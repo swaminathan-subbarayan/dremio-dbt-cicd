@@ -1,0 +1,59 @@
+name: dbt CI/CD
+
+on:
+  push:
+    branches:
+      - develop
+  workflow_dispatch:
+
+jobs:
+  dev-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.12'
+      - name: Install dbt
+        run: pip install dbt-dremio
+      - name: Run dbt in Dev
+        env:
+          DREMIO_DEV_HOST: ${{ secrets.DREMIO_DEV_HOST }}
+          DREMIO_DEV_PORT: ${{ secrets.DREMIO_DEV_PORT }}
+          DREMIO_DEV_USER: ${{ secrets.DREMIO_DEV_USER }}
+          DREMIO_DEV_PASSWORD: ${{ secrets.DREMIO_DEV_PASSWORD }}
+          DREMIO_DEV_SPACE: ${{ secrets.DREMIO_DEV_SPACE }}
+          DREMIO_DEV_SPACE_FOLDER: ${{ secrets.DREMIO_DEV_SPACE_FOLDER }}
+        run: |
+          dbt deps
+          dbt run --target dev
+
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  prod-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.12'
+      - name: Install dbt
+        run: pip install dbt-dremio
+      - name: Run dbt in Prod
+        env:
+          DREMIO_PROD_HOST: ${{ secrets.DREMIO_PROD_HOST }}
+          DREMIO_PROD_PORT: ${{ secrets.DREMIO_PROD_PORT }}
+          DREMIO_PROD_USER: ${{ secrets.DREMIO_PROD_USER }}
+          DREMIO_PROD_PASSWORD: ${{ secrets.DREMIO_PROD_PASSWORD }}
+          DREMIO_PROD_SPACE: ${{ secrets.DREMIO_PROD_SPACE }}
+          DREMIO_PROD_SPACE_FOLDER: ${{ secrets.DREMIO_PROD_SPACE_FOLDER }}
+        run: |
+          dbt deps
+          dbt run --target prod

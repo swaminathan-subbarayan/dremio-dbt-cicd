@@ -1,0 +1,15 @@
+dbt_cicd_profile:
+  target: prod
+  outputs:
+    prod:
+      dremio_space: "{{ env_var('DREMIO_SPACE') }}"
+      dremio_space_folder: "{{ env_var('DREMIO_SPACE_FOLDER') }}"
+      #object_storage_source: "{{ env_var('DREMIO_OBJECT_STORAGE_SOURCE') }}"
+      #object_storage_path: "{{ env_var('DREMIO_OBJECT_STORAGE_PATH') }}"
+      software_host: "{{ env_var('DREMIO_TARGET_ENV_HOST') }}"
+      port: "{{ env_var('DREMIO_PORT') | int }}"
+      user: "{{ env_var('DREMIO_USER') }}"
+      password: "{{ env_var('DREMIO_PASSWORD') }}"
+      threads: 2
+      type: dremio
+      use_ssl: false

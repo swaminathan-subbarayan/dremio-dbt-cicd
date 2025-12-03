@@ -59,6 +59,12 @@ jobs:
         #   DREMIO_DEV_SPACE_FOLDER: ${{ secrets.DREMIO_DEV_SPACE_FOLDER }}
         run: |
           dbt deps
+      - name: Debug profiles.yml
+        run: cat ~/.dbt/profiles.yml
+      - name: Check secrets
+        run: |
+          echo "DREMIO_DEV_HOST: ${{ secrets.DREMIO_DEV_HOST }}"
+          echo "DREMIO_PROD_HOST: ${{ secrets.DREMIO_PROD_HOST }}"
           dbt run --target dev
           dbt test --target dev
 
@@ -113,5 +119,11 @@ jobs:
         #   DREMIO_PROD_SPACE_FOLDER: ${{ secrets.DREMIO_PROD_SPACE_FOLDER }}
         run: |
           dbt deps
+      - name: Debug profiles.yml
+        run: cat ~/.dbt/profiles.yml
+      - name: Check secrets
+        run: |
+          echo "DREMIO_DEV_HOST: ${{ secrets.DREMIO_DEV_HOST }}"
+          echo "DREMIO_PROD_HOST: ${{ secrets.DREMIO_PROD_HOST }}"
           dbt run --target prod
           dbt test --target prod

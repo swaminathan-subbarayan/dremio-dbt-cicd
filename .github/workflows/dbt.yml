@@ -19,18 +19,49 @@ jobs:
           python-version: '3.12'
       - name: Install dbt
         run: pip install dbt-dremio
+      - name: Create profiles.yml
+        run: |
+          mkdir -p ~/.dbt
+          cat <<EOF > ~/.dbt/profiles.yml
+          dbt_cicd_profile:
+            target: dev
+            outputs:
+              dev:
+                type: dremio
+                threads: 2
+                environment: software
+                software_host: "{{ env_var('DREMIO_DEV_HOST') }}"
+                port: "{{ env_var('DREMIO_DEV_PORT') | int }}"
+                use_ssl: false
+                user: "{{ env_var('DREMIO_DEV_USER') }}"
+                password: "{{ env_var('DREMIO_DEV_PASSWORD') }}"
+                dremio_space: "{{ env_var('DREMIO_DEV_SPACE') }}"
+                dremio_space_folder: "{{ env_var('DREMIO_DEV_SPACE_FOLDER') }}"
+              prod:
+                type: dremio
+                threads: 2
+                environment: software
+                software_host: "{{ env_var('DREMIO_PROD_HOST') }}"
+                port: "{{ env_var('DREMIO_PROD_PORT') | int }}"
+                use_ssl: false
+                user: "{{ env_var('DREMIO_PROD_USER') }}"
+                password: "{{ env_var('DREMIO_PROD_PASSWORD') }}"
+                dremio_space: "{{ env_var('DREMIO_PROD_SPACE') }}"
+                dremio_space_folder: "{{ env_var('DREMIO_PROD_SPACE_FOLDER') }}"
+            EOF
       - name: Run dbt in Dev
-        env:
-          DREMIO_DEV_HOST: ${{ secrets.DREMIO_DEV_HOST }}
-          DREMIO_DEV_PORT: ${{ secrets.DREMIO_DEV_PORT }}
-          DREMIO_DEV_USER: ${{ secrets.DREMIO_DEV_USER }}
-          DREMIO_DEV_PASSWORD: ${{ secrets.DREMIO_DEV_PASSWORD }}
-          DREMIO_DEV_SPACE: ${{ secrets.DREMIO_DEV_SPACE }}
-          DREMIO_DEV_SPACE_FOLDER: ${{ secrets.DREMIO_DEV_SPACE_FOLDER }}
+        # env:
+        #   DREMIO_DEV_HOST: ${{ secrets.DREMIO_DEV_HOST }}
+        #   DREMIO_DEV_PORT: ${{ secrets.DREMIO_DEV_PORT }}
+        #   DREMIO_DEV_USER: ${{ secrets.DREMIO_DEV_USER }}
+        #   DREMIO_DEV_PASSWORD: ${{ secrets.DREMIO_DEV_PASSWORD }}
+        #   DREMIO_DEV_SPACE: ${{ secrets.DREMIO_DEV_SPACE }}
+        #   DREMIO_DEV_SPACE_FOLDER: ${{ secrets.DREMIO_DEV_SPACE_FOLDER }}
         run: |
           dbt deps
           dbt run --target dev
-  
+          dbt test --target dev
+
   prod-deploy:
     if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
@@ -42,17 +73,45 @@ jobs:
           python-version: '3.12'
       - name: Install dbt
         run: pip install dbt-dremio
+      - name: Create profiles.yml
+        run: |
+          mkdir -p ~/.dbt
+          cat <<EOF > ~/.dbt/profiles.yml
+          dbt_cicd_profile:
+            target: dev
+            outputs:
+              dev:
+                type: dremio
+                threads: 2
+                environment: software
+                software_host: "{{ env_var('DREMIO_DEV_HOST') }}"
+                port: "{{ env_var('DREMIO_DEV_PORT') | int }}"
+                use_ssl: false
+                user: "{{ env_var('DREMIO_DEV_USER') }}"
+                password: "{{ env_var('DREMIO_DEV_PASSWORD') }}"
+                dremio_space: "{{ env_var('DREMIO_DEV_SPACE') }}"
+                dremio_space_folder: "{{ env_var('DREMIO_DEV_SPACE_FOLDER') }}"
+              prod:
+                type: dremio
+                threads: 2
+                environment: software
+                software_host: "{{ env_var('DREMIO_PROD_HOST') }}"
+                port: "{{ env_var('DREMIO_PROD_PORT') | int }}"
+                use_ssl: false
+                user: "{{ env_var('DREMIO_PROD_USER') }}"
+                password: "{{ env_var('DREMIO_PROD_PASSWORD') }}"
+                dremio_space: "{{ env_var('DREMIO_PROD_SPACE') }}"
+                dremio_space_folder: "{{ env_var('DREMIO_PROD_SPACE_FOLDER') }}"
+            EOF
       - name: Run dbt in Prod
-        env:
-          DREMIO_PROD_HOST: ${{ secrets.DREMIO_PROD_HOST }}
-          DREMIO_PROD_PORT: ${{ secrets.DREMIO_PROD_PORT }}
-          DREMIO_PROD_USER: ${{ secrets.DREMIO_PROD_USER }}
-          DREMIO_PROD_PASSWORD: ${{ secrets.DREMIO_PROD_PASSWORD }}
-          DREMIO_PROD_SPACE: ${{ secrets.DREMIO_PROD_SPACE }}
-          DREMIO_PROD_SPACE_FOLDER: ${{ secrets.DREMIO_PROD_SPACE_FOLDER }}
+        # env:
+        #   DREMIO_PROD_HOST: ${{ secrets.DREMIO_PROD_HOST }}
+        #   DREMIO_PROD_PORT: ${{ secrets.DREMIO_PROD_PORT }}
+        #   DREMIO_PROD_USER: ${{ secrets.DREMIO_PROD_USER }}
+        #   DREMIO_PROD_PASSWORD: ${{ secrets.DREMIO_PROD_PASSWORD }}
+        #   DREMIO_PROD_SPACE: ${{ secrets.DREMIO_PROD_SPACE }}
+        #   DREMIO_PROD_SPACE_FOLDER: ${{ secrets.DREMIO_PROD_SPACE_FOLDER }}
         run: |
           dbt deps
-
           dbt run --target prod
-
-
+          dbt test --target prod

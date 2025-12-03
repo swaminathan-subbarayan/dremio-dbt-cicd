@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - develop
+      - main
   workflow_dispatch:
 
 jobs:
@@ -51,3 +52,4 @@ jobs:
           dbt deps
 
           dbt run --target prod
+

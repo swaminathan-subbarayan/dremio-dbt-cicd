@@ -28,14 +28,7 @@ jobs:
         run: |
           dbt deps
           dbt run --target dev
-
-
-on:
-  push:
-    branches:
-      - main
-
-jobs:
+  
   prod-deploy:
     runs-on: ubuntu-latest
     steps:
@@ -56,4 +49,5 @@ jobs:
           DREMIO_PROD_SPACE_FOLDER: ${{ secrets.DREMIO_PROD_SPACE_FOLDER }}
         run: |
           dbt deps
+
           dbt run --target prod

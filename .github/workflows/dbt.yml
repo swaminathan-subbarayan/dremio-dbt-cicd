@@ -9,8 +9,8 @@ on:
 
 jobs:
   dev-deploy:
-    if: github.ref == 'refs/heads/develop'
     runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/develop'
     steps:
       - uses: actions/checkout@v3
       - name: Set up Python
@@ -63,8 +63,8 @@ jobs:
           dbt test --target dev
 
   prod-deploy:
-    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
     steps:
       - uses: actions/checkout@v3
       - name: Set up Python

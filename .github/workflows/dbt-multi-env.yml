@@ -1,4 +1,4 @@
-name: dbt on Dremio Software (Dev -> Prod -> Prod2)
+name: dbt on Dremio Software (Dev -> Prod-> Prod2)
 
 on:
   push:
@@ -13,7 +13,7 @@ defaults:
 jobs:
   # ---------- DEV: runs on `develop` ----------
   dev-deploy:
-    name: Dev deploy (HTTP)
+    name: Dev deploy (HTTP) 
     runs-on: [self-hosted, Windows]
     if: github.ref == 'refs/heads/develop'
     steps:

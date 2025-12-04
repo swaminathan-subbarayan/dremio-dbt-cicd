@@ -14,6 +14,9 @@ jobs:
 #    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Allow PowerShell scripts for this job
+        shell: pwsh
+        run: Set-ExecutionPolicy -Scope Process -ExecutionPolicy RemoteSigned
       - name: Verify Python
         run: python --version
 #        uses: actions/setup-python@v4
@@ -74,6 +77,9 @@ jobs:
 #    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Allow PowerShell scripts for this job
+        shell: pwsh
+        run: Set-ExecutionPolicy -Scope Process -ExecutionPolicy RemoteSigned
       - name: Verify Python
         run: python --version
 #        uses: actions/setup-python@v4

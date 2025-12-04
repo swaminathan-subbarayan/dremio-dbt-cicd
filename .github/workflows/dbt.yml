@@ -1,60 +1,66 @@
-name: dbt CI/CD
+name: dbt on Dremio Software (HTTP)
 
 on:
   push:
     branches:
       - develop
       - main
-  workflow_dispatch:
+
+# Use cmd across the workflow. You can switch to powershell later if you prefer.
+defaults:
+  run:
+    shell: cmd
 
 jobs:
   dev-deploy:
+    name: Dev deploy (HTTP)
     runs-on: [self-hosted, Windows]
     if: github.ref == 'refs/heads/develop'
-
-    defaults:
-      run:
-        shell: cmd
-
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
       - name: Verify Python
-        run: python --version
+        run: |
+          python --version
+          python -m pip --version
 
-      - name: Upgrade pip & install dbt-dremio
+      - name: Upgrade pip & install dbt-core + dbt-dremio
         run: |
           python -m pip install --upgrade pip
-          python -m pip install dbt-dremio
+          rem Pin dbt-core to a compatible version for dbt-dremio
+          python -m pip install "dbt-core==1.7.*" dbt-dremio
+          rem Helpful diagnostics
+          python -m pip show dbt-core dbt-dremio
+          where dbt
 
       - name: Create profiles.yml (Windows-safe via cmd)
         run: |
           if not exist "%USERPROFILE%\.dbt" mkdir "%USERPROFILE%\.dbt"
           (
-          echo dbt_cicd_profile:
-          echo   target: dev
-          echo   outputs:
-          echo     dev:
-          echo       type: dremio
-          echo       threads: 2
-          echo       environment: software
-          echo       software_host: "${{ secrets.DREMIO_DEV_HOST }}"
-          echo       port: ${{ secrets.DREMIO_DEV_PORT }}
-          echo       user: "${{ secrets.DREMIO_DEV_USER }}"
-          echo       password: "${{ secrets.DREMIO_DEV_PASSWORD }}"
-          echo       dremio_space: "${{ secrets.DREMIO_DEV_SPACE }}"
-          echo       dremio_space_folder: "${{ secrets.DREMIO_DEV_SPACE_FOLDER }}"
-          echo     prod:
-          echo       type: dremio
-          echo       threads: 2
-          echo       environment: software
-          echo       software_host: "${{ secrets.DREMIO_PROD_HOST }}"
-          echo       port: ${{ secrets.DREMIO_PROD_PORT }}
-          echo       user: "${{ secrets.DREMIO_PROD_USER }}"
-          echo       password: "${{ secrets.DREMIO_PROD_PASSWORD }}"
-          echo       dremio_space: "${{ secrets.DREMIO_PROD_SPACE }}"
-          echo       dremio_space_folder: "${{ secrets.DREMIO_PROD_SPACE_FOLDER }}"
+            echo dbt_cicd_profile:
+            echo   target: dev
+            echo   outputs:
+            echo     dev:
+            echo       type: dremio
+            echo       threads: 2
+            echo       environment: software
+            echo       software_host: "${{ secrets.DREMIO_DEV_HOST }}"
+            echo       port: ${{ secrets.DREMIO_DEV_PORT }}
+            echo       user: "${{ secrets.DREMIO_DEV_USER }}"
+            echo       password: "${{ secrets.DREMIO_DEV_PASSWORD }}"
+            echo       dremio_space: "${{ secrets.DREMIO_DEV_SPACE }}"
+            echo       dremio_space_folder: "${{ secrets.DREMIO_DEV_SPACE_FOLDER }}"
+            echo     prod:
+            echo       type: dremio
+            echo       threads: 2
+            echo       environment: software
+            echo       software_host: "${{ secrets.DREMIO_PROD_HOST }}"
+            echo       port: ${{ secrets.DREMIO_PROD_PORT }}
+            echo       user: "${{ secrets.DREMIO_PROD_USER }}"
+            echo       password: "${{ secrets.DREMIO_PROD_PASSWORD }}"
+            echo       dremio_space: "${{ secrets.DREMIO_PROD_SPACE }}"
+            echo       dremio_space_folder: "${{ secrets.DREMIO_PROD_SPACE_FOLDER }}"
           ) > "%USERPROFILE%\.dbt\profiles.yml"
 
       - name: Debug profiles.yml
@@ -67,83 +73,83 @@ jobs:
           curl -I "%URL%" || exit /b 1
 
       - name: dbt version
-        run: python -m dbt --version
+        run: dbt --version
 
       - name: dbt debug
-        run: python -m dbt debug --profiles-dir "%USERPROFILE%\.dbt"
+        run: dbt debug --profiles-dir "%USERPROFILE%\.dbt"
 
       - name: dbt deps
-        run: python -m dbt deps
+        run: dbt deps
 
-      - name: dbt build (dev)
-        run: python -m dbt build --profiles-dir "%USERPROFILE%\.dbt" --profile dbt_cicd_profile --target dev
+      - name: dbt build (dev target)
+        run: dbt build --profiles-dir "%USERPROFILE%\.dbt" --profile dbt_cicd_profile --target dev
 
   prod-deploy:
+    name: Prod deploy (HTTP)
     runs-on: [self-hosted, Windows]
     if: github.ref == 'refs/heads/main'
-
-    defaults:
-      run:
-        shell: cmd
-
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
       - name: Verify Python
-        run: python --version
+        run: |
+          python --version
+          python -m pip --version
 
-      - name: Upgrade pip & install dbt-dremio
+      - name: Upgrade pip & install dbt-core + dbt-dremio
         run: |
           python -m pip install --upgrade pip
-          python -m pip install dbt-dremio
+          python -m pip install "dbt-core==1.7.*" dbt-dremio
+          python -m pip show dbt-core dbt-dremio
+          where dbt
 
       - name: Create profiles.yml (Windows-safe via cmd)
         run: |
           if not exist "%USERPROFILE%\.dbt" mkdir "%USERPROFILE%\.dbt"
           (
-          echo dbt_cicd_profile:
-          echo   target: prod
-          echo   outputs:
-          echo     dev:
-          echo       type: dremio
-          echo       threads: 2
-          echo       environment: software
-          echo       software_host: "${{ secrets.DREMIO_DEV_HOST }}"
-          echo       port: ${{ secrets.DREMIO_DEV_PORT }}
-          echo       user: "${{ secrets.DREMIO_DEV_USER }}"
-          echo       password: "${{ secrets.DREMIO_DEV_PASSWORD }}"
-          echo       dremio_space: "${{ secrets.DREMIO_DEV_SPACE }}"
-          echo       dremio_space_folder: "${{ secrets.DREMIO_DEV_SPACE_FOLDER }}"
-          echo     prod:
-          echo       type: dremio
-          echo       threads: 2
-          echo       environment: software
-          echo       software_host: "${{ secrets.DREMIO_PROD_HOST }}"
-          echo       port: ${{ secrets.DREMIO_PROD_PORT }}
-          echo       user: "${{ secrets.DREMIO_PROD_USER }}"
-          echo       password: "${{ secrets.DREMIO_PROD_PASSWORD }}"
-          echo       dremio_space: "${{ secrets.DREMIO_PROD_SPACE }}"
-          echo       dremio_space_folder: "${{ secrets.DREMIO_PROD_SPACE_FOLDER }}"
+            echo dbt_cicd_profile:
+            echo   target: prod
+            echo   outputs:
+            echo     dev:
+            echo       type: dremio
+            echo       threads: 2
+            echo       environment: software
+            echo       software_host: "${{ secrets.DREMIO_DEV_HOST }}"
+            echo       port: ${{ secrets.DREMIO_DEV_PORT }}
+            echo       user: "${{ secrets.DREMIO_DEV_USER }}"
+            echo       password: "${{ secrets.DREMIO_DEV_PASSWORD }}"
+            echo       dremio_space: "${{ secrets.DREMIO_DEV_SPACE }}"
+            echo       dremio_space_folder: "${{ secrets.DREMIO_DEV_SPACE_FOLDER }}"
+            echo     prod:
+            echo       type: dremio
+            echo       threads: 2
+            echo       environment: software
+            echo       software_host: "${{ secrets.DREMIO_PROD_HOST }}"
+            echo       port: ${{ secrets.DREMIO_PROD_PORT }}
+            echo       user: "${{ secrets.DREMIO_PROD_USER }}"
+            echo       password: "${{ secrets.DREMIO_PROD_PASSWORD }}"
+            echo       dremio_space: "${{ secrets.DREMIO_PROD_SPACE }}"
+            echo       dremio_space_folder: "${{ secrets.DREMIO_PROD_SPACE_FOLDER }}"
           ) > "%USERPROFILE%\.dbt\profiles.yml"
 
       - name: Debug profiles.yml
         run: type "%USERPROFILE%\.dbt\profiles.yml"
 
-      - name: Connectivity check to Dremio (HTTPS via curl)
+      - name: Connectivity check to Dremio (HTTP via curl)
         run: |
-          set URL=https://${{ secrets.DREMIO_PROD_HOST }}:${{ secrets.DREMIO_PROD_PORT }}/apiv2/login
+          set URL=http://${{ secrets.DREMIO_PROD_HOST }}:${{ secrets.DREMIO_PROD_PORT }}/apiv2/login
           echo Testing: %URL%
-          curl -k -I "%URL%" || exit /b 1
+          curl -I "%URL%" || exit /b 1
 
       - name: dbt version
-        run: python -m dbt --version
+        run: dbt --version
 
       - name: dbt debug
-        run: python -m dbt debug --profiles-dir "%USERPROFILE%\.dbt"
+        run: dbt debug --profiles-dir "%USERPROFILE%\.dbt"
 
       - name: dbt deps
-        run: python -m dbt deps
+        run: dbt deps
 
-      - name: dbt build (prod)
-        run: python -m dbt build --profiles-dir "%USERPROFILE%\.dbt" --profile dbt_cicd_profile --target prod
+      - name: dbt build (prod target)
+        run: dbt build --profiles-dir "%USERPROFILE%\.dbt" --profile dbt_cicd_profile --target prod

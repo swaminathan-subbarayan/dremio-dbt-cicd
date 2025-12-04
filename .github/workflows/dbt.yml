@@ -60,13 +60,11 @@ jobs:
       - name: Debug profiles.yml
         run: type "%USERPROFILE%\.dbt\profiles.yml"
 
-      - name: Connectivity check to Dremio (HTTPS)
-        run: >
-          powershell -NoProfile -ExecutionPolicy Bypass -Command
-          "$url = 'https://${{ secrets.DREMIO_DEV_HOST }}:${{ secrets.DREMIO_DEV_PORT }}/apiv2/login';
-           Write-Host ('Testing: ' + $url);
-           try { (Invoke-WebRequest -Uri $url -UseBasicParsing -SkipCertificateCheck).StatusCode | Write-Host }
-           catch { Write-Host ('Connection failed: ' + $_.Exception.Message); exit 1 }"
+      - name: Connectivity check to Dremio (HTTPS via curl)
+        run: |
+          set URL=https://${{ secrets.DREMIO_DEV_HOST }}:${{ secrets.DREMIO_DEV_PORT }}/apiv2/login
+          echo Testing: %URL%
+          curl -k -I "%URL%" || exit /b 1
 
       - name: dbt version
         run: python -m dbt --version
@@ -132,13 +130,11 @@ jobs:
       - name: Debug profiles.yml
         run: type "%USERPROFILE%\.dbt\profiles.yml"
 
-      - name: Connectivity check to Dremio (HTTPS)
-        run: >
-          powershell -NoProfile -ExecutionPolicy Bypass -Command
-          "$url = 'https://${{ secrets.DREMIO_PROD_HOST }}:${{ secrets.DREMIO_PROD_PORT }}/apiv2/login';
-           Write-Host ('Testing: ' + $url);
-           try { (Invoke-WebRequest -Uri $url -UseBasicParsing -SkipCertificateCheck).StatusCode | Write-Host }
-           catch { Write-Host ('Connection failed: ' + $_.Exception.Message); exit 1 }"
+      - name: Connectivity check to Dremio (HTTPS via curl)
+        run: |
+          set URL=https://${{ secrets.DREMIO_PROD_HOST }}:${{ secrets.DREMIO_PROD_PORT }}/apiv2/login
+          echo Testing: %URL%
+          curl -k -I "%URL%" || exit /b 1
 
       - name: dbt version
         run: python -m dbt --version

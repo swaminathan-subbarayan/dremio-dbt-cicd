@@ -1,0 +1,12 @@
+﻿{
+  "repositoryName": "swaminathan-subbarayan/dremio-dbt-cicd",
+  "pipelineDirectory": "dremio-dbt-cicd",
+  "workspaceDirectory": "dremio-dbt-cicd\\dremio-dbt-cicd",
+  "repositories": {
+    "swaminathan-subbarayan/dremio-dbt-cicd": {
+      "repositoryPath": "dremio-dbt-cicd\\dremio-dbt-cicd",
+      "lastRunOn": "12/04/2025 06:46:12 +05:30"
+    }
+  },
+  "lastRunOn": "12/04/2025 09:34:04 +05:30"
+}

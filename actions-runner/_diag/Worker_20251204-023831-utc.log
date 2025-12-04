@@ -1,0 +1,3885 @@
+[2025-12-04 02:38:31Z INFO HostContext] No proxy settings were found based on environmental variables (http_proxy/https_proxy/HTTP_PROXY/HTTPS_PROXY)
+[2025-12-04 02:38:31Z INFO HostContext] Well known directory 'Bin': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\bin'
+[2025-12-04 02:38:31Z INFO HostContext] Well known directory 'Root': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner'
+[2025-12-04 02:38:31Z INFO HostContext] Well known config file 'Credentials': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\.credentials'
+[2025-12-04 02:38:31Z INFO HostContext] Well known directory 'Bin': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\bin'
+[2025-12-04 02:38:31Z INFO HostContext] Well known directory 'Root': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner'
+[2025-12-04 02:38:31Z INFO HostContext] Well known config file 'Runner': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\.runner'
+[2025-12-04 02:38:31Z INFO Worker] Version: 2.329.0
+[2025-12-04 02:38:31Z INFO Worker] Commit: c76c59996c8fa32e989164a5a695efb12608ae5a
+[2025-12-04 02:38:31Z INFO Worker] Culture: en-IN
+[2025-12-04 02:38:31Z INFO Worker] UI Culture: en-US
+[2025-12-04 02:38:31Z INFO Worker] Waiting to receive the job message from the channel.
+[2025-12-04 02:38:31Z INFO ProcessChannel] Receiving message of length 25696, with hash '92b143320a0332f998fa1e0f3fa3cc008bffcc59c7ac14e9dad60c9fc311083e'
+[2025-12-04 02:38:31Z INFO Worker] Message received.
+[2025-12-04 02:38:32Z INFO Worker] Job message:
+ {
+  "defaults": [
+    {
+      "type": 2,
+      "file": 1,
+      "line": 16,
+      "col": 7,
+      "map": [
+        {
+          "key": {
+            "type": 0,
+            "file": 1,
+            "line": 16,
+            "col": 7,
+            "lit": "run"
+          },
+          "value": {
+            "type": 2,
+            "file": 1,
+            "line": 17,
+            "col": 9,
+            "map": [
+              {
+                "key": {
+                  "type": 0,
+                  "file": 1,
+                  "line": 17,
+                  "col": 9,
+                  "lit": "shell"
+                },
+                "value": {
+                  "type": 0,
+                  "file": 1,
+                  "line": 17,
+                  "col": 16,
+                  "lit": "cmd"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "fileTable": [
+    ".github/workflows/dbt.yml"
+  ],
+  "mask": [
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    }
+  ],
+  "steps": [
+    {
+      "type": "action",
+      "reference": {
+        "type": "repository",
+        "name": "actions/checkout",
+        "ref": "v4",
+        "repositoryType": "GitHub"
+      },
+      "contextName": "__actions_checkout",
+      "condition": "success()",
+      "id": "ec7d495f-9fdb-47a3-97d7-3bf4031cae00",
+      "name": "__actions_checkout"
+    },
+    {
+      "type": "action",
+      "reference": {
+        "type": "script"
+      },
+      "displayNameToken": {
+        "type": 0,
+        "file": 1,
+        "line": 20,
+        "col": 15,
+        "lit": "Verify Python"
+      },
+      "contextName": "__run",
+      "inputs": {
+        "type": 2,
+        "map": [
+          {
+            "key": "script",
+            "value": {
+              "type": 0,
+              "file": 1,
+              "line": 22,
+              "col": 14,
+              "lit": "python --version"
+            }
+          },
+          {
+            "key": "shell",
+            "value": {
+              "type": 0,
+              "file": 1,
+              "line": 21,
+              "col": 16,
+              "lit": "cmd"
+            }
+          }
+        ]
+      },
+      "condition": "success()",
+      "id": "cbb13390-47c8-42dd-aa2c-82f8fd6c130e",
+      "name": "__run"
+    },
+    {
+      "type": "action",
+      "reference": {
+        "type": "script"
+      },
+      "displayNameToken": {
+        "type": 0,
+        "file": 1,
+        "line": 26,
+        "col": 15,
+        "lit": "Install dbt"
+      },
+      "contextName": "__run_2",
+      "inputs": {
+        "type": 2,
+        "map": [
+          {
+            "key": "script",
+            "value": {
+              "type": 0,
+              "file": 1,
+              "line": 28,
+              "col": 14,
+              "lit": "pip install dbt-dremio"
+            }
+          },
+          {
+            "key": "shell",
+            "value": {
+              "type": 0,
+              "file": 1,
+              "line": 27,
+              "col": 16,
+              "lit": "cmd"
+            }
+          }
+        ]
+      },
+      "condition": "success()",
+      "id": "2b2b37d4-1ad1-484b-a0fe-e6382adb6b87",
+      "name": "__run_2"
+    },
+    {
+      "type": "action",
+      "reference": {
+        "type": "script"
+      },
+      "displayNameToken": {
+        "type": 0,
+        "file": 1,
+        "line": 61,
+        "col": 15,
+        "lit": "Create profiles.yml (Python)"
+      },
+      "contextName": "__run_3",
+      "inputs": {
+        "type": 2,
+        "map": [
+          {
+            "key": "script",
+            "value": {
+              "type": 3,
+              "file": 1,
+              "line": 63,
+              "col": 14,
+              "expr": "format('python -c \"import os, textwrap; p=os.path.join(os.environ[''USERPROFILE''],''.dbt''); os.makedirs(p, exist_ok=True); content=textwrap.dedent(''''''\\ dbt_cicd_profile:\n  target: dev\n  outputs:\n      dev:\n        type: dremio\n        threads: 2\n        environment: software\n        software_host: \\\"{0}\\\"\n        port: {1}\n        user: \\\"{2}\\\"\n        password: \\\"{3}\\\"\n        dremio_space: \\\"{4}\\\"\n        dremio_space_folder: \\\"{5}\\\"\n      prod:\n        type: dremio\n        threads: 2\n        environment: software\n        software_host: \\\"{6}\\\"\n        port: {7}\n        user: \\\"{8}\\\"\n        password: \\\"{9}\\\"\n        dremio_space: \\\"{10}\\\"\n        dremio_space_folder: \\\"{11}\\\"\n''''''); open(os.path.join(p,''profiles.yml''),''w'',encoding=''utf-8'').write(content)\"\n', secrets.DREMIO_DEV_HOST, secrets.DREMIO_DEV_PORT, secrets.DREMIO_DEV_USER, secrets.DREMIO_DEV_PASSWORD, secrets.DREMIO_DEV_SPACE, secrets.DREMIO_DEV_SPACE_FOLDER, secrets.DREMIO_PROD_HOST, secrets.DREMIO_PROD_PORT, secrets.DREMIO_PROD_USER, secrets.DREMIO_PROD_PASSWORD, secrets.DREMIO_PROD_SPACE, secrets.DREMIO_PROD_SPACE_FOLDER)"
+            }
+          },
+          {
+            "key": "shell",
+            "value": {
+              "type": 0,
+              "file": 1,
+              "line": 62,
+              "col": 16,
+              "lit": "cmd"
+            }
+          }
+        ]
+      },
+      "condition": "success()",
+      "id": "704359b0-6c38-4da0-a3e1-6b2b8afef22c",
+      "name": "__run_3"
+    },
+    {
+      "type": "action",
+      "reference": {
+        "type": "script"
+      },
+      "displayNameToken": {
+        "type": 0,
+        "file": 1,
+        "line": 93,
+        "col": 15,
+        "lit": "Debug profiles.yml"
+      },
+      "contextName": "__run_4",
+      "inputs": {
+        "type": 2,
+        "map": [
+          {
+            "key": "script",
+            "value": {
+              "type": 0,
+              "file": 1,
+              "line": 94,
+              "col": 14,
+              "lit": "type \"%USERPROFILE%\\.dbt\\profiles.yml\""
+            }
+          }
+        ]
+      },
+      "condition": "success()",
+      "id": "bb7d7bd7-7e82-41b8-9797-436c34dad825",
+      "name": "__run_4"
+    },
+    {
+      "type": "action",
+      "reference": {
+        "type": "script"
+      },
+      "displayNameToken": {
+        "type": 0,
+        "file": 1,
+        "line": 95,
+        "col": 15,
+        "lit": "Connectivity check to Dremio (HTTPS)"
+      },
+      "contextName": "__run_5",
+      "inputs": {
+        "type": 2,
+        "map": [
+          {
+            "key": "script",
+            "value": {
+              "type": 3,
+              "file": 1,
+              "line": 96,
+              "col": 14,
+              "expr": "format('set URL=https://{0}:{1}/apiv2/login\necho Testing: %URL%\ncurl -k -I \"%URL%\"\n', secrets.DREMIO_DEV_HOST, secrets.DREMIO_DEV_PORT)"
+            }
+          }
+        ]
+      },
+      "condition": "success()",
+      "id": "4a638d43-3dc6-4a22-aa3d-4bbcb4566328",
+      "name": "__run_5"
+    },
+    {
+      "type": "action",
+      "reference": {
+        "type": "script"
+      },
+      "displayNameToken": {
+        "type": 0,
+        "file": 1,
+        "line": 100,
+        "col": 15,
+        "lit": "Run dbt in Dev"
+      },
+      "contextName": "__run_6",
+      "inputs": {
+        "type": 2,
+        "map": [
+          {
+            "key": "script",
+            "value": {
+              "type": 0,
+              "file": 1,
+              "line": 108,
+              "col": 14,
+              "lit": "dbt deps\n"
+            }
+          }
+        ]
+      },
+      "condition": "success()",
+      "id": "787549a9-2578-4985-965c-cea1d34d65c9",
+      "name": "__run_6"
+    },
+    {
+      "type": "action",
+      "reference": {
+        "type": "script"
+      },
+      "displayNameToken": {
+        "type": 0,
+        "file": 1,
+        "line": 110,
+        "col": 15,
+        "lit": "Debug profiles.yml"
+      },
+      "contextName": "__run_7",
+      "inputs": {
+        "type": 2,
+        "map": [
+          {
+            "key": "script",
+            "value": {
+              "type": 0,
+              "file": 1,
+              "line": 111,
+              "col": 14,
+              "lit": "cat ~/.dbt/profiles.yml"
+            }
+          }
+        ]
+      },
+      "condition": "success()",
+      "id": "b92992f8-284e-409a-b6eb-617957d4d73f",
+      "name": "__run_7"
+    },
+    {
+      "type": "action",
+      "reference": {
+        "type": "script"
+      },
+      "displayNameToken": {
+        "type": 0,
+        "file": 1,
+        "line": 112,
+        "col": 15,
+        "lit": "Check secrets"
+      },
+      "contextName": "__run_8",
+      "inputs": {
+        "type": 2,
+        "map": [
+          {
+            "key": "script",
+            "value": {
+              "type": 3,
+              "file": 1,
+              "line": 113,
+              "col": 14,
+              "expr": "format('echo \"DREMIO_DEV_HOST: {0}\"\necho \"DREMIO_PROD_HOST: {1}\"\ndbt run --target dev\ndbt test --target dev\n', secrets.DREMIO_DEV_HOST, secrets.DREMIO_PROD_HOST)"
+            }
+          }
+        ]
+      },
+      "condition": "success()",
+      "id": "0e166240-b6ca-477b-bc06-9b47d06d2aa0",
+      "name": "__run_8"
+    }
+  ],
+  "variables": {
+    "Actions.EnableHttpRedirects": {
+      "value": "true"
+    },
+    "DREMIO_DEV_HOST": {
+      "value": "***",
+      "isSecret": true
+    },
+    "DREMIO_DEV_PASSWORD": {
+      "value": "***",
+      "isSecret": true
+    },
+    "DREMIO_DEV_PORT": {
+      "value": "***",
+      "isSecret": true
+    },
+    "DREMIO_DEV_SPACE": {
+      "value": "***",
+      "isSecret": true
+    },
+    "DREMIO_DEV_SPACE_FOLDER": {
+      "value": "***",
+      "isSecret": true
+    },
+    "DREMIO_DEV_USER": {
+      "value": "***",
+      "isSecret": true
+    },
+    "DREMIO_PROD_HOST": {
+      "value": "***",
+      "isSecret": true
+    },
+    "DREMIO_PROD_PASSWORD": {
+      "value": "***",
+      "isSecret": true
+    },
+    "DREMIO_PROD_PORT": {
+      "value": "***",
+      "isSecret": true
+    },
+    "DREMIO_PROD_SPACE": {
+      "value": "***",
+      "isSecret": true
+    },
+    "DREMIO_PROD_SPACE_FOLDER": {
+      "value": "***",
+      "isSecret": true
+    },
+    "DREMIO_PROD_USER": {
+      "value": "***",
+      "isSecret": true
+    },
+    "DistributedTask.AddWarningToNode12Action": {
+      "value": "true"
+    },
+    "DistributedTask.AddWarningToNode16Action": {
+      "value": "true"
+    },
+    "DistributedTask.AllowRunnerContainerHooks": {
+      "value": "true"
+    },
+    "DistributedTask.DeprecateStepOutputCommands": {
+      "value": "true"
+    },
+    "DistributedTask.DetailUntarFailure": {
+      "value": "true"
+    },
+    "DistributedTask.EnableCompositeActions": {
+      "value": "true"
+    },
+    "DistributedTask.EnableJobServerQueueTelemetry": {
+      "value": "true"
+    },
+    "DistributedTask.EnhancedAnnotations": {
+      "value": "true"
+    },
+    "DistributedTask.ForceGithubJavascriptActionsToNode16": {
+      "value": "true"
+    },
+    "DistributedTask.ForceGithubJavascriptActionsToNode20": {
+      "value": "true"
+    },
+    "DistributedTask.LogTemplateErrorsAsDebugMessages": {
+      "value": "true"
+    },
+    "DistributedTask.MarkJobAsFailedOnWorkerCrash": {
+      "value": "true"
+    },
+    "DistributedTask.NewActionMetadata": {
+      "value": "true"
+    },
+    "DistributedTask.UploadStepSummary": {
+      "value": "true"
+    },
+    "DistributedTask.UseActionArchiveCache": {
+      "value": "true"
+    },
+    "DistributedTask.UseWhich2": {
+      "value": "true"
+    },
+    "RunService.FixEmbeddedIssues": {
+      "value": "true"
+    },
+    "actions_add_check_run_id_to_job_context": {
+      "value": "true"
+    },
+    "actions_container_action_runner_temp": {
+      "value": "true"
+    },
+    "actions_display_helpful_actions_download_errors": {
+      "value": "true"
+    },
+    "actions_skip_retry_complete_job_upon_known_errors": {
+      "value": "true"
+    },
+    "actions_uses_cache_service_v2": {
+      "value": "true"
+    },
+    "github_token": {
+      "value": "***",
+      "isSecret": true
+    },
+    "system.from_run_service": {
+      "value": "true"
+    },
+    "system.github.job": {
+      "value": "dev-deploy"
+    },
+    "system.github.launch_endpoint": {
+      "value": "https://launch.actions.githubusercontent.com"
+    },
+    "system.github.results_endpoint": {
+      "value": "https://results-receiver.actions.githubusercontent.com/"
+    },
+    "system.github.results_upload_with_sdk": {
+      "value": "true"
+    },
+    "system.github.token": {
+      "value": "***",
+      "isSecret": true
+    },
+    "system.github.token.permissions": {
+      "value": "{\"Actions\":\"write\",\"ArtifactMetadata\":\"write\",\"Attestations\":\"write\",\"Checks\":\"write\",\"Contents\":\"write\",\"Deployments\":\"write\",\"Discussions\":\"write\",\"Issues\":\"write\",\"Metadata\":\"read\",\"Models\":\"read\",\"Packages\":\"write\",\"Pages\":\"write\",\"PullRequests\":\"write\",\"RepositoryProjects\":\"write\",\"SecurityEvents\":\"write\",\"Statuses\":\"write\"}"
+    },
+    "system.orchestrationId": {
+      "value": "e5e34a70-99ae-46ca-a784-4cf7ae1755b2.dev-deploy.__default"
+    },
+    "system.phaseDisplayName": {
+      "value": "dev-deploy"
+    },
+    "system.runner.lowdiskspacethreshold": {
+      "value": "100"
+    },
+    "system.runnerEnvironment": {
+      "value": "self-hosted"
+    },
+    "system.runnerGroupName": {
+      "value": "Default"
+    }
+  },
+  "messageType": "RunnerJobRequest",
+  "plan": {
+    "scopeIdentifier": "00000000-0000-0000-0000-000000000000",
+    "planType": "actions",
+    "version": 0,
+    "planId": "e5e34a70-99ae-46ca-a784-4cf7ae1755b2",
+    "planGroup": null,
+    "artifactUri": null,
+    "artifactLocation": null,
+    "definition": null,
+    "owner": null
+  },
+  "timeline": {
+    "id": "e5e34a70-99ae-46ca-a784-4cf7ae1755b2",
+    "changeId": 0,
+    "location": null
+  },
+  "jobId": "52272951-71b4-51a2-bc74-0c3caf9a0210",
+  "jobDisplayName": "dev-deploy",
+  "jobName": "__default",
+  "requestId": 0,
+  "lockedUntil": "0001-01-01T00:00:00",
+  "resources": {
+    "endpoints": [
+      {
+        "data": {
+          "ServerId": "",
+          "ServerName": "",
+          "CacheServerUrl": "https://artifactcache.actions.githubusercontent.com/jzw1bAFMUTIH43NFRDYmLi2MnFtUrBShYd63pGQgrhx3HviMSj/",
+          "FeedStreamUrl": "wss://results-receiver.actions.githubusercontent.com/_ws/ingest.sock",
+          "ResultsServiceUrl": "https://results-receiver.actions.githubusercontent.com/",
+          "PipelinesServiceUrl": "https://pipelinesghubeus22.actions.githubusercontent.com/jzw1bAFMUTIH43NFRDYmLi2MnFtUrBShYd63pGQgrhx3HviMSj/",
+          "GenerateIdTokenUrl": ""
+        },
+        "name": "SystemVssConnection",
+        "url": "https://run-actions-2-azure-eastus.actions.githubusercontent.com/10/",
+        "authorization": {
+          "parameters": {
+            "AccessToken": "***"
+          },
+          "scheme": "OAuth"
+        },
+        "isShared": false,
+        "isReady": true
+      }
+    ]
+  },
+  "contextData": {
+    "github": {
+      "t": 2,
+      "d": [
+        {
+          "k": "ref",
+          "v": "refs/heads/develop"
+        },
+        {
+          "k": "sha",
+          "v": "59a7bb5b08a3de6ee0e3535ee99c1e5bf6d501a8"
+        },
+        {
+          "k": "repository",
+          "v": "swaminathan-subbarayan/dremio-dbt-cicd"
+        },
+        {
+          "k": "repository_owner",
+          "v": "swaminathan-subbarayan"
+        },
+        {
+          "k": "repository_owner_id",
+          "v": "247504762"
+        },
+        {
+          "k": "repositoryUrl",
+          "v": "git://github.com/swaminathan-subbarayan/dremio-dbt-cicd.git"
+        },
+        {
+          "k": "run_id",
+          "v": "19915793915"
+        },
+        {
+          "k": "run_number",
+          "v": "19"
+        },
+        {
+          "k": "retention_days",
+          "v": "90"
+        },
+        {
+          "k": "run_attempt",
+          "v": "1"
+        },
+        {
+          "k": "artifact_cache_size_limit",
+          "v": "10"
+        },
+        {
+          "k": "repository_visibility",
+          "v": "public"
+        },
+        {
+          "k": "actor_id",
+          "v": "247504762"
+        },
+        {
+          "k": "actor",
+          "v": "swaminathan-subbarayan"
+        },
+        {
+          "k": "workflow",
+          "v": "dbt CI/CD"
+        },
+        {
+          "k": "head_ref",
+          "v": ""
+        },
+        {
+          "k": "base_ref",
+          "v": ""
+        },
+        {
+          "k": "event_name",
+          "v": "push"
+        },
+        {
+          "k": "server_url",
+          "v": "https://github.com"
+        },
+        {
+          "k": "api_url",
+          "v": "https://api.github.com"
+        },
+        {
+          "k": "graphql_url",
+          "v": "https://api.github.com/graphql"
+        },
+        {
+          "k": "ref_name",
+          "v": "develop"
+        },
+        {
+          "k": "ref_protected",
+          "v": false
+        },
+        {
+          "k": "ref_type",
+          "v": "branch"
+        },
+        {
+          "k": "secret_source",
+          "v": "Actions"
+        },
+        {
+          "k": "event",
+          "v": {
+            "t": 2,
+            "d": [
+              {
+                "k": "after",
+                "v": "59a7bb5b08a3de6ee0e3535ee99c1e5bf6d501a8"
+              },
+              {
+                "k": "base_ref",
+                "v": null
+              },
+              {
+                "k": "before",
+                "v": "f29c3751557a3f7ed7d3a25b7d20f3cd8772d03b"
+              },
+              {
+                "k": "commits",
+                "v": {
+                  "t": 1,
+                  "a": [
+                    {
+                      "t": 2,
+                      "d": [
+                        {
+                          "k": "author",
+                          "v": {
+                            "t": 2,
+                            "d": [
+                              {
+                                "k": "email",
+                                "v": "swaminathan.subbarayan@Relevantz.com"
+                              },
+                              {
+                                "k": "name",
+                                "v": "Swaminathan Subbarayan"
+                              },
+                              {
+                                "k": "username",
+                                "v": "swaminathan-subbarayan"
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "k": "committer",
+                          "v": {
+                            "t": 2,
+                            "d": [
+                              {
+                                "k": "email",
+                                "v": "swaminathan.subbarayan@Relevantz.com"
+                              },
+                              {
+                                "k": "name",
+                                "v": "Swaminathan Subbarayan"
+                              },
+                              {
+                                "k": "username",
+                                "v": "swaminathan-subbarayan"
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "k": "distinct",
+                          "v": true
+                        },
+                        {
+                          "k": "id",
+                          "v": "59a7bb5b08a3de6ee0e3535ee99c1e5bf6d501a8"
+                        },
+                        {
+                          "k": "message",
+                          "v": "Trigger wf: updated dbt.yml for self host"
+                        },
+                        {
+                          "k": "timestamp",
+                          "v": "2025-12-04T08:08:18+05:30"
+                        },
+                        {
+                          "k": "tree_id",
+                          "v": "639df0e1c4acd1a18ef0a73c8f2e26b93cdcea35"
+                        },
+                        {
+                          "k": "url",
+                          "v": "https://github.com/swaminathan-subbarayan/dremio-dbt-cicd/commit/59a7bb5b08a3de6ee0e3535ee99c1e5bf6d501a8"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              },
+              {
+                "k": "compare",
+                "v": "https://github.com/swaminathan-subbarayan/dremio-dbt-cicd/compare/f29c3751557a...59a7bb5b08a3"
+              },
+              {
+                "k": "created",
+                "v": false
+              },
+              {
+                "k": "deleted",
+                "v": false
+              },
+              {
+                "k": "forced",
+                "v": false
+              },
+              {
+                "k": "head_commit",
+                "v": {
+                  "t": 2,
+                  "d": [
+                    {
+                      "k": "author",
+                      "v": {
+                        "t": 2,
+                        "d": [
+                          {
+                            "k": "email",
+                            "v": "swaminathan.subbarayan@Relevantz.com"
+                          },
+                          {
+                            "k": "name",
+                            "v": "Swaminathan Subbarayan"
+                          },
+                          {
+                            "k": "username",
+                            "v": "swaminathan-subbarayan"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "k": "committer",
+                      "v": {
+                        "t": 2,
+                        "d": [
+                          {
+                            "k": "email",
+                            "v": "swaminathan.subbarayan@Relevantz.com"
+                          },
+                          {
+                            "k": "name",
+                            "v": "Swaminathan Subbarayan"
+                          },
+                          {
+                            "k": "username",
+                            "v": "swaminathan-subbarayan"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "k": "distinct",
+                      "v": true
+                    },
+                    {
+                      "k": "id",
+                      "v": "59a7bb5b08a3de6ee0e3535ee99c1e5bf6d501a8"
+                    },
+                    {
+                      "k": "message",
+                      "v": "Trigger wf: updated dbt.yml for self host"
+                    },
+                    {
+                      "k": "timestamp",
+                      "v": "2025-12-04T08:08:18+05:30"
+                    },
+                    {
+                      "k": "tree_id",
+                      "v": "639df0e1c4acd1a18ef0a73c8f2e26b93cdcea35"
+                    },
+                    {
+                      "k": "url",
+                      "v": "https://github.com/swaminathan-subbarayan/dremio-dbt-cicd/commit/59a7bb5b08a3de6ee0e3535ee99c1e5bf6d501a8"
+                    }
+                  ]
+                }
+              },
+              {
+                "k": "pusher",
+                "v": {
+                  "t": 2,
+                  "d": [
+                    {
+                      "k": "email",
+                      "v": "swaminathan.subbarayan@relevantz.com"
+                    },
+                    {
+                      "k": "name",
+                      "v": "swaminathan-subbarayan"
+                    }
+                  ]
+                }
+              },
+              {
+                "k": "ref",
+                "v": "refs/heads/develop"
+              },
+              {
+                "k": "repository",
+                "v": {
+                  "t": 2,
+                  "d": [
+                    {
+                      "k": "allow_forking",
+                      "v": true
+                    },
+                    {
+                      "k": "archive_url",
+                      "v": "https://api.github.com/repos/swaminathan-subbarayan/dremio-dbt-cicd/{archive_format}{/ref}"
+                    },
+                    {
+                      "k": "archived",
+                      "v": false
+                    },
+                    {
+                      "k": "assignees_url",
+                      "v": "https://api.github.com/repos/swaminathan-subbarayan/dremio-dbt-cicd/assignees{/user}"
+                    },
+                    {
+                      "k": "blobs_url",
+                      "v": "https://api.github.com/repos/swaminathan-subbarayan/dremio-dbt-cicd/git/blobs{/sha}"
+                    },
+                    {
+                      "k": "branches_url",
+                      "v": "https://api.github.com/repos/swaminathan-subbarayan/dremio-dbt-cicd/branches{/branch}"
+                    },
+                    {
+                      "k": "clone_url",
+                      "v": "https://github.com/swaminathan-subbarayan/dremio-dbt-cicd.git"
+                    },
+                    {
+                      "k": "collaborators_url",
+                      "v": "https://api.github.com/repos/swaminathan-subbarayan/dremio-dbt-cicd/collaborators{/collaborator}"
+                    },
+                    {
+                      "k": "comments_url",
+                      "v": "https://api.github.com/repos/swaminathan-subbarayan/dremio-dbt-cicd/comments{/number}"
+                    },
+                    {
+                      "k": "commits_url",
+                      "v": "https://api.github.com/repos/swaminathan-subbarayan/dremio-dbt-cicd/commits{/sha}"
+                    },
+                    {
+                      "k": "compare_url",
+                      "v": "https://api.github.com/repos/swaminathan-subbarayan/dremio-dbt-cicd/compare/{base}...{head}"
+                    },
+                    {
+                      "k": "contents_url",
+                      "v": "https://api.github.com/repos/swaminathan-subbarayan/dremio-dbt-cicd/contents/{+path}"
+                    },
+                    {
+                      "k": "contributors_url",
+                      "v": "https://api.github.com/repos/swaminathan-subbarayan/dremio-dbt-cicd/contributors"
+                    },
+                    {
+                      "k": "created_at",
+                      "v": 1764732023.0
+                    },
+                    {
+                      "k": "default_branch",
+                      "v": "main"
+                    },
+                    {
+                      "k": "deployments_url",
+                      "v": "https://api.github.com/repos/swaminathan-subbarayan/dremio-dbt-cicd/deployments"
+                    },
+                    {
+                      "k": "description",
+                      "v": "A sample CI/CD pipeline for Dremio that leverages dbt and dremio-dbt-exporter"
+                    },
+                    {
+                      "k": "disabled",
+                      "v": false
+                    },
+                    {
+                      "k": "downloads_url",
+                      "v": "https://api.github.com/repos/swaminathan-subbarayan/dremio-dbt-cicd/downloads"
+                    },
+                    {
+                      "k": "events_url",
+                      "v": "https://api.github.com/repos/swaminathan-subbarayan/dremio-dbt-cicd/events"
+                    },
+                    {
+                      "k": "fork",
+                      "v": true
+                    },
+                    {
+                      "k": "forks",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "forks_count",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "forks_url",
+                      "v": "https://api.github.com/repos/swaminathan-subbarayan/dremio-dbt-cicd/forks"
+                    },
+                    {
+                      "k": "full_name",
+                      "v": "swaminathan-subbarayan/dremio-dbt-cicd"
+                    },
+                    {
+                      "k": "git_commits_url",
+                      "v": "https://api.github.com/repos/swaminathan-subbarayan/dremio-dbt-cicd/git/commits{/sha}"
+                    },
+                    {
+                      "k": "git_refs_url",
+                      "v": "https://api.github.com/repos/swaminathan-subbarayan/dremio-dbt-cicd/git/refs{/sha}"
+                    },
+                    {
+                      "k": "git_tags_url",
+                      "v": "https://api.github.com/repos/swaminathan-subbarayan/dremio-dbt-cicd/git/tags{/sha}"
+                    },
+                    {
+                      "k": "git_url",
+                      "v": "git://github.com/swaminathan-subbarayan/dremio-dbt-cicd.git"
+                    },
+                    {
+                      "k": "has_discussions",
+                      "v": false
+                    },
+                    {
+                      "k": "has_downloads",
+                      "v": true
+                    },
+                    {
+                      "k": "has_issues",
+                      "v": false
+                    },
+                    {
+                      "k": "has_pages",
+                      "v": false
+                    },
+                    {
+                      "k": "has_projects",
+                      "v": true
+                    },
+                    {
+                      "k": "has_wiki",
+                      "v": true
+                    },
+                    {
+                      "k": "homepage",
+                      "v": ""
+                    },
+                    {
+                      "k": "hooks_url",
+                      "v": "https://api.github.com/repos/swaminathan-subbarayan/dremio-dbt-cicd/hooks"
+                    },
+                    {
+                      "k": "html_url",
+                      "v": "https://github.com/swaminathan-subbarayan/dremio-dbt-cicd"
+                    },
+                    {
+                      "k": "id",
+                      "v": 1108876965.0
+                    },
+                    {
+                      "k": "is_template",
+                      "v": false
+                    },
+                    {
+                      "k": "issue_comment_url",
+                      "v": "https://api.github.com/repos/swaminathan-subbarayan/dremio-dbt-cicd/issues/comments{/number}"
+                    },
+                    {
+                      "k": "issue_events_url",
+                      "v": "https://api.github.com/repos/swaminathan-subbarayan/dremio-dbt-cicd/issues/events{/number}"
+                    },
+                    {
+                      "k": "issues_url",
+                      "v": "https://api.github.com/repos/swaminathan-subbarayan/dremio-dbt-cicd/issues{/number}"
+                    },
+                    {
+                      "k": "keys_url",
+                      "v": "https://api.github.com/repos/swaminathan-subbarayan/dremio-dbt-cicd/keys{/key_id}"
+                    },
+                    {
+                      "k": "labels_url",
+                      "v": "https://api.github.com/repos/swaminathan-subbarayan/dremio-dbt-cicd/labels{/name}"
+                    },
+                    {
+                      "k": "language",
+                      "v": "Python"
+                    },
+                    {
+                      "k": "languages_url",
+                      "v": "https://api.github.com/repos/swaminathan-subbarayan/dremio-dbt-cicd/languages"
+                    },
+                    {
+                      "k": "license",
+                      "v": null
+                    },
+                    {
+                      "k": "master_branch",
+                      "v": "main"
+                    },
+                    {
+                      "k": "merges_url",
+                      "v": "https://api.github.com/repos/swaminathan-subbarayan/dremio-dbt-cicd/merges"
+                    },
+                    {
+                      "k": "milestones_url",
+                      "v": "https://api.github.com/repos/swaminathan-subbarayan/dremio-dbt-cicd/milestones{/number}"
+                    },
+                    {
+                      "k": "mirror_url",
+                      "v": null
+                    },
+                    {
+                      "k": "name",
+                      "v": "dremio-dbt-cicd"
+                    },
+                    {
+                      "k": "node_id",
+                      "v": "R_kgDOQhgepQ"
+                    },
+                    {
+                      "k": "notifications_url",
+                      "v": "https://api.github.com/repos/swaminathan-subbarayan/dremio-dbt-cicd/notifications{?since,all,participating}"
+                    },
+                    {
+                      "k": "open_issues",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "open_issues_count",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "owner",
+                      "v": {
+                        "t": 2,
+                        "d": [
+                          {
+                            "k": "avatar_url",
+                            "v": "https://avatars.githubusercontent.com/u/247504762?v=4"
+                          },
+                          {
+                            "k": "email",
+                            "v": "swaminathan.subbarayan@relevantz.com"
+                          },
+                          {
+                            "k": "events_url",
+                            "v": "https://api.github.com/users/swaminathan-subbarayan/events{/privacy}"
+                          },
+                          {
+                            "k": "followers_url",
+                            "v": "https://api.github.com/users/swaminathan-subbarayan/followers"
+                          },
+                          {
+                            "k": "following_url",
+                            "v": "https://api.github.com/users/swaminathan-subbarayan/following{/other_user}"
+                          },
+                          {
+                            "k": "gists_url",
+                            "v": "https://api.github.com/users/swaminathan-subbarayan/gists{/gist_id}"
+                          },
+                          {
+                            "k": "gravatar_id",
+                            "v": ""
+                          },
+                          {
+                            "k": "html_url",
+                            "v": "https://github.com/swaminathan-subbarayan"
+                          },
+                          {
+                            "k": "id",
+                            "v": 247504762.0
+                          },
+                          {
+                            "k": "login",
+                            "v": "swaminathan-subbarayan"
+                          },
+                          {
+                            "k": "name",
+                            "v": "swaminathan-subbarayan"
+                          },
+                          {
+                            "k": "node_id",
+                            "v": "U_kgDODsCfeg"
+                          },
+                          {
+                            "k": "organizations_url",
+                            "v": "https://api.github.com/users/swaminathan-subbarayan/orgs"
+                          },
+                          {
+                            "k": "received_events_url",
+                            "v": "https://api.github.com/users/swaminathan-subbarayan/received_events"
+                          },
+                          {
+                            "k": "repos_url",
+                            "v": "https://api.github.com/users/swaminathan-subbarayan/repos"
+                          },
+                          {
+                            "k": "site_***",
+                            "v": false
+                          },
+                          {
+                            "k": "starred_url",
+                            "v": "https://api.github.com/users/swaminathan-subbarayan/starred{/owner}{/repo}"
+                          },
+                          {
+                            "k": "subscriptions_url",
+                            "v": "https://api.github.com/users/swaminathan-subbarayan/subscriptions"
+                          },
+                          {
+                            "k": "type",
+                            "v": "User"
+                          },
+                          {
+                            "k": "url",
+                            "v": "https://api.github.com/users/swaminathan-subbarayan"
+                          },
+                          {
+                            "k": "user_view_type",
+                            "v": "public"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "k": "private",
+                      "v": false
+                    },
+                    {
+                      "k": "pulls_url",
+                      "v": "https://api.github.com/repos/swaminathan-subbarayan/dremio-dbt-cicd/pulls{/number}"
+                    },
+                    {
+                      "k": "pushed_at",
+                      "v": 1764815904.0
+                    },
+                    {
+                      "k": "releases_url",
+                      "v": "https://api.github.com/repos/swaminathan-subbarayan/dremio-dbt-cicd/releases{/id}"
+                    },
+                    {
+                      "k": "size",
+                      "v": 2452.0
+                    },
+                    {
+                      "k": "ssh_url",
+                      "v": "git@github.com:swaminathan-subbarayan/dremio-dbt-cicd.git"
+                    },
+                    {
+                      "k": "stargazers",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "stargazers_count",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "stargazers_url",
+                      "v": "https://api.github.com/repos/swaminathan-subbarayan/dremio-dbt-cicd/stargazers"
+                    },
+                    {
+                      "k": "statuses_url",
+                      "v": "https://api.github.com/repos/swaminathan-subbarayan/dremio-dbt-cicd/statuses/{sha}"
+                    },
+                    {
+                      "k": "subscribers_url",
+                      "v": "https://api.github.com/repos/swaminathan-subbarayan/dremio-dbt-cicd/subscribers"
+                    },
+                    {
+                      "k": "subscription_url",
+                      "v": "https://api.github.com/repos/swaminathan-subbarayan/dremio-dbt-cicd/subscription"
+                    },
+                    {
+                      "k": "svn_url",
+                      "v": "https://github.com/swaminathan-subbarayan/dremio-dbt-cicd"
+                    },
+                    {
+                      "k": "tags_url",
+                      "v": "https://api.github.com/repos/swaminathan-subbarayan/dremio-dbt-cicd/tags"
+                    },
+                    {
+                      "k": "teams_url",
+                      "v": "https://api.github.com/repos/swaminathan-subbarayan/dremio-dbt-cicd/teams"
+                    },
+                    {
+                      "k": "topics",
+                      "v": {
+                        "t": 1
+                      }
+                    },
+                    {
+                      "k": "trees_url",
+                      "v": "https://api.github.com/repos/swaminathan-subbarayan/dremio-dbt-cicd/git/trees{/sha}"
+                    },
+                    {
+                      "k": "updated_at",
+                      "v": "2025-12-03T22:56:38Z"
+                    },
+                    {
+                      "k": "url",
+                      "v": "https://api.github.com/repos/swaminathan-subbarayan/dremio-dbt-cicd"
+                    },
+                    {
+                      "k": "visibility",
+                      "v": "public"
+                    },
+                    {
+                      "k": "watchers",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "watchers_count",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "web_commit_signoff_required",
+                      "v": false
+                    }
+                  ]
+                }
+              },
+              {
+                "k": "sender",
+                "v": {
+                  "t": 2,
+                  "d": [
+                    {
+                      "k": "avatar_url",
+                      "v": "https://avatars.githubusercontent.com/u/247504762?v=4"
+                    },
+                    {
+                      "k": "events_url",
+                      "v": "https://api.github.com/users/swaminathan-subbarayan/events{/privacy}"
+                    },
+                    {
+                      "k": "followers_url",
+                      "v": "https://api.github.com/users/swaminathan-subbarayan/followers"
+                    },
+                    {
+                      "k": "following_url",
+                      "v": "https://api.github.com/users/swaminathan-subbarayan/following{/other_user}"
+                    },
+                    {
+                      "k": "gists_url",
+                      "v": "https://api.github.com/users/swaminathan-subbarayan/gists{/gist_id}"
+                    },
+                    {
+                      "k": "gravatar_id",
+                      "v": ""
+                    },
+                    {
+                      "k": "html_url",
+                      "v": "https://github.com/swaminathan-subbarayan"
+                    },
+                    {
+                      "k": "id",
+                      "v": 247504762.0
+                    },
+                    {
+                      "k": "login",
+                      "v": "swaminathan-subbarayan"
+                    },
+                    {
+                      "k": "node_id",
+                      "v": "U_kgDODsCfeg"
+                    },
+                    {
+                      "k": "organizations_url",
+                      "v": "https://api.github.com/users/swaminathan-subbarayan/orgs"
+                    },
+                    {
+                      "k": "received_events_url",
+                      "v": "https://api.github.com/users/swaminathan-subbarayan/received_events"
+                    },
+                    {
+                      "k": "repos_url",
+                      "v": "https://api.github.com/users/swaminathan-subbarayan/repos"
+                    },
+                    {
+                      "k": "site_***",
+                      "v": false
+                    },
+                    {
+                      "k": "starred_url",
+                      "v": "https://api.github.com/users/swaminathan-subbarayan/starred{/owner}{/repo}"
+                    },
+                    {
+                      "k": "subscriptions_url",
+                      "v": "https://api.github.com/users/swaminathan-subbarayan/subscriptions"
+                    },
+                    {
+                      "k": "type",
+                      "v": "User"
+                    },
+                    {
+                      "k": "url",
+                      "v": "https://api.github.com/users/swaminathan-subbarayan"
+                    },
+                    {
+                      "k": "user_view_type",
+                      "v": "public"
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "k": "workflow_ref",
+          "v": "swaminathan-subbarayan/dremio-dbt-cicd/.github/workflows/dbt.yml@refs/heads/develop"
+        },
+        {
+          "k": "workflow_sha",
+          "v": "59a7bb5b08a3de6ee0e3535ee99c1e5bf6d501a8"
+        },
+        {
+          "k": "repository_id",
+          "v": "1108876965"
+        },
+        {
+          "k": "triggering_actor",
+          "v": "swaminathan-subbarayan"
+        }
+      ]
+    },
+    "inputs": {
+      "t": 2
+    },
+    "job": {
+      "t": 2,
+      "d": [
+        {
+          "k": "check_run_id",
+          "v": 57094086213.0
+        }
+      ]
+    },
+    "matrix": null,
+    "needs": {
+      "t": 2
+    },
+    "strategy": {
+      "t": 2,
+      "d": [
+        {
+          "k": "fail-fast",
+          "v": true
+        },
+        {
+          "k": "job-index",
+          "v": 0.0
+        },
+        {
+          "k": "job-total",
+          "v": 1.0
+        },
+        {
+          "k": "max-parallel",
+          "v": 1.0
+        }
+      ]
+    },
+    "vars": {
+      "t": 2
+    }
+  },
+  "billingOwnerId": "U_kgDODsCfeg"
+}
+[2025-12-04 02:38:32Z INFO JobRunner] Job ID 52272951-71b4-51a2-bc74-0c3caf9a0210
+[2025-12-04 02:38:32Z INFO ConfigurationStore] currentAssemblyLocation: C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\bin\Runner.Worker.dll
+[2025-12-04 02:38:32Z INFO HostContext] Well known directory 'Bin': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\bin'
+[2025-12-04 02:38:32Z INFO ConfigurationStore] binPath: C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\bin
+[2025-12-04 02:38:32Z INFO HostContext] Well known directory 'Bin': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\bin'
+[2025-12-04 02:38:32Z INFO HostContext] Well known directory 'Root': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner'
+[2025-12-04 02:38:32Z INFO ConfigurationStore] RootFolder: C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner
+[2025-12-04 02:38:32Z INFO HostContext] Well known directory 'Bin': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\bin'
+[2025-12-04 02:38:32Z INFO HostContext] Well known directory 'Root': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner'
+[2025-12-04 02:38:32Z INFO HostContext] Well known config file 'Runner': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\.runner'
+[2025-12-04 02:38:32Z INFO ConfigurationStore] ConfigFilePath: C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\.runner
+[2025-12-04 02:38:32Z INFO HostContext] Well known directory 'Bin': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\bin'
+[2025-12-04 02:38:32Z INFO HostContext] Well known directory 'Root': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner'
+[2025-12-04 02:38:32Z INFO HostContext] Well known config file 'MigratedRunner': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\.runner_migrated'
+[2025-12-04 02:38:32Z INFO ConfigurationStore] MigratedConfigFilePath: C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\.runner_migrated
+[2025-12-04 02:38:32Z INFO HostContext] Well known directory 'Bin': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\bin'
+[2025-12-04 02:38:32Z INFO HostContext] Well known directory 'Root': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner'
+[2025-12-04 02:38:32Z INFO HostContext] Well known config file 'Credentials': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\.credentials'
+[2025-12-04 02:38:32Z INFO ConfigurationStore] CredFilePath: C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\.credentials
+[2025-12-04 02:38:32Z INFO HostContext] Well known directory 'Bin': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\bin'
+[2025-12-04 02:38:32Z INFO HostContext] Well known directory 'Root': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner'
+[2025-12-04 02:38:32Z INFO HostContext] Well known config file 'MigratedCredentials': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\.credentials_migrated'
+[2025-12-04 02:38:32Z INFO ConfigurationStore] MigratedCredFilePath: C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\.credentials_migrated
+[2025-12-04 02:38:32Z INFO HostContext] Well known directory 'Bin': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\bin'
+[2025-12-04 02:38:32Z INFO HostContext] Well known directory 'Root': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner'
+[2025-12-04 02:38:32Z INFO HostContext] Well known config file 'Service': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\.service'
+[2025-12-04 02:38:32Z INFO ConfigurationStore] ServiceConfigFilePath: C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\.service
+[2025-12-04 02:38:32Z INFO ConfigurationStore] Read setting file: 410 chars
+[2025-12-04 02:38:32Z INFO JobRunner] Initializing launch client
+[2025-12-04 02:38:32Z INFO JobServerQueue] Initializing results client
+[2025-12-04 02:38:32Z INFO ResultServer] Creating websocket client ...wss://results-receiver.actions.githubusercontent.com/_ws/ingest.sock
+[2025-12-04 02:38:32Z INFO ResultServer] Attempting to start websocket client with delay 00:00:00.
+[2025-12-04 02:38:32Z INFO JobServerQueue] Start process web console line queue.
+[2025-12-04 02:38:32Z INFO JobServerQueue] Start process file upload queue.
+[2025-12-04 02:38:32Z INFO JobServerQueue] Start results file upload queue.
+[2025-12-04 02:38:32Z INFO JobServerQueue] Starting results-based upload queue...
+[2025-12-04 02:38:32Z INFO JobServerQueue] Start process timeline update queue.
+[2025-12-04 02:38:32Z INFO ExecutionContext] Initializing Job context
+[2025-12-04 02:38:32Z INFO ExecutionContext] Initialize GitHub context
+[2025-12-04 02:38:32Z INFO ExecutionContext] Initialize Env context
+[2025-12-04 02:38:32Z INFO HostContext] Well known directory 'Bin': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\bin'
+[2025-12-04 02:38:32Z INFO HostContext] Well known directory 'Root': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner'
+[2025-12-04 02:38:32Z INFO HostContext] Well known directory 'Diag': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\_diag'
+[2025-12-04 02:38:32Z INFO HostContext] Well known directory 'Bin': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\bin'
+[2025-12-04 02:38:32Z INFO HostContext] Well known directory 'Root': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner'
+[2025-12-04 02:38:32Z INFO HostContext] Well known directory 'Diag': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\_diag'
+[2025-12-04 02:38:32Z INFO JobRunner] Starting the job execution context.
+[2025-12-04 02:38:32Z INFO HostContext] Well known directory 'Bin': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\bin'
+[2025-12-04 02:38:32Z INFO HostContext] Well known directory 'Root': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner'
+[2025-12-04 02:38:32Z INFO HostContext] Well known directory 'Work': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\_work'
+[2025-12-04 02:38:32Z INFO JobRunner] Validating directory permissions for: 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\_work'
+[2025-12-04 02:38:32Z INFO HostContext] Well known directory 'Bin': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\bin'
+[2025-12-04 02:38:32Z INFO HostContext] Well known directory 'Root': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner'
+[2025-12-04 02:38:32Z INFO HostContext] Well known directory 'Work': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\_work'
+[2025-12-04 02:38:32Z INFO HostContext] Well known directory 'Tools': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\_work\_tool'
+[2025-12-04 02:38:32Z INFO HostContext] Well known directory 'Bin': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\bin'
+[2025-12-04 02:38:32Z INFO HostContext] Well known directory 'Root': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner'
+[2025-12-04 02:38:32Z INFO HostContext] Well known directory 'Work': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\_work'
+[2025-12-04 02:38:32Z INFO HostContext] Well known directory 'Temp': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\_work\_temp'
+[2025-12-04 02:38:32Z INFO JobRunner] Getting job extension.
+[2025-12-04 02:38:32Z INFO JobRunner] Initialize job. Getting all job steps.
+[2025-12-04 02:38:32Z INFO HostContext] Well known directory 'Bin': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\bin'
+[2025-12-04 02:38:32Z INFO HostContext] Well known directory 'Root': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner'
+[2025-12-04 02:38:32Z INFO HostContext] Well known directory 'Diag': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\_diag'
+[2025-12-04 02:38:32Z INFO HostContext] Well known directory 'Bin': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\bin'
+[2025-12-04 02:38:32Z INFO HostContext] Well known directory 'Root': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner'
+[2025-12-04 02:38:32Z INFO HostContext] Well known directory 'Diag': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\_diag'
+[2025-12-04 02:38:32Z INFO HostContext] Well known directory 'Bin': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\bin'
+[2025-12-04 02:38:32Z INFO HostContext] Well known directory 'Root': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner'
+[2025-12-04 02:38:32Z INFO HostContext] Well known config file 'Credentials': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\.credentials'
+[2025-12-04 02:38:32Z INFO HostContext] Well known directory 'Bin': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\bin'
+[2025-12-04 02:38:32Z INFO HostContext] Well known directory 'Root': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner'
+[2025-12-04 02:38:32Z INFO HostContext] Well known config file 'SetupInfo': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\.setup_info'
+[2025-12-04 02:38:32Z INFO HostContext] Well known directory 'Bin': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\bin'
+[2025-12-04 02:38:32Z INFO HostContext] Well known directory 'Root': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner'
+[2025-12-04 02:38:32Z INFO HostContext] Well known directory 'Work': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\_work'
+[2025-12-04 02:38:32Z INFO PipelineDirectoryManager] Loading tracking config if exists: C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\_work\_PipelineMapping\swaminathan-subbarayan/dremio-dbt-cicd\PipelineFolder.json
+[2025-12-04 02:38:32Z INFO PipelineDirectoryManager] Updating job run properties.
+[2025-12-04 02:38:32Z INFO HostContext] Well known directory 'Bin': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\bin'
+[2025-12-04 02:38:32Z INFO HostContext] Well known directory 'Root': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner'
+[2025-12-04 02:38:32Z INFO HostContext] Well known directory 'Work': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\_work'
+[2025-12-04 02:38:32Z INFO HostContext] Well known directory 'Bin': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\bin'
+[2025-12-04 02:38:32Z INFO HostContext] Well known directory 'Root': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner'
+[2025-12-04 02:38:32Z INFO HostContext] Well known directory 'Work': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\_work'
+[2025-12-04 02:38:32Z INFO HostContext] Well known directory 'Bin': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\bin'
+[2025-12-04 02:38:32Z INFO HostContext] Well known directory 'Root': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner'
+[2025-12-04 02:38:32Z INFO HostContext] Well known directory 'Work': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\_work'
+[2025-12-04 02:38:32Z INFO JobExtension] Downloading actions
+[2025-12-04 02:38:32Z INFO HostContext] Well known directory 'Bin': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\bin'
+[2025-12-04 02:38:32Z INFO HostContext] Well known directory 'Root': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner'
+[2025-12-04 02:38:32Z INFO HostContext] Well known directory 'Work': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\_work'
+[2025-12-04 02:38:32Z INFO HostContext] Well known directory 'Actions': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\_work\_actions'
+[2025-12-04 02:38:32Z INFO Worker] Listening for cancel message from the channel.
+[2025-12-04 02:38:32Z INFO Worker] Waiting for the job to complete or for a cancel message from the channel.
+[2025-12-04 02:38:33Z INFO ResultServer] Successfully started websocket client.
+[2025-12-04 02:38:33Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'f609d9cd-2e1e-476a-bb0f-01440f7dc708', success rate: 1/1.
+[2025-12-04 02:38:33Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'f609d9cd-2e1e-476a-bb0f-01440f7dc708', success rate: 1/1.
+[2025-12-04 02:38:33Z INFO JobServerQueue] Job timeline record has been updated for the first time.
+[2025-12-04 02:38:33Z INFO HostContext] Well known directory 'Bin': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\bin'
+[2025-12-04 02:38:33Z INFO HostContext] Well known directory 'Root': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner'
+[2025-12-04 02:38:33Z INFO HostContext] Well known directory 'Work': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\_work'
+[2025-12-04 02:38:33Z INFO HostContext] Well known directory 'Actions': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\_work\_actions'
+[2025-12-04 02:38:33Z INFO HostContext] Well known directory 'Bin': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\bin'
+[2025-12-04 02:38:33Z INFO HostContext] Well known directory 'Root': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner'
+[2025-12-04 02:38:33Z INFO HostContext] Well known directory 'Work': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\_work'
+[2025-12-04 02:38:33Z INFO HostContext] Well known directory 'Actions': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\_work\_actions'
+[2025-12-04 02:38:33Z INFO ActionManager] Save archive 'https://api.github.com/repos/actions/checkout/zipball/34e114876b0b11c390a56381ad16ebd13914f8d5' into C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\_work\_actions\_temp_dfec7be1-1b22-4a18-b4f8-79c7eebf6b2d\25999352-a755-4443-a33a-5d20f1a3ad95.zip.
+[2025-12-04 02:38:33Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'f609d9cd-2e1e-476a-bb0f-01440f7dc708', success rate: 1/1.
+[2025-12-04 02:38:34Z INFO ActionManager] Request URL: https://api.github.com/repos/actions/checkout/zipball/34e114876b0b11c390a56381ad16ebd13914f8d5 X-GitHub-Request-Id: 4452:295E2F:0AA0:B8CE:6930F429 Http Status: OK
+[2025-12-04 02:38:37Z INFO ActionManager] Finished getting action repository.
+[2025-12-04 02:38:37Z INFO HostContext] Well known directory 'Bin': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\bin'
+[2025-12-04 02:38:37Z INFO HostContext] Well known directory 'Root': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner'
+[2025-12-04 02:38:37Z INFO HostContext] Well known directory 'Work': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\_work'
+[2025-12-04 02:38:37Z INFO HostContext] Well known directory 'Actions': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\_work\_actions'
+[2025-12-04 02:38:37Z INFO ActionManifestManager] Load schema file with definitions: [
+  "null",
+  "boolean",
+  "number",
+  "string",
+  "sequence",
+  "mapping",
+  "any",
+  "action-root",
+  "inputs",
+  "input",
+  "outputs",
+  "output-definition",
+  "runs",
+  "container-runs",
+  "container-runs-args",
+  "container-runs-env",
+  "node-runs",
+  "plugin-runs",
+  "composite-runs",
+  "composite-steps",
+  "composite-step",
+  "run-step",
+  "uses-step",
+  "container-runs-context",
+  "output-value",
+  "input-default-context",
+  "non-empty-string",
+  "string-steps-context",
+  "boolean-steps-context",
+  "step-env",
+  "step-if",
+  "step-with"
+]
+[2025-12-04 02:38:37Z INFO HostContext] Well known directory 'Bin': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\bin'
+[2025-12-04 02:38:37Z INFO HostContext] Well known directory 'Root': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner'
+[2025-12-04 02:38:37Z INFO HostContext] Well known directory 'Work': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\_work'
+[2025-12-04 02:38:37Z INFO HostContext] Well known directory 'Actions': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\_work\_actions'
+[2025-12-04 02:38:37Z INFO ActionManifestManager] Loaded action.yml file: {
+  "name": "Checkout",
+  "description": "Checkout a Git repository at a particular version",
+  "inputs": {
+    "type": 2,
+    "map": [
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 4,
+          "col": 3,
+          "lit": "repository"
+        },
+        "value": {
+          "type": 3,
+          "file": 2,
+          "line": 6,
+          "col": 14,
+          "expr": "github.repository"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 7,
+          "col": 3,
+          "lit": "ref"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 12,
+          "col": 3,
+          "lit": "token"
+        },
+        "value": {
+          "type": 3,
+          "file": 2,
+          "line": 24,
+          "col": 14,
+          "expr": "github.token"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 25,
+          "col": 3,
+          "lit": "ssh-key"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 37,
+          "col": 3,
+          "lit": "ssh-known-hosts"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 42,
+          "col": 3,
+          "lit": "ssh-strict"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 47,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 48,
+          "col": 3,
+          "lit": "ssh-user"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 51,
+          "col": 14,
+          "lit": "git"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 52,
+          "col": 3,
+          "lit": "persist-credentials"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 54,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 55,
+          "col": 3,
+          "lit": "path"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 57,
+          "col": 3,
+          "lit": "clean"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 59,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 60,
+          "col": 3,
+          "lit": "filter"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 64,
+          "col": 14,
+          "lit": ""
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 65,
+          "col": 3,
+          "lit": "sparse-checkout"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 69,
+          "col": 14,
+          "lit": ""
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 70,
+          "col": 3,
+          "lit": "sparse-checkout-cone-mode"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 73,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 74,
+          "col": 3,
+          "lit": "fetch-depth"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 76,
+          "col": 14,
+          "lit": "1"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 77,
+          "col": 3,
+          "lit": "fetch-tags"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 79,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 80,
+          "col": 3,
+          "lit": "show-progress"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 82,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 83,
+          "col": 3,
+          "lit": "lfs"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 85,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 86,
+          "col": 3,
+          "lit": "submodules"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 94,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 95,
+          "col": 3,
+          "lit": "set-safe-directory"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 97,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 98,
+          "col": 3,
+          "lit": "github-server-url"
+        },
+        "value": ""
+      }
+    ]
+  },
+  "execution": {
+    "executionType": "nodeJS",
+    "hasPre": false,
+    "hasPost": true,
+    "script": "dist/index.js",
+    "pre": null,
+    "post": "dist/index.js",
+    "nodeVersion": "node20",
+    "cleanupCondition": "always()",
+    "initCondition": "always()"
+  },
+  "deprecated": null
+}
+[2025-12-04 02:38:37Z INFO ActionManager] Action node.js file: dist/index.js, no more preparation.
+[2025-12-04 02:38:37Z INFO HostContext] Well known directory 'Bin': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\bin'
+[2025-12-04 02:38:37Z INFO HostContext] Well known directory 'Root': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner'
+[2025-12-04 02:38:37Z INFO HostContext] Well known directory 'Work': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\_work'
+[2025-12-04 02:38:37Z INFO HostContext] Well known directory 'Actions': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\_work\_actions'
+[2025-12-04 02:38:37Z INFO ActionManager] Load action that reference repository from 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\_work\_actions\actions\checkout\v4'
+[2025-12-04 02:38:37Z INFO HostContext] Well known directory 'Bin': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\bin'
+[2025-12-04 02:38:37Z INFO HostContext] Well known directory 'Root': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner'
+[2025-12-04 02:38:37Z INFO HostContext] Well known directory 'Work': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\_work'
+[2025-12-04 02:38:37Z INFO HostContext] Well known directory 'Actions': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\_work\_actions'
+[2025-12-04 02:38:37Z INFO ActionManifestManager] Loaded action.yml file: {
+  "name": "Checkout",
+  "description": "Checkout a Git repository at a particular version",
+  "inputs": {
+    "type": 2,
+    "map": [
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 4,
+          "col": 3,
+          "lit": "repository"
+        },
+        "value": {
+          "type": 3,
+          "file": 2,
+          "line": 6,
+          "col": 14,
+          "expr": "github.repository"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 7,
+          "col": 3,
+          "lit": "ref"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 12,
+          "col": 3,
+          "lit": "token"
+        },
+        "value": {
+          "type": 3,
+          "file": 2,
+          "line": 24,
+          "col": 14,
+          "expr": "github.token"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 25,
+          "col": 3,
+          "lit": "ssh-key"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 37,
+          "col": 3,
+          "lit": "ssh-known-hosts"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 42,
+          "col": 3,
+          "lit": "ssh-strict"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 47,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 48,
+          "col": 3,
+          "lit": "ssh-user"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 51,
+          "col": 14,
+          "lit": "git"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 52,
+          "col": 3,
+          "lit": "persist-credentials"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 54,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 55,
+          "col": 3,
+          "lit": "path"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 57,
+          "col": 3,
+          "lit": "clean"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 59,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 60,
+          "col": 3,
+          "lit": "filter"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 64,
+          "col": 14,
+          "lit": ""
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 65,
+          "col": 3,
+          "lit": "sparse-checkout"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 69,
+          "col": 14,
+          "lit": ""
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 70,
+          "col": 3,
+          "lit": "sparse-checkout-cone-mode"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 73,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 74,
+          "col": 3,
+          "lit": "fetch-depth"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 76,
+          "col": 14,
+          "lit": "1"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 77,
+          "col": 3,
+          "lit": "fetch-tags"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 79,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 80,
+          "col": 3,
+          "lit": "show-progress"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 82,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 83,
+          "col": 3,
+          "lit": "lfs"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 85,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 86,
+          "col": 3,
+          "lit": "submodules"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 94,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 95,
+          "col": 3,
+          "lit": "set-safe-directory"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 97,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 98,
+          "col": 3,
+          "lit": "github-server-url"
+        },
+        "value": ""
+      }
+    ]
+  },
+  "execution": {
+    "executionType": "nodeJS",
+    "hasPre": false,
+    "hasPost": true,
+    "script": "dist/index.js",
+    "pre": null,
+    "post": "dist/index.js",
+    "nodeVersion": "node20",
+    "cleanupCondition": "always()",
+    "initCondition": "always()"
+  },
+  "deprecated": null
+}
+[2025-12-04 02:38:37Z INFO ActionManager] Action pre node.js file: N/A.
+[2025-12-04 02:38:37Z INFO ActionManager] Action node.js file: dist/index.js.
+[2025-12-04 02:38:37Z INFO ActionManager] Action post node.js file: dist/index.js.
+[2025-12-04 02:38:37Z INFO JobExtension] Adding .
+[2025-12-04 02:38:37Z INFO JobExtension] Adding .
+[2025-12-04 02:38:37Z INFO JobExtension] Adding .
+[2025-12-04 02:38:37Z INFO JobExtension] Adding .
+[2025-12-04 02:38:37Z INFO JobExtension] Adding .
+[2025-12-04 02:38:37Z INFO JobExtension] Adding .
+[2025-12-04 02:38:37Z INFO JobExtension] Adding .
+[2025-12-04 02:38:37Z INFO JobExtension] Adding .
+[2025-12-04 02:38:37Z INFO JobExtension] Adding .
+[2025-12-04 02:38:37Z INFO HostContext] Well known directory 'Bin': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\bin'
+[2025-12-04 02:38:37Z INFO HostContext] Well known directory 'Root': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner'
+[2025-12-04 02:38:37Z INFO HostContext] Well known directory 'Diag': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\_diag'
+[2025-12-04 02:38:37Z INFO HostContext] Well known directory 'Bin': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\bin'
+[2025-12-04 02:38:37Z INFO HostContext] Well known directory 'Root': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner'
+[2025-12-04 02:38:37Z INFO HostContext] Well known directory 'Diag': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\_diag'
+[2025-12-04 02:38:37Z INFO HostContext] Well known directory 'Bin': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\bin'
+[2025-12-04 02:38:37Z INFO HostContext] Well known directory 'Root': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner'
+[2025-12-04 02:38:37Z INFO HostContext] Well known directory 'Diag': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\_diag'
+[2025-12-04 02:38:37Z INFO HostContext] Well known directory 'Bin': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\bin'
+[2025-12-04 02:38:37Z INFO HostContext] Well known directory 'Root': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner'
+[2025-12-04 02:38:37Z INFO HostContext] Well known directory 'Diag': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\_diag'
+[2025-12-04 02:38:37Z INFO HostContext] Well known directory 'Bin': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\bin'
+[2025-12-04 02:38:37Z INFO HostContext] Well known directory 'Root': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner'
+[2025-12-04 02:38:37Z INFO HostContext] Well known directory 'Diag': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\_diag'
+[2025-12-04 02:38:37Z INFO HostContext] Well known directory 'Bin': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\bin'
+[2025-12-04 02:38:37Z INFO HostContext] Well known directory 'Root': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner'
+[2025-12-04 02:38:37Z INFO HostContext] Well known directory 'Diag': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\_diag'
+[2025-12-04 02:38:37Z INFO HostContext] Well known directory 'Bin': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\bin'
+[2025-12-04 02:38:37Z INFO HostContext] Well known directory 'Root': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner'
+[2025-12-04 02:38:37Z INFO HostContext] Well known directory 'Diag': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\_diag'
+[2025-12-04 02:38:37Z INFO HostContext] Well known directory 'Bin': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\bin'
+[2025-12-04 02:38:37Z INFO HostContext] Well known directory 'Root': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner'
+[2025-12-04 02:38:37Z INFO HostContext] Well known directory 'Diag': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\_diag'
+[2025-12-04 02:38:37Z INFO HostContext] Well known directory 'Bin': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\bin'
+[2025-12-04 02:38:37Z INFO HostContext] Well known directory 'Root': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner'
+[2025-12-04 02:38:37Z INFO HostContext] Well known directory 'Diag': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\_diag'
+[2025-12-04 02:38:37Z INFO HostContext] Well known directory 'Bin': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\bin'
+[2025-12-04 02:38:37Z INFO HostContext] Well known directory 'Root': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner'
+[2025-12-04 02:38:37Z INFO HostContext] Well known directory 'Diag': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\_diag'
+[2025-12-04 02:38:37Z INFO HostContext] Well known directory 'Bin': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\bin'
+[2025-12-04 02:38:37Z INFO HostContext] Well known directory 'Root': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner'
+[2025-12-04 02:38:37Z INFO HostContext] Well known directory 'Diag': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\_diag'
+[2025-12-04 02:38:37Z INFO HostContext] Well known directory 'Bin': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\bin'
+[2025-12-04 02:38:37Z INFO HostContext] Well known directory 'Root': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner'
+[2025-12-04 02:38:37Z INFO HostContext] Well known directory 'Diag': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\_diag'
+[2025-12-04 02:38:37Z INFO HostContext] Well known directory 'Bin': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\bin'
+[2025-12-04 02:38:37Z INFO HostContext] Well known directory 'Root': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner'
+[2025-12-04 02:38:37Z INFO HostContext] Well known directory 'Diag': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\_diag'
+[2025-12-04 02:38:37Z INFO HostContext] Well known directory 'Bin': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\bin'
+[2025-12-04 02:38:37Z INFO HostContext] Well known directory 'Root': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner'
+[2025-12-04 02:38:37Z INFO HostContext] Well known directory 'Diag': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\_diag'
+[2025-12-04 02:38:37Z INFO HostContext] Well known directory 'Bin': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\bin'
+[2025-12-04 02:38:37Z INFO HostContext] Well known directory 'Root': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner'
+[2025-12-04 02:38:37Z INFO HostContext] Well known directory 'Diag': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\_diag'
+[2025-12-04 02:38:37Z INFO HostContext] Well known directory 'Bin': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\bin'
+[2025-12-04 02:38:37Z INFO HostContext] Well known directory 'Root': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner'
+[2025-12-04 02:38:37Z INFO HostContext] Well known directory 'Diag': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\_diag'
+[2025-12-04 02:38:37Z INFO HostContext] Well known directory 'Bin': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\bin'
+[2025-12-04 02:38:37Z INFO HostContext] Well known directory 'Root': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner'
+[2025-12-04 02:38:37Z INFO HostContext] Well known directory 'Diag': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\_diag'
+[2025-12-04 02:38:37Z INFO HostContext] Well known directory 'Bin': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\bin'
+[2025-12-04 02:38:37Z INFO HostContext] Well known directory 'Root': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner'
+[2025-12-04 02:38:37Z INFO HostContext] Well known directory 'Diag': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\_diag'
+[2025-12-04 02:38:37Z INFO JobExtension] Total accessible running process: 418.
+[2025-12-04 02:38:37Z INFO HostContext] Well known directory 'Bin': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\bin'
+[2025-12-04 02:38:37Z INFO HostContext] Well known directory 'Root': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner'
+[2025-12-04 02:38:37Z INFO HostContext] Well known directory 'Work': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\_work'
+[2025-12-04 02:38:37Z INFO JobExtension] Start checking service connectivity in background.
+[2025-12-04 02:38:37Z INFO ExecutionContext] Publish step telemetry for current step {
+  "action": "setup_job",
+  "type": "runner",
+  "stage": "Pre",
+  "stepId": "f609d9cd-2e1e-476a-bb0f-01440f7dc708",
+  "result": "succeeded",
+  "errorMessages": [],
+  "executionTimeInSeconds": 6,
+  "startTime": "2025-12-04T02:38:32.4328038Z",
+  "finishTime": "2025-12-04T02:38:37.466072Z"
+}.
+[2025-12-04 02:38:37Z INFO JobRunner] Total job steps: 9.
+[2025-12-04 02:38:37Z INFO JobRunner] Run all job steps.
+[2025-12-04 02:38:37Z INFO StepsRunner] Processing step: DisplayName='Run actions/checkout@v4'
+[2025-12-04 02:38:37Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'f609d9cd-2e1e-476a-bb0f-01440f7dc708', success rate: 1/1.
+[2025-12-04 02:38:37Z INFO StepsRunner] Evaluating: success()
+[2025-12-04 02:38:37Z INFO StepsRunner] Result: true
+[2025-12-04 02:38:37Z INFO StepsRunner] Starting the step.
+[2025-12-04 02:38:37Z INFO HostContext] Well known directory 'Bin': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\bin'
+[2025-12-04 02:38:37Z INFO HostContext] Well known directory 'Root': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner'
+[2025-12-04 02:38:37Z INFO HostContext] Well known directory 'Work': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\_work'
+[2025-12-04 02:38:37Z INFO StepsRunner] Which2: 'chcp'
+[2025-12-04 02:38:37Z INFO StepsRunner] Location: 'C:\Windows\system32\chcp.COM'
+[2025-12-04 02:38:37Z INFO ProcessInvokerWrapper] Starting process:
+[2025-12-04 02:38:37Z INFO ProcessInvokerWrapper]   File name: 'C:\Windows\system32\chcp.COM'
+[2025-12-04 02:38:37Z INFO ProcessInvokerWrapper]   Arguments: '65001'
+[2025-12-04 02:38:37Z INFO ProcessInvokerWrapper]   Working directory: 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\_work'
+[2025-12-04 02:38:37Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2025-12-04 02:38:37Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2025-12-04 02:38:37Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2025-12-04 02:38:37Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2025-12-04 02:38:37Z INFO ProcessInvokerWrapper]   Persist current code page: 'True'
+[2025-12-04 02:38:37Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2025-12-04 02:38:37Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2025-12-04 02:38:37Z INFO ProcessInvokerWrapper] Process started with process id 40984, waiting for process exit.
+[2025-12-04 02:38:37Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-12-04 02:38:37Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-12-04 02:38:37Z INFO ProcessInvokerWrapper] Finished process 40984 with exit code 0, and elapsed time 00:00:00.1186911.
+[2025-12-04 02:38:37Z INFO StepsRunner] Successfully returned to code page 65001 (UTF8)
+[2025-12-04 02:38:37Z INFO HostContext] Well known directory 'Bin': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\bin'
+[2025-12-04 02:38:37Z INFO HostContext] Well known directory 'Root': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner'
+[2025-12-04 02:38:37Z INFO HostContext] Well known directory 'Work': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\_work'
+[2025-12-04 02:38:37Z INFO HostContext] Well known directory 'Actions': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\_work\_actions'
+[2025-12-04 02:38:37Z INFO ActionManager] Load action that reference repository from 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\_work\_actions\actions\checkout\v4'
+[2025-12-04 02:38:37Z INFO HostContext] Well known directory 'Bin': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\bin'
+[2025-12-04 02:38:37Z INFO HostContext] Well known directory 'Root': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner'
+[2025-12-04 02:38:37Z INFO HostContext] Well known directory 'Work': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\_work'
+[2025-12-04 02:38:37Z INFO HostContext] Well known directory 'Actions': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\_work\_actions'
+[2025-12-04 02:38:37Z INFO ActionManifestManager] Loaded action.yml file: {
+  "name": "Checkout",
+  "description": "Checkout a Git repository at a particular version",
+  "inputs": {
+    "type": 2,
+    "map": [
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 4,
+          "col": 3,
+          "lit": "repository"
+        },
+        "value": {
+          "type": 3,
+          "file": 2,
+          "line": 6,
+          "col": 14,
+          "expr": "github.repository"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 7,
+          "col": 3,
+          "lit": "ref"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 12,
+          "col": 3,
+          "lit": "token"
+        },
+        "value": {
+          "type": 3,
+          "file": 2,
+          "line": 24,
+          "col": 14,
+          "expr": "github.token"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 25,
+          "col": 3,
+          "lit": "ssh-key"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 37,
+          "col": 3,
+          "lit": "ssh-known-hosts"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 42,
+          "col": 3,
+          "lit": "ssh-strict"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 47,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 48,
+          "col": 3,
+          "lit": "ssh-user"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 51,
+          "col": 14,
+          "lit": "git"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 52,
+          "col": 3,
+          "lit": "persist-credentials"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 54,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 55,
+          "col": 3,
+          "lit": "path"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 57,
+          "col": 3,
+          "lit": "clean"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 59,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 60,
+          "col": 3,
+          "lit": "filter"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 64,
+          "col": 14,
+          "lit": ""
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 65,
+          "col": 3,
+          "lit": "sparse-checkout"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 69,
+          "col": 14,
+          "lit": ""
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 70,
+          "col": 3,
+          "lit": "sparse-checkout-cone-mode"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 73,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 74,
+          "col": 3,
+          "lit": "fetch-depth"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 76,
+          "col": 14,
+          "lit": "1"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 77,
+          "col": 3,
+          "lit": "fetch-tags"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 79,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 80,
+          "col": 3,
+          "lit": "show-progress"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 82,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 83,
+          "col": 3,
+          "lit": "lfs"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 85,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 86,
+          "col": 3,
+          "lit": "submodules"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 94,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 95,
+          "col": 3,
+          "lit": "set-safe-directory"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 97,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 98,
+          "col": 3,
+          "lit": "github-server-url"
+        },
+        "value": ""
+      }
+    ]
+  },
+  "execution": {
+    "executionType": "nodeJS",
+    "hasPre": false,
+    "hasPost": true,
+    "script": "dist/index.js",
+    "pre": null,
+    "post": "dist/index.js",
+    "nodeVersion": "node20",
+    "cleanupCondition": "always()",
+    "initCondition": "always()"
+  },
+  "deprecated": null
+}
+[2025-12-04 02:38:37Z INFO ActionManager] Action pre node.js file: N/A.
+[2025-12-04 02:38:37Z INFO ActionManager] Action node.js file: dist/index.js.
+[2025-12-04 02:38:37Z INFO ActionManager] Action post node.js file: dist/index.js.
+[2025-12-04 02:38:37Z INFO ExecutionContext] Reserve record order 11 to 20 for post job actions.
+[2025-12-04 02:38:37Z INFO HostContext] Well known directory 'Bin': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\bin'
+[2025-12-04 02:38:37Z INFO HostContext] Well known directory 'Root': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner'
+[2025-12-04 02:38:37Z INFO HostContext] Well known directory 'Diag': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\_diag'
+[2025-12-04 02:38:37Z INFO HostContext] Well known directory 'Bin': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\bin'
+[2025-12-04 02:38:37Z INFO HostContext] Well known directory 'Root': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner'
+[2025-12-04 02:38:37Z INFO HostContext] Well known directory 'Diag': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\_diag'
+[2025-12-04 02:38:37Z INFO HostContext] Well known directory 'Bin': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\bin'
+[2025-12-04 02:38:37Z INFO HostContext] Well known directory 'Root': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner'
+[2025-12-04 02:38:37Z INFO HostContext] Well known directory 'Work': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\_work'
+[2025-12-04 02:38:37Z INFO HostContext] Well known directory 'Temp': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\_work\_temp'
+[2025-12-04 02:38:37Z INFO ExecutionContext] Write event payload to C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\_work\_temp\_github_workflow\event.json
+[2025-12-04 02:38:37Z INFO HostContext] Well known directory 'Bin': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\bin'
+[2025-12-04 02:38:37Z INFO HostContext] Well known directory 'Root': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner'
+[2025-12-04 02:38:37Z INFO HostContext] Well known directory 'Work': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\_work'
+[2025-12-04 02:38:37Z INFO HostContext] Well known directory 'Temp': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\_work\_temp'
+[2025-12-04 02:38:37Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IFileCommandExtension'
+[2025-12-04 02:38:37Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.AddPathFileCommand, Runner.Worker
+[2025-12-04 02:38:37Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.SetEnvFileCommand, Runner.Worker
+[2025-12-04 02:38:37Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.CreateStepSummaryCommand, Runner.Worker
+[2025-12-04 02:38:37Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.SaveStateFileCommand, Runner.Worker
+[2025-12-04 02:38:37Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.SetOutputFileCommand, Runner.Worker
+[2025-12-04 02:38:37Z INFO ActionManifestManager] Input 'repository': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 6,
+  "col": 14,
+  "lit": "swaminathan-subbarayan/dremio-dbt-cicd"
+}
+[2025-12-04 02:38:37Z INFO ActionManifestManager] Input 'ref': default value evaluate result: ""
+[2025-12-04 02:38:37Z INFO ActionManifestManager] Input 'token': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 24,
+  "col": 14,
+  "lit": "***"
+}
+[2025-12-04 02:38:37Z INFO ActionManifestManager] Input 'ssh-key': default value evaluate result: ""
+[2025-12-04 02:38:37Z INFO ActionManifestManager] Input 'ssh-known-hosts': default value evaluate result: ""
+[2025-12-04 02:38:37Z INFO ActionManifestManager] Input 'ssh-strict': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 47,
+  "col": 14,
+  "lit": "true"
+}
+[2025-12-04 02:38:37Z INFO ActionManifestManager] Input 'ssh-user': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 51,
+  "col": 14,
+  "lit": "git"
+}
+[2025-12-04 02:38:37Z INFO ActionManifestManager] Input 'persist-credentials': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 54,
+  "col": 14,
+  "lit": "true"
+}
+[2025-12-04 02:38:37Z INFO ActionManifestManager] Input 'path': default value evaluate result: ""
+[2025-12-04 02:38:37Z INFO ActionManifestManager] Input 'clean': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 59,
+  "col": 14,
+  "lit": "true"
+}
+[2025-12-04 02:38:37Z INFO ActionManifestManager] Input 'filter': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 64,
+  "col": 14,
+  "lit": ""
+}
+[2025-12-04 02:38:37Z INFO ActionManifestManager] Input 'sparse-checkout': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 69,
+  "col": 14,
+  "lit": ""
+}
+[2025-12-04 02:38:37Z INFO ActionManifestManager] Input 'sparse-checkout-cone-mode': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 73,
+  "col": 14,
+  "lit": "true"
+}
+[2025-12-04 02:38:37Z INFO ActionManifestManager] Input 'fetch-depth': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 76,
+  "col": 14,
+  "lit": "1"
+}
+[2025-12-04 02:38:37Z INFO ActionManifestManager] Input 'fetch-tags': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 79,
+  "col": 14,
+  "lit": "false"
+}
+[2025-12-04 02:38:37Z INFO ActionManifestManager] Input 'show-progress': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 82,
+  "col": 14,
+  "lit": "true"
+}
+[2025-12-04 02:38:37Z INFO ActionManifestManager] Input 'lfs': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 85,
+  "col": 14,
+  "lit": "false"
+}
+[2025-12-04 02:38:37Z INFO ActionManifestManager] Input 'submodules': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 94,
+  "col": 14,
+  "lit": "false"
+}
+[2025-12-04 02:38:37Z INFO ActionManifestManager] Input 'set-safe-directory': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 97,
+  "col": 14,
+  "lit": "true"
+}
+[2025-12-04 02:38:37Z INFO ActionManifestManager] Input 'github-server-url': default value evaluate result: ""
+[2025-12-04 02:38:37Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IActionCommandExtension'
+[2025-12-04 02:38:37Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.InternalPluginSetRepoPathCommandExtension, Runner.Worker
+[2025-12-04 02:38:37Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.SetEnvCommandExtension, Runner.Worker
+[2025-12-04 02:38:37Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.SetOutputCommandExtension, Runner.Worker
+[2025-12-04 02:38:37Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.SaveStateCommandExtension, Runner.Worker
+[2025-12-04 02:38:37Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.AddPathCommandExtension, Runner.Worker
+[2025-12-04 02:38:37Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.AddMaskCommandExtension, Runner.Worker
+[2025-12-04 02:38:37Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.AddMatcherCommandExtension, Runner.Worker
+[2025-12-04 02:38:37Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.RemoveMatcherCommandExtension, Runner.Worker
+[2025-12-04 02:38:37Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.WarningCommandExtension, Runner.Worker
+[2025-12-04 02:38:37Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.ErrorCommandExtension, Runner.Worker
+[2025-12-04 02:38:37Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.NoticeCommandExtension, Runner.Worker
+[2025-12-04 02:38:37Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.DebugCommandExtension, Runner.Worker
+[2025-12-04 02:38:37Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.GroupCommandExtension, Runner.Worker
+[2025-12-04 02:38:37Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.EndGroupCommandExtension, Runner.Worker
+[2025-12-04 02:38:37Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.EchoCommandExtension, Runner.Worker
+[2025-12-04 02:38:37Z INFO ActionCommandManager] Register action command extension for command internal-set-repo-path
+[2025-12-04 02:38:37Z INFO ActionCommandManager] Register action command extension for command set-env
+[2025-12-04 02:38:37Z INFO ActionCommandManager] Register action command extension for command set-output
+[2025-12-04 02:38:37Z INFO ActionCommandManager] Register action command extension for command save-state
+[2025-12-04 02:38:37Z INFO ActionCommandManager] Register action command extension for command add-path
+[2025-12-04 02:38:37Z INFO ActionCommandManager] Register action command extension for command add-mask
+[2025-12-04 02:38:37Z INFO ActionCommandManager] Register action command extension for command add-matcher
+[2025-12-04 02:38:37Z INFO ActionCommandManager] Register action command extension for command remove-matcher
+[2025-12-04 02:38:37Z INFO ActionCommandManager] Register action command extension for command warning
+[2025-12-04 02:38:37Z INFO ActionCommandManager] Register action command extension for command error
+[2025-12-04 02:38:37Z INFO ActionCommandManager] Register action command extension for command notice
+[2025-12-04 02:38:37Z INFO ActionCommandManager] Register action command extension for command debug
+[2025-12-04 02:38:37Z INFO ActionCommandManager] Register action command extension for command group
+[2025-12-04 02:38:37Z INFO ActionCommandManager] Register action command extension for command endgroup
+[2025-12-04 02:38:37Z INFO ActionCommandManager] Register action command extension for command echo
+[2025-12-04 02:38:37Z INFO HostContext] Well known directory 'Bin': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\bin'
+[2025-12-04 02:38:37Z INFO HostContext] Well known directory 'Root': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner'
+[2025-12-04 02:38:37Z INFO HostContext] Well known directory 'Externals': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\externals'
+[2025-12-04 02:38:37Z INFO ProcessInvokerWrapper] Starting process:
+[2025-12-04 02:38:37Z INFO ProcessInvokerWrapper]   File name: 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\externals\node20\bin\node.exe'
+[2025-12-04 02:38:37Z INFO ProcessInvokerWrapper]   Arguments: '"C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\_work\_actions\actions\checkout\v4\dist/index.js"'
+[2025-12-04 02:38:37Z INFO ProcessInvokerWrapper]   Working directory: 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\_work\dremio-dbt-cicd\dremio-dbt-cicd'
+[2025-12-04 02:38:37Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2025-12-04 02:38:37Z INFO ProcessInvokerWrapper]   Encoding web name: utf-8 ; code page: '65001'
+[2025-12-04 02:38:37Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2025-12-04 02:38:37Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2025-12-04 02:38:37Z INFO ProcessInvokerWrapper]   Persist current code page: 'True'
+[2025-12-04 02:38:37Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2025-12-04 02:38:37Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2025-12-04 02:38:37Z INFO ProcessInvokerWrapper] Process started with process id 45444, waiting for process exit.
+[2025-12-04 02:38:38Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'ec7d495f-9fdb-47a3-97d7-3bf4031cae00', success rate: 1/1.
+[2025-12-04 02:38:38Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'ec7d495f-9fdb-47a3-97d7-3bf4031cae00', success rate: 1/1.
+[2025-12-04 02:38:38Z INFO AddMaskCommandExtension] Add new secret mask with length of 76
+[2025-12-04 02:38:38Z INFO JobServerQueue] Got a step log file to send to results service.
+[2025-12-04 02:38:38Z INFO JobServerQueue] Starting upload of step log file to results service ResultsLog, C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\_diag\blocks\e5e34a70-99ae-46ca-a784-4cf7ae1755b2_f609d9cd-2e1e-476a-bb0f-01440f7dc708.1
+[2025-12-04 02:38:38Z INFO JobServerQueue] Try to upload 1 log files or attachments, success rate: 1/1.
+[2025-12-04 02:38:38Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'ec7d495f-9fdb-47a3-97d7-3bf4031cae00', success rate: 1/1.
+[2025-12-04 02:38:38Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'ec7d495f-9fdb-47a3-97d7-3bf4031cae00', success rate: 1/1.
+[2025-12-04 02:38:39Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'ec7d495f-9fdb-47a3-97d7-3bf4031cae00', success rate: 1/1.
+[2025-12-04 02:38:39Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'ec7d495f-9fdb-47a3-97d7-3bf4031cae00', success rate: 1/1.
+[2025-12-04 02:38:39Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'ec7d495f-9fdb-47a3-97d7-3bf4031cae00', success rate: 1/1.
+[2025-12-04 02:38:40Z INFO JobServerQueue] Tried to upload 1 file(s) to results, success rate: 1/1.
+[2025-12-04 02:38:45Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'ec7d495f-9fdb-47a3-97d7-3bf4031cae00', success rate: 1/1.
+[2025-12-04 02:38:45Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'ec7d495f-9fdb-47a3-97d7-3bf4031cae00', success rate: 1/1.
+[2025-12-04 02:38:46Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'ec7d495f-9fdb-47a3-97d7-3bf4031cae00', success rate: 1/1.
+[2025-12-04 02:38:46Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'ec7d495f-9fdb-47a3-97d7-3bf4031cae00', success rate: 1/1.
+[2025-12-04 02:38:46Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'ec7d495f-9fdb-47a3-97d7-3bf4031cae00', success rate: 1/1.
+[2025-12-04 02:38:47Z INFO HostContext] Well known directory 'Bin': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\bin'
+[2025-12-04 02:38:47Z INFO HostContext] Well known directory 'Root': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner'
+[2025-12-04 02:38:47Z INFO HostContext] Well known directory 'Work': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\_work'
+[2025-12-04 02:38:51Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'ec7d495f-9fdb-47a3-97d7-3bf4031cae00', success rate: 1/1.
+[2025-12-04 02:38:52Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'ec7d495f-9fdb-47a3-97d7-3bf4031cae00', success rate: 1/1.
+[2025-12-04 02:38:57Z INFO HostContext] Well known directory 'Bin': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\bin'
+[2025-12-04 02:38:57Z INFO HostContext] Well known directory 'Root': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner'
+[2025-12-04 02:38:57Z INFO HostContext] Well known directory 'Work': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\_work'
+[2025-12-04 02:38:57Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'ec7d495f-9fdb-47a3-97d7-3bf4031cae00', success rate: 1/1.
+[2025-12-04 02:38:58Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'ec7d495f-9fdb-47a3-97d7-3bf4031cae00', success rate: 1/1.
+[2025-12-04 02:39:03Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'ec7d495f-9fdb-47a3-97d7-3bf4031cae00', success rate: 1/1.
+[2025-12-04 02:39:03Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'ec7d495f-9fdb-47a3-97d7-3bf4031cae00', success rate: 1/1.
+[2025-12-04 02:39:05Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'ec7d495f-9fdb-47a3-97d7-3bf4031cae00', success rate: 1/1.
+[2025-12-04 02:39:05Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'ec7d495f-9fdb-47a3-97d7-3bf4031cae00', success rate: 1/1.
+[2025-12-04 02:39:05Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'ec7d495f-9fdb-47a3-97d7-3bf4031cae00', success rate: 1/1.
+[2025-12-04 02:39:06Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'ec7d495f-9fdb-47a3-97d7-3bf4031cae00', success rate: 1/1.
+[2025-12-04 02:39:06Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'ec7d495f-9fdb-47a3-97d7-3bf4031cae00', success rate: 1/1.
+[2025-12-04 02:39:06Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-12-04 02:39:06Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-12-04 02:39:06Z INFO ProcessInvokerWrapper] Finished process 45444 with exit code 0, and elapsed time 00:00:29.0898210.
+[2025-12-04 02:39:06Z INFO CreateStepSummaryCommand] Step Summary file (C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\_work\_temp\_runner_file_commands\step_summary_90596f04-47c4-42f5-a906-7c419e613a96) is empty; skipping attachment upload
+[2025-12-04 02:39:06Z INFO StepsRunner] Step result: 
+[2025-12-04 02:39:06Z INFO ExecutionContext] Publish step telemetry for current step {
+  "action": "actions/checkout",
+  "ref": "v4",
+  "type": "node20",
+  "stage": "Main",
+  "stepId": "ec7d495f-9fdb-47a3-97d7-3bf4031cae00",
+  "stepContextName": "__actions_checkout",
+  "hasPreStep": false,
+  "hasPostStep": true,
+  "result": "succeeded",
+  "errorMessages": [],
+  "executionTimeInSeconds": 30,
+  "startTime": "2025-12-04T02:38:37.5017185Z",
+  "finishTime": "2025-12-04T02:39:06.9147191Z"
+}.
+[2025-12-04 02:39:06Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'ec7d495f-9fdb-47a3-97d7-3bf4031cae00', success rate: 1/1.
+[2025-12-04 02:39:06Z INFO StepsRunner] No need for updating job result with current step result 'Succeeded'.
+[2025-12-04 02:39:06Z INFO StepsRunner] Current state: job state = ''
+[2025-12-04 02:39:06Z INFO StepsRunner] Processing step: DisplayName='Verify Python'
+[2025-12-04 02:39:06Z INFO StepsRunner] Evaluating: success()
+[2025-12-04 02:39:06Z INFO StepsRunner] Result: true
+[2025-12-04 02:39:06Z INFO StepsRunner] Starting the step.
+[2025-12-04 02:39:06Z INFO HostContext] Well known directory 'Bin': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\bin'
+[2025-12-04 02:39:06Z INFO HostContext] Well known directory 'Root': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner'
+[2025-12-04 02:39:06Z INFO HostContext] Well known directory 'Work': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\_work'
+[2025-12-04 02:39:06Z INFO StepsRunner] Which2: 'chcp'
+[2025-12-04 02:39:06Z INFO StepsRunner] Location: 'C:\Windows\system32\chcp.COM'
+[2025-12-04 02:39:06Z INFO ProcessInvokerWrapper] Starting process:
+[2025-12-04 02:39:06Z INFO ProcessInvokerWrapper]   File name: 'C:\Windows\system32\chcp.COM'
+[2025-12-04 02:39:06Z INFO ProcessInvokerWrapper]   Arguments: '65001'
+[2025-12-04 02:39:06Z INFO ProcessInvokerWrapper]   Working directory: 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\_work'
+[2025-12-04 02:39:06Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2025-12-04 02:39:06Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2025-12-04 02:39:06Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2025-12-04 02:39:06Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2025-12-04 02:39:06Z INFO ProcessInvokerWrapper]   Persist current code page: 'True'
+[2025-12-04 02:39:06Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2025-12-04 02:39:06Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2025-12-04 02:39:06Z INFO ProcessInvokerWrapper] Process started with process id 31412, waiting for process exit.
+[2025-12-04 02:39:07Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-12-04 02:39:07Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-12-04 02:39:07Z INFO ProcessInvokerWrapper] Finished process 31412 with exit code 0, and elapsed time 00:00:00.0999380.
+[2025-12-04 02:39:07Z INFO StepsRunner] Successfully returned to code page 65001 (UTF8)
+[2025-12-04 02:39:07Z INFO HostContext] Well known directory 'Bin': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\bin'
+[2025-12-04 02:39:07Z INFO HostContext] Well known directory 'Root': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner'
+[2025-12-04 02:39:07Z INFO HostContext] Well known directory 'Work': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\_work'
+[2025-12-04 02:39:07Z INFO HostContext] Well known directory 'Temp': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\_work\_temp'
+[2025-12-04 02:39:07Z INFO ExecutionContext] Write event payload to C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\_work\_temp\_github_workflow\event.json
+[2025-12-04 02:39:07Z INFO HostContext] Well known directory 'Bin': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\bin'
+[2025-12-04 02:39:07Z INFO HostContext] Well known directory 'Root': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner'
+[2025-12-04 02:39:07Z INFO HostContext] Well known directory 'Work': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\_work'
+[2025-12-04 02:39:07Z INFO HostContext] Well known directory 'Temp': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\_work\_temp'
+[2025-12-04 02:39:07Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IFileCommandExtension'
+[2025-12-04 02:39:07Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IActionCommandExtension'
+[2025-12-04 02:39:07Z INFO ActionCommandManager] Register action command extension for command internal-set-repo-path
+[2025-12-04 02:39:07Z INFO ActionCommandManager] Register action command extension for command set-env
+[2025-12-04 02:39:07Z INFO ActionCommandManager] Register action command extension for command set-output
+[2025-12-04 02:39:07Z INFO ActionCommandManager] Register action command extension for command save-state
+[2025-12-04 02:39:07Z INFO ActionCommandManager] Register action command extension for command add-path
+[2025-12-04 02:39:07Z INFO ActionCommandManager] Register action command extension for command add-mask
+[2025-12-04 02:39:07Z INFO ActionCommandManager] Register action command extension for command add-matcher
+[2025-12-04 02:39:07Z INFO ActionCommandManager] Register action command extension for command remove-matcher
+[2025-12-04 02:39:07Z INFO ActionCommandManager] Register action command extension for command warning
+[2025-12-04 02:39:07Z INFO ActionCommandManager] Register action command extension for command error
+[2025-12-04 02:39:07Z INFO ActionCommandManager] Register action command extension for command notice
+[2025-12-04 02:39:07Z INFO ActionCommandManager] Register action command extension for command debug
+[2025-12-04 02:39:07Z INFO ActionCommandManager] Register action command extension for command group
+[2025-12-04 02:39:07Z INFO ActionCommandManager] Register action command extension for command endgroup
+[2025-12-04 02:39:07Z INFO ActionCommandManager] Register action command extension for command echo
+[2025-12-04 02:39:07Z INFO ScriptHandler] Which2: 'cmd'
+[2025-12-04 02:39:07Z INFO ScriptHandler] Location: 'C:\Windows\system32\cmd.EXE'
+[2025-12-04 02:39:07Z INFO HostContext] Well known directory 'Bin': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\bin'
+[2025-12-04 02:39:07Z INFO HostContext] Well known directory 'Root': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner'
+[2025-12-04 02:39:07Z INFO HostContext] Well known directory 'Work': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\_work'
+[2025-12-04 02:39:07Z INFO HostContext] Well known directory 'Temp': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\_work\_temp'
+[2025-12-04 02:39:07Z INFO ScriptHandler] Which2: 'cmd'
+[2025-12-04 02:39:07Z INFO ScriptHandler] Location: 'C:\Windows\system32\cmd.EXE'
+[2025-12-04 02:39:07Z INFO ProcessInvokerWrapper] Starting process:
+[2025-12-04 02:39:07Z INFO ProcessInvokerWrapper]   File name: 'C:\Windows\system32\cmd.EXE'
+[2025-12-04 02:39:07Z INFO ProcessInvokerWrapper]   Arguments: '/D /E:ON /V:OFF /S /C "CALL "C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\_work\_temp\f9f7a13a-b767-4c13-b3c6-3624d3ee586c.cmd""'
+[2025-12-04 02:39:07Z INFO ProcessInvokerWrapper]   Working directory: 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\_work\dremio-dbt-cicd\dremio-dbt-cicd'
+[2025-12-04 02:39:07Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2025-12-04 02:39:07Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2025-12-04 02:39:07Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2025-12-04 02:39:07Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2025-12-04 02:39:07Z INFO ProcessInvokerWrapper]   Persist current code page: 'True'
+[2025-12-04 02:39:07Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2025-12-04 02:39:07Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2025-12-04 02:39:07Z INFO ProcessInvokerWrapper] Process started with process id 42784, waiting for process exit.
+[2025-12-04 02:39:07Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'cbb13390-47c8-42dd-aa2c-82f8fd6c130e', success rate: 1/1.
+[2025-12-04 02:39:07Z INFO JobServerQueue] Got a step log file to send to results service.
+[2025-12-04 02:39:07Z INFO JobServerQueue] Starting upload of step log file to results service ResultsLog, C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\_diag\blocks\e5e34a70-99ae-46ca-a784-4cf7ae1755b2_ec7d495f-9fdb-47a3-97d7-3bf4031cae00.1
+[2025-12-04 02:39:07Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-12-04 02:39:07Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-12-04 02:39:07Z INFO ProcessInvokerWrapper] Finished process 42784 with exit code 0, and elapsed time 00:00:00.2733966.
+[2025-12-04 02:39:07Z INFO CreateStepSummaryCommand] Step Summary file (C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\_work\_temp\_runner_file_commands\step_summary_17847423-4333-4242-bb53-bf5e0adc8432) is empty; skipping attachment upload
+[2025-12-04 02:39:07Z INFO StepsRunner] Step result: 
+[2025-12-04 02:39:07Z INFO ExecutionContext] Publish step telemetry for current step {
+  "action": "cmd",
+  "type": "run",
+  "stage": "Main",
+  "stepId": "cbb13390-47c8-42dd-aa2c-82f8fd6c130e",
+  "stepContextName": "__run",
+  "result": "succeeded",
+  "errorMessages": [],
+  "executionTimeInSeconds": 1,
+  "startTime": "2025-12-04T02:39:06.9291496Z",
+  "finishTime": "2025-12-04T02:39:07.4077816Z"
+}.
+[2025-12-04 02:39:07Z INFO StepsRunner] No need for updating job result with current step result 'Succeeded'.
+[2025-12-04 02:39:07Z INFO StepsRunner] Current state: job state = ''
+[2025-12-04 02:39:07Z INFO StepsRunner] Processing step: DisplayName='Install dbt'
+[2025-12-04 02:39:07Z INFO StepsRunner] Evaluating: success()
+[2025-12-04 02:39:07Z INFO StepsRunner] Result: true
+[2025-12-04 02:39:07Z INFO StepsRunner] Starting the step.
+[2025-12-04 02:39:07Z INFO HostContext] Well known directory 'Bin': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\bin'
+[2025-12-04 02:39:07Z INFO HostContext] Well known directory 'Root': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner'
+[2025-12-04 02:39:07Z INFO HostContext] Well known directory 'Work': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\_work'
+[2025-12-04 02:39:07Z INFO StepsRunner] Which2: 'chcp'
+[2025-12-04 02:39:07Z INFO StepsRunner] Location: 'C:\Windows\system32\chcp.COM'
+[2025-12-04 02:39:07Z INFO ProcessInvokerWrapper] Starting process:
+[2025-12-04 02:39:07Z INFO ProcessInvokerWrapper]   File name: 'C:\Windows\system32\chcp.COM'
+[2025-12-04 02:39:07Z INFO ProcessInvokerWrapper]   Arguments: '65001'
+[2025-12-04 02:39:07Z INFO ProcessInvokerWrapper]   Working directory: 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\_work'
+[2025-12-04 02:39:07Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2025-12-04 02:39:07Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2025-12-04 02:39:07Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2025-12-04 02:39:07Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2025-12-04 02:39:07Z INFO ProcessInvokerWrapper]   Persist current code page: 'True'
+[2025-12-04 02:39:07Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2025-12-04 02:39:07Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2025-12-04 02:39:07Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'cbb13390-47c8-42dd-aa2c-82f8fd6c130e', success rate: 1/1.
+[2025-12-04 02:39:07Z INFO ProcessInvokerWrapper] Process started with process id 20376, waiting for process exit.
+[2025-12-04 02:39:07Z INFO HostContext] Well known directory 'Bin': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\bin'
+[2025-12-04 02:39:07Z INFO HostContext] Well known directory 'Root': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner'
+[2025-12-04 02:39:07Z INFO HostContext] Well known directory 'Work': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\_work'
+[2025-12-04 02:39:07Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-12-04 02:39:07Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-12-04 02:39:07Z INFO ProcessInvokerWrapper] Finished process 20376 with exit code 0, and elapsed time 00:00:00.0952006.
+[2025-12-04 02:39:07Z INFO StepsRunner] Successfully returned to code page 65001 (UTF8)
+[2025-12-04 02:39:07Z INFO HostContext] Well known directory 'Bin': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\bin'
+[2025-12-04 02:39:07Z INFO HostContext] Well known directory 'Root': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner'
+[2025-12-04 02:39:07Z INFO HostContext] Well known directory 'Work': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\_work'
+[2025-12-04 02:39:07Z INFO HostContext] Well known directory 'Temp': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\_work\_temp'
+[2025-12-04 02:39:07Z INFO ExecutionContext] Write event payload to C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\_work\_temp\_github_workflow\event.json
+[2025-12-04 02:39:07Z INFO HostContext] Well known directory 'Bin': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\bin'
+[2025-12-04 02:39:07Z INFO HostContext] Well known directory 'Root': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner'
+[2025-12-04 02:39:07Z INFO HostContext] Well known directory 'Work': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\_work'
+[2025-12-04 02:39:07Z INFO HostContext] Well known directory 'Temp': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\_work\_temp'
+[2025-12-04 02:39:07Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IFileCommandExtension'
+[2025-12-04 02:39:07Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IActionCommandExtension'
+[2025-12-04 02:39:07Z INFO ActionCommandManager] Register action command extension for command internal-set-repo-path
+[2025-12-04 02:39:07Z INFO ActionCommandManager] Register action command extension for command set-env
+[2025-12-04 02:39:07Z INFO ActionCommandManager] Register action command extension for command set-output
+[2025-12-04 02:39:07Z INFO ActionCommandManager] Register action command extension for command save-state
+[2025-12-04 02:39:07Z INFO ActionCommandManager] Register action command extension for command add-path
+[2025-12-04 02:39:07Z INFO ActionCommandManager] Register action command extension for command add-mask
+[2025-12-04 02:39:07Z INFO ActionCommandManager] Register action command extension for command add-matcher
+[2025-12-04 02:39:07Z INFO ActionCommandManager] Register action command extension for command remove-matcher
+[2025-12-04 02:39:07Z INFO ActionCommandManager] Register action command extension for command warning
+[2025-12-04 02:39:07Z INFO ActionCommandManager] Register action command extension for command error
+[2025-12-04 02:39:07Z INFO ActionCommandManager] Register action command extension for command notice
+[2025-12-04 02:39:07Z INFO ActionCommandManager] Register action command extension for command debug
+[2025-12-04 02:39:07Z INFO ActionCommandManager] Register action command extension for command group
+[2025-12-04 02:39:07Z INFO ActionCommandManager] Register action command extension for command endgroup
+[2025-12-04 02:39:07Z INFO ActionCommandManager] Register action command extension for command echo
+[2025-12-04 02:39:07Z INFO ScriptHandler] Which2: 'cmd'
+[2025-12-04 02:39:07Z INFO ScriptHandler] Location: 'C:\Windows\system32\cmd.EXE'
+[2025-12-04 02:39:07Z INFO HostContext] Well known directory 'Bin': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\bin'
+[2025-12-04 02:39:07Z INFO HostContext] Well known directory 'Root': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner'
+[2025-12-04 02:39:07Z INFO HostContext] Well known directory 'Work': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\_work'
+[2025-12-04 02:39:07Z INFO HostContext] Well known directory 'Temp': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\_work\_temp'
+[2025-12-04 02:39:07Z INFO ScriptHandler] Which2: 'cmd'
+[2025-12-04 02:39:07Z INFO ScriptHandler] Location: 'C:\Windows\system32\cmd.EXE'
+[2025-12-04 02:39:07Z INFO ProcessInvokerWrapper] Starting process:
+[2025-12-04 02:39:07Z INFO ProcessInvokerWrapper]   File name: 'C:\Windows\system32\cmd.EXE'
+[2025-12-04 02:39:07Z INFO ProcessInvokerWrapper]   Arguments: '/D /E:ON /V:OFF /S /C "CALL "C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\_work\_temp\b7dd57e3-c51c-4bc4-9427-7db69dceae74.cmd""'
+[2025-12-04 02:39:07Z INFO ProcessInvokerWrapper]   Working directory: 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\_work\dremio-dbt-cicd\dremio-dbt-cicd'
+[2025-12-04 02:39:07Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2025-12-04 02:39:07Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2025-12-04 02:39:07Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2025-12-04 02:39:07Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2025-12-04 02:39:07Z INFO ProcessInvokerWrapper]   Persist current code page: 'True'
+[2025-12-04 02:39:07Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2025-12-04 02:39:07Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2025-12-04 02:39:07Z INFO ProcessInvokerWrapper] Process started with process id 42292, waiting for process exit.
+[2025-12-04 02:39:07Z INFO JobServerQueue] Try to upload 2 log files or attachments, success rate: 2/2.
+[2025-12-04 02:39:07Z INFO JobServerQueue] Try to append 1 batches web console lines for record '2b2b37d4-1ad1-484b-a0fe-e6382adb6b87', success rate: 1/1.
+[2025-12-04 02:39:08Z INFO JobServerQueue] Tried to upload 1 file(s) to results, success rate: 1/1.
+[2025-12-04 02:39:09Z INFO JobServerQueue] Got a step log file to send to results service.
+[2025-12-04 02:39:09Z INFO JobServerQueue] Starting upload of step log file to results service ResultsLog, C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\_diag\blocks\e5e34a70-99ae-46ca-a784-4cf7ae1755b2_cbb13390-47c8-42dd-aa2c-82f8fd6c130e.1
+[2025-12-04 02:39:10Z INFO JobServerQueue] Tried to upload 1 file(s) to results, success rate: 1/1.
+[2025-12-04 02:39:11Z INFO JobServerQueue] Try to append 1 batches web console lines for record '2b2b37d4-1ad1-484b-a0fe-e6382adb6b87', success rate: 1/1.
+[2025-12-04 02:39:11Z INFO JobServerQueue] Try to append 1 batches web console lines for record '2b2b37d4-1ad1-484b-a0fe-e6382adb6b87', success rate: 1/1.
+[2025-12-04 02:39:11Z INFO JobServerQueue] Try to append 1 batches web console lines for record '2b2b37d4-1ad1-484b-a0fe-e6382adb6b87', success rate: 1/1.
+[2025-12-04 02:39:11Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-12-04 02:39:11Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-12-04 02:39:11Z INFO ProcessInvokerWrapper] Finished process 42292 with exit code 0, and elapsed time 00:00:04.1319558.
+[2025-12-04 02:39:11Z INFO CreateStepSummaryCommand] Step Summary file (C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\_work\_temp\_runner_file_commands\step_summary_fd8c6750-45d0-4dfc-a9ad-5e8db260d499) is empty; skipping attachment upload
+[2025-12-04 02:39:11Z INFO StepsRunner] Step result: 
+[2025-12-04 02:39:11Z INFO ExecutionContext] Publish step telemetry for current step {
+  "action": "cmd",
+  "type": "run",
+  "stage": "Main",
+  "stepId": "2b2b37d4-1ad1-484b-a0fe-e6382adb6b87",
+  "stepContextName": "__run_2",
+  "result": "succeeded",
+  "errorMessages": [],
+  "executionTimeInSeconds": 5,
+  "startTime": "2025-12-04T02:39:07.4189604Z",
+  "finishTime": "2025-12-04T02:39:11.7320587Z"
+}.
+[2025-12-04 02:39:11Z INFO StepsRunner] No need for updating job result with current step result 'Succeeded'.
+[2025-12-04 02:39:11Z INFO StepsRunner] Current state: job state = ''
+[2025-12-04 02:39:11Z INFO StepsRunner] Processing step: DisplayName='Create profiles.yml (Python)'
+[2025-12-04 02:39:11Z INFO StepsRunner] Evaluating: success()
+[2025-12-04 02:39:11Z INFO StepsRunner] Result: true
+[2025-12-04 02:39:11Z INFO StepsRunner] Starting the step.
+[2025-12-04 02:39:11Z INFO HostContext] Well known directory 'Bin': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\bin'
+[2025-12-04 02:39:11Z INFO HostContext] Well known directory 'Root': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner'
+[2025-12-04 02:39:11Z INFO HostContext] Well known directory 'Work': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\_work'
+[2025-12-04 02:39:11Z INFO StepsRunner] Which2: 'chcp'
+[2025-12-04 02:39:11Z INFO StepsRunner] Location: 'C:\Windows\system32\chcp.COM'
+[2025-12-04 02:39:11Z INFO ProcessInvokerWrapper] Starting process:
+[2025-12-04 02:39:11Z INFO ProcessInvokerWrapper]   File name: 'C:\Windows\system32\chcp.COM'
+[2025-12-04 02:39:11Z INFO ProcessInvokerWrapper]   Arguments: '65001'
+[2025-12-04 02:39:11Z INFO ProcessInvokerWrapper]   Working directory: 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\_work'
+[2025-12-04 02:39:11Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2025-12-04 02:39:11Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2025-12-04 02:39:11Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2025-12-04 02:39:11Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2025-12-04 02:39:11Z INFO ProcessInvokerWrapper]   Persist current code page: 'True'
+[2025-12-04 02:39:11Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2025-12-04 02:39:11Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2025-12-04 02:39:11Z INFO ProcessInvokerWrapper] Process started with process id 43112, waiting for process exit.
+[2025-12-04 02:39:11Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-12-04 02:39:11Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-12-04 02:39:11Z INFO ProcessInvokerWrapper] Finished process 43112 with exit code 0, and elapsed time 00:00:00.0922160.
+[2025-12-04 02:39:11Z INFO StepsRunner] Successfully returned to code page 65001 (UTF8)
+[2025-12-04 02:39:11Z INFO HostContext] Well known directory 'Bin': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\bin'
+[2025-12-04 02:39:11Z INFO HostContext] Well known directory 'Root': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner'
+[2025-12-04 02:39:11Z INFO HostContext] Well known directory 'Work': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\_work'
+[2025-12-04 02:39:11Z INFO HostContext] Well known directory 'Temp': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\_work\_temp'
+[2025-12-04 02:39:11Z INFO ExecutionContext] Write event payload to C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\_work\_temp\_github_workflow\event.json
+[2025-12-04 02:39:11Z INFO HostContext] Well known directory 'Bin': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\bin'
+[2025-12-04 02:39:11Z INFO HostContext] Well known directory 'Root': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner'
+[2025-12-04 02:39:11Z INFO HostContext] Well known directory 'Work': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\_work'
+[2025-12-04 02:39:11Z INFO HostContext] Well known directory 'Temp': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\_work\_temp'
+[2025-12-04 02:39:11Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IFileCommandExtension'
+[2025-12-04 02:39:11Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IActionCommandExtension'
+[2025-12-04 02:39:11Z INFO ActionCommandManager] Register action command extension for command internal-set-repo-path
+[2025-12-04 02:39:11Z INFO ActionCommandManager] Register action command extension for command set-env
+[2025-12-04 02:39:11Z INFO ActionCommandManager] Register action command extension for command set-output
+[2025-12-04 02:39:11Z INFO ActionCommandManager] Register action command extension for command save-state
+[2025-12-04 02:39:11Z INFO ActionCommandManager] Register action command extension for command add-path
+[2025-12-04 02:39:11Z INFO ActionCommandManager] Register action command extension for command add-mask
+[2025-12-04 02:39:11Z INFO ActionCommandManager] Register action command extension for command add-matcher
+[2025-12-04 02:39:11Z INFO ActionCommandManager] Register action command extension for command remove-matcher
+[2025-12-04 02:39:11Z INFO ActionCommandManager] Register action command extension for command warning
+[2025-12-04 02:39:11Z INFO ActionCommandManager] Register action command extension for command error
+[2025-12-04 02:39:11Z INFO ActionCommandManager] Register action command extension for command notice
+[2025-12-04 02:39:11Z INFO ActionCommandManager] Register action command extension for command debug
+[2025-12-04 02:39:11Z INFO ActionCommandManager] Register action command extension for command group
+[2025-12-04 02:39:11Z INFO ActionCommandManager] Register action command extension for command endgroup
+[2025-12-04 02:39:11Z INFO ActionCommandManager] Register action command extension for command echo
+[2025-12-04 02:39:11Z INFO ScriptHandler] Which2: 'cmd'
+[2025-12-04 02:39:11Z INFO ScriptHandler] Location: 'C:\Windows\system32\cmd.EXE'
+[2025-12-04 02:39:11Z INFO HostContext] Well known directory 'Bin': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\bin'
+[2025-12-04 02:39:11Z INFO HostContext] Well known directory 'Root': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner'
+[2025-12-04 02:39:11Z INFO HostContext] Well known directory 'Work': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\_work'
+[2025-12-04 02:39:11Z INFO HostContext] Well known directory 'Temp': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\_work\_temp'
+[2025-12-04 02:39:11Z INFO ScriptHandler] Which2: 'cmd'
+[2025-12-04 02:39:11Z INFO ScriptHandler] Location: 'C:\Windows\system32\cmd.EXE'
+[2025-12-04 02:39:11Z INFO ProcessInvokerWrapper] Starting process:
+[2025-12-04 02:39:11Z INFO ProcessInvokerWrapper]   File name: 'C:\Windows\system32\cmd.EXE'
+[2025-12-04 02:39:11Z INFO ProcessInvokerWrapper]   Arguments: '/D /E:ON /V:OFF /S /C "CALL "C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\_work\_temp\1631754f-decc-421d-a229-4a404c786a75.cmd""'
+[2025-12-04 02:39:11Z INFO ProcessInvokerWrapper]   Working directory: 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\_work\dremio-dbt-cicd\dremio-dbt-cicd'
+[2025-12-04 02:39:11Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2025-12-04 02:39:11Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2025-12-04 02:39:11Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2025-12-04 02:39:11Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2025-12-04 02:39:11Z INFO ProcessInvokerWrapper]   Persist current code page: 'True'
+[2025-12-04 02:39:11Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2025-12-04 02:39:11Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2025-12-04 02:39:11Z INFO ProcessInvokerWrapper] Process started with process id 4136, waiting for process exit.
+[2025-12-04 02:39:12Z INFO JobServerQueue] Try to append 1 batches web console lines for record '704359b0-6c38-4da0-a3e1-6b2b8afef22c', success rate: 1/1.
+[2025-12-04 02:39:12Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-12-04 02:39:12Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-12-04 02:39:12Z INFO ProcessInvokerWrapper] Finished process 4136 with exit code 1, and elapsed time 00:00:00.3567307.
+[2025-12-04 02:39:12Z INFO CreateStepSummaryCommand] Step Summary file (C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\_work\_temp\_runner_file_commands\step_summary_54990c3c-77d6-4bf5-ae55-a809185d3f1d) is empty; skipping attachment upload
+[2025-12-04 02:39:12Z INFO StepsRunner] Step result: Failed
+[2025-12-04 02:39:12Z INFO ExecutionContext] Publish step telemetry for current step {
+  "action": "cmd",
+  "type": "run",
+  "stage": "Main",
+  "stepId": "704359b0-6c38-4da0-a3e1-6b2b8afef22c",
+  "stepContextName": "__run_3",
+  "result": "failed",
+  "errorMessages": [
+    "Process completed with exit code 1."
+  ],
+  "executionTimeInSeconds": 1,
+  "startTime": "2025-12-04T02:39:11.7424357Z",
+  "finishTime": "2025-12-04T02:39:12.2677702Z"
+}.
+[2025-12-04 02:39:12Z INFO StepsRunner] Update job result with current step result 'Failed'.
+[2025-12-04 02:39:12Z INFO StepsRunner] Current state: job state = 'Failed'
+[2025-12-04 02:39:12Z INFO StepsRunner] Processing step: DisplayName='Debug profiles.yml'
+[2025-12-04 02:39:12Z INFO StepsRunner] Evaluating: success()
+[2025-12-04 02:39:12Z INFO StepsRunner] Result: false
+[2025-12-04 02:39:12Z INFO StepsRunner] Skipping step due to condition evaluation.
+[2025-12-04 02:39:12Z INFO StepsRunner] No need for updating job result with current step result 'Skipped'.
+[2025-12-04 02:39:12Z INFO StepsRunner] Current state: job state = 'Failed'
+[2025-12-04 02:39:12Z INFO StepsRunner] Processing step: DisplayName='Connectivity check to Dremio (HTTPS)'
+[2025-12-04 02:39:12Z INFO StepsRunner] Evaluating: success()
+[2025-12-04 02:39:12Z INFO StepsRunner] Result: false
+[2025-12-04 02:39:12Z INFO StepsRunner] Skipping step due to condition evaluation.
+[2025-12-04 02:39:12Z INFO StepsRunner] No need for updating job result with current step result 'Skipped'.
+[2025-12-04 02:39:12Z INFO StepsRunner] Current state: job state = 'Failed'
+[2025-12-04 02:39:12Z INFO StepsRunner] Processing step: DisplayName='Run dbt in Dev'
+[2025-12-04 02:39:12Z INFO StepsRunner] Evaluating: success()
+[2025-12-04 02:39:12Z INFO StepsRunner] Result: false
+[2025-12-04 02:39:12Z INFO StepsRunner] Skipping step due to condition evaluation.
+[2025-12-04 02:39:12Z INFO StepsRunner] No need for updating job result with current step result 'Skipped'.
+[2025-12-04 02:39:12Z INFO StepsRunner] Current state: job state = 'Failed'
+[2025-12-04 02:39:12Z INFO StepsRunner] Processing step: DisplayName='Debug profiles.yml'
+[2025-12-04 02:39:12Z INFO StepsRunner] Evaluating: success()
+[2025-12-04 02:39:12Z INFO StepsRunner] Result: false
+[2025-12-04 02:39:12Z INFO StepsRunner] Skipping step due to condition evaluation.
+[2025-12-04 02:39:12Z INFO StepsRunner] No need for updating job result with current step result 'Skipped'.
+[2025-12-04 02:39:12Z INFO StepsRunner] Current state: job state = 'Failed'
+[2025-12-04 02:39:12Z INFO StepsRunner] Processing step: DisplayName='Check secrets'
+[2025-12-04 02:39:12Z INFO StepsRunner] Evaluating: success()
+[2025-12-04 02:39:12Z INFO StepsRunner] Result: false
+[2025-12-04 02:39:12Z INFO StepsRunner] Skipping step due to condition evaluation.
+[2025-12-04 02:39:12Z INFO StepsRunner] No need for updating job result with current step result 'Skipped'.
+[2025-12-04 02:39:12Z INFO StepsRunner] Current state: job state = 'Failed'
+[2025-12-04 02:39:12Z INFO StepsRunner] Processing step: DisplayName='Post Run actions/checkout@v4'
+[2025-12-04 02:39:12Z INFO StepsRunner] Evaluating: always()
+[2025-12-04 02:39:12Z INFO StepsRunner] Result: true
+[2025-12-04 02:39:12Z INFO StepsRunner] Starting the step.
+[2025-12-04 02:39:12Z INFO HostContext] Well known directory 'Bin': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\bin'
+[2025-12-04 02:39:12Z INFO HostContext] Well known directory 'Root': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner'
+[2025-12-04 02:39:12Z INFO HostContext] Well known directory 'Work': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\_work'
+[2025-12-04 02:39:12Z INFO StepsRunner] Which2: 'chcp'
+[2025-12-04 02:39:12Z INFO StepsRunner] Location: 'C:\Windows\system32\chcp.COM'
+[2025-12-04 02:39:12Z INFO ProcessInvokerWrapper] Starting process:
+[2025-12-04 02:39:12Z INFO ProcessInvokerWrapper]   File name: 'C:\Windows\system32\chcp.COM'
+[2025-12-04 02:39:12Z INFO ProcessInvokerWrapper]   Arguments: '65001'
+[2025-12-04 02:39:12Z INFO ProcessInvokerWrapper]   Working directory: 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\_work'
+[2025-12-04 02:39:12Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2025-12-04 02:39:12Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2025-12-04 02:39:12Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2025-12-04 02:39:12Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2025-12-04 02:39:12Z INFO ProcessInvokerWrapper]   Persist current code page: 'True'
+[2025-12-04 02:39:12Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2025-12-04 02:39:12Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2025-12-04 02:39:12Z INFO JobServerQueue] Try to append 1 batches web console lines for record '704359b0-6c38-4da0-a3e1-6b2b8afef22c', success rate: 1/1.
+[2025-12-04 02:39:12Z INFO ProcessInvokerWrapper] Process started with process id 17952, waiting for process exit.
+[2025-12-04 02:39:12Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-12-04 02:39:12Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-12-04 02:39:12Z INFO ProcessInvokerWrapper] Finished process 17952 with exit code 0, and elapsed time 00:00:00.0873262.
+[2025-12-04 02:39:12Z INFO StepsRunner] Successfully returned to code page 65001 (UTF8)
+[2025-12-04 02:39:12Z INFO HostContext] Well known directory 'Bin': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\bin'
+[2025-12-04 02:39:12Z INFO HostContext] Well known directory 'Root': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner'
+[2025-12-04 02:39:12Z INFO HostContext] Well known directory 'Work': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\_work'
+[2025-12-04 02:39:12Z INFO HostContext] Well known directory 'Actions': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\_work\_actions'
+[2025-12-04 02:39:12Z INFO ActionManager] Load action that reference repository from 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\_work\_actions\actions\checkout\v4'
+[2025-12-04 02:39:12Z INFO HostContext] Well known directory 'Bin': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\bin'
+[2025-12-04 02:39:12Z INFO HostContext] Well known directory 'Root': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner'
+[2025-12-04 02:39:12Z INFO HostContext] Well known directory 'Work': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\_work'
+[2025-12-04 02:39:12Z INFO HostContext] Well known directory 'Actions': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\_work\_actions'
+[2025-12-04 02:39:12Z INFO ActionManifestManager] Loaded action.yml file: {
+  "name": "Checkout",
+  "description": "Checkout a Git repository at a particular version",
+  "inputs": {
+    "type": 2,
+    "map": [
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 4,
+          "col": 3,
+          "lit": "repository"
+        },
+        "value": {
+          "type": 3,
+          "file": 2,
+          "line": 6,
+          "col": 14,
+          "expr": "github.repository"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 7,
+          "col": 3,
+          "lit": "ref"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 12,
+          "col": 3,
+          "lit": "token"
+        },
+        "value": {
+          "type": 3,
+          "file": 2,
+          "line": 24,
+          "col": 14,
+          "expr": "github.token"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 25,
+          "col": 3,
+          "lit": "ssh-key"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 37,
+          "col": 3,
+          "lit": "ssh-known-hosts"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 42,
+          "col": 3,
+          "lit": "ssh-strict"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 47,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 48,
+          "col": 3,
+          "lit": "ssh-user"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 51,
+          "col": 14,
+          "lit": "git"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 52,
+          "col": 3,
+          "lit": "persist-credentials"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 54,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 55,
+          "col": 3,
+          "lit": "path"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 57,
+          "col": 3,
+          "lit": "clean"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 59,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 60,
+          "col": 3,
+          "lit": "filter"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 64,
+          "col": 14,
+          "lit": ""
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 65,
+          "col": 3,
+          "lit": "sparse-checkout"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 69,
+          "col": 14,
+          "lit": ""
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 70,
+          "col": 3,
+          "lit": "sparse-checkout-cone-mode"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 73,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 74,
+          "col": 3,
+          "lit": "fetch-depth"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 76,
+          "col": 14,
+          "lit": "1"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 77,
+          "col": 3,
+          "lit": "fetch-tags"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 79,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 80,
+          "col": 3,
+          "lit": "show-progress"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 82,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 83,
+          "col": 3,
+          "lit": "lfs"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 85,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 86,
+          "col": 3,
+          "lit": "submodules"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 94,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 95,
+          "col": 3,
+          "lit": "set-safe-directory"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 97,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 98,
+          "col": 3,
+          "lit": "github-server-url"
+        },
+        "value": ""
+      }
+    ]
+  },
+  "execution": {
+    "executionType": "nodeJS",
+    "hasPre": false,
+    "hasPost": true,
+    "script": "dist/index.js",
+    "pre": null,
+    "post": "dist/index.js",
+    "nodeVersion": "node20",
+    "cleanupCondition": "always()",
+    "initCondition": "always()"
+  },
+  "deprecated": null
+}
+[2025-12-04 02:39:12Z INFO ActionManager] Action pre node.js file: N/A.
+[2025-12-04 02:39:12Z INFO ActionManager] Action node.js file: dist/index.js.
+[2025-12-04 02:39:12Z INFO ActionManager] Action post node.js file: dist/index.js.
+[2025-12-04 02:39:12Z INFO HostContext] Well known directory 'Bin': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\bin'
+[2025-12-04 02:39:12Z INFO HostContext] Well known directory 'Root': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner'
+[2025-12-04 02:39:12Z INFO HostContext] Well known directory 'Work': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\_work'
+[2025-12-04 02:39:12Z INFO HostContext] Well known directory 'Temp': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\_work\_temp'
+[2025-12-04 02:39:12Z INFO ExecutionContext] Write event payload to C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\_work\_temp\_github_workflow\event.json
+[2025-12-04 02:39:12Z INFO HostContext] Well known directory 'Bin': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\bin'
+[2025-12-04 02:39:12Z INFO HostContext] Well known directory 'Root': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner'
+[2025-12-04 02:39:12Z INFO HostContext] Well known directory 'Work': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\_work'
+[2025-12-04 02:39:12Z INFO HostContext] Well known directory 'Temp': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\_work\_temp'
+[2025-12-04 02:39:12Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IFileCommandExtension'
+[2025-12-04 02:39:12Z INFO ActionManifestManager] Input 'repository': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 6,
+  "col": 14,
+  "lit": "swaminathan-subbarayan/dremio-dbt-cicd"
+}
+[2025-12-04 02:39:12Z INFO ActionManifestManager] Input 'ref': default value evaluate result: ""
+[2025-12-04 02:39:12Z INFO ActionManifestManager] Input 'token': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 24,
+  "col": 14,
+  "lit": "***"
+}
+[2025-12-04 02:39:12Z INFO ActionManifestManager] Input 'ssh-key': default value evaluate result: ""
+[2025-12-04 02:39:12Z INFO ActionManifestManager] Input 'ssh-known-hosts': default value evaluate result: ""
+[2025-12-04 02:39:12Z INFO ActionManifestManager] Input 'ssh-strict': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 47,
+  "col": 14,
+  "lit": "true"
+}
+[2025-12-04 02:39:12Z INFO ActionManifestManager] Input 'ssh-user': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 51,
+  "col": 14,
+  "lit": "git"
+}
+[2025-12-04 02:39:12Z INFO ActionManifestManager] Input 'persist-credentials': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 54,
+  "col": 14,
+  "lit": "true"
+}
+[2025-12-04 02:39:12Z INFO ActionManifestManager] Input 'path': default value evaluate result: ""
+[2025-12-04 02:39:12Z INFO ActionManifestManager] Input 'clean': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 59,
+  "col": 14,
+  "lit": "true"
+}
+[2025-12-04 02:39:12Z INFO ActionManifestManager] Input 'filter': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 64,
+  "col": 14,
+  "lit": ""
+}
+[2025-12-04 02:39:12Z INFO ActionManifestManager] Input 'sparse-checkout': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 69,
+  "col": 14,
+  "lit": ""
+}
+[2025-12-04 02:39:12Z INFO ActionManifestManager] Input 'sparse-checkout-cone-mode': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 73,
+  "col": 14,
+  "lit": "true"
+}
+[2025-12-04 02:39:12Z INFO ActionManifestManager] Input 'fetch-depth': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 76,
+  "col": 14,
+  "lit": "1"
+}
+[2025-12-04 02:39:12Z INFO ActionManifestManager] Input 'fetch-tags': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 79,
+  "col": 14,
+  "lit": "false"
+}
+[2025-12-04 02:39:12Z INFO ActionManifestManager] Input 'show-progress': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 82,
+  "col": 14,
+  "lit": "true"
+}
+[2025-12-04 02:39:12Z INFO ActionManifestManager] Input 'lfs': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 85,
+  "col": 14,
+  "lit": "false"
+}
+[2025-12-04 02:39:12Z INFO ActionManifestManager] Input 'submodules': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 94,
+  "col": 14,
+  "lit": "false"
+}
+[2025-12-04 02:39:12Z INFO ActionManifestManager] Input 'set-safe-directory': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 97,
+  "col": 14,
+  "lit": "true"
+}
+[2025-12-04 02:39:12Z INFO ActionManifestManager] Input 'github-server-url': default value evaluate result: ""
+[2025-12-04 02:39:12Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IActionCommandExtension'
+[2025-12-04 02:39:12Z INFO ActionCommandManager] Register action command extension for command internal-set-repo-path
+[2025-12-04 02:39:12Z INFO ActionCommandManager] Register action command extension for command set-env
+[2025-12-04 02:39:12Z INFO ActionCommandManager] Register action command extension for command set-output
+[2025-12-04 02:39:12Z INFO ActionCommandManager] Register action command extension for command save-state
+[2025-12-04 02:39:12Z INFO ActionCommandManager] Register action command extension for command add-path
+[2025-12-04 02:39:12Z INFO ActionCommandManager] Register action command extension for command add-mask
+[2025-12-04 02:39:12Z INFO ActionCommandManager] Register action command extension for command add-matcher
+[2025-12-04 02:39:12Z INFO ActionCommandManager] Register action command extension for command remove-matcher
+[2025-12-04 02:39:12Z INFO ActionCommandManager] Register action command extension for command warning
+[2025-12-04 02:39:12Z INFO ActionCommandManager] Register action command extension for command error
+[2025-12-04 02:39:12Z INFO ActionCommandManager] Register action command extension for command notice
+[2025-12-04 02:39:12Z INFO ActionCommandManager] Register action command extension for command debug
+[2025-12-04 02:39:12Z INFO ActionCommandManager] Register action command extension for command group
+[2025-12-04 02:39:12Z INFO ActionCommandManager] Register action command extension for command endgroup
+[2025-12-04 02:39:12Z INFO ActionCommandManager] Register action command extension for command echo
+[2025-12-04 02:39:12Z INFO HostContext] Well known directory 'Bin': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\bin'
+[2025-12-04 02:39:12Z INFO HostContext] Well known directory 'Root': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner'
+[2025-12-04 02:39:12Z INFO HostContext] Well known directory 'Externals': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\externals'
+[2025-12-04 02:39:12Z INFO ProcessInvokerWrapper] Starting process:
+[2025-12-04 02:39:12Z INFO ProcessInvokerWrapper]   File name: 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\externals\node20\bin\node.exe'
+[2025-12-04 02:39:12Z INFO ProcessInvokerWrapper]   Arguments: '"C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\_work\_actions\actions\checkout\v4\dist/index.js"'
+[2025-12-04 02:39:12Z INFO ProcessInvokerWrapper]   Working directory: 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\_work\dremio-dbt-cicd\dremio-dbt-cicd'
+[2025-12-04 02:39:12Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2025-12-04 02:39:12Z INFO ProcessInvokerWrapper]   Encoding web name: utf-8 ; code page: '65001'
+[2025-12-04 02:39:12Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2025-12-04 02:39:12Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2025-12-04 02:39:12Z INFO ProcessInvokerWrapper]   Persist current code page: 'True'
+[2025-12-04 02:39:12Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2025-12-04 02:39:12Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2025-12-04 02:39:12Z INFO ProcessInvokerWrapper] Process started with process id 31824, waiting for process exit.
+[2025-12-04 02:39:12Z INFO JobServerQueue] Try to append 1 batches web console lines for record '9ee0231b-0d65-4118-a088-e1f7119ace4c', success rate: 1/1.
+[2025-12-04 02:39:12Z INFO JobServerQueue] Try to upload 2 log files or attachments, success rate: 2/2.
+[2025-12-04 02:39:12Z INFO JobServerQueue] Got a step log file to send to results service.
+[2025-12-04 02:39:12Z INFO JobServerQueue] Starting upload of step log file to results service ResultsLog, C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\_diag\blocks\e5e34a70-99ae-46ca-a784-4cf7ae1755b2_2b2b37d4-1ad1-484b-a0fe-e6382adb6b87.1
+[2025-12-04 02:39:12Z INFO JobServerQueue] Try to append 1 batches web console lines for record '9ee0231b-0d65-4118-a088-e1f7119ace4c', success rate: 1/1.
+[2025-12-04 02:39:12Z INFO AddMaskCommandExtension] Add new secret mask with length of 32
+[2025-12-04 02:39:13Z INFO JobServerQueue] Try to append 1 batches web console lines for record '9ee0231b-0d65-4118-a088-e1f7119ace4c', success rate: 1/1.
+[2025-12-04 02:39:13Z INFO JobServerQueue] Try to append 1 batches web console lines for record '9ee0231b-0d65-4118-a088-e1f7119ace4c', success rate: 1/1.
+[2025-12-04 02:39:13Z INFO JobServerQueue] Got a step log file to send to results service.
+[2025-12-04 02:39:13Z INFO JobServerQueue] Starting upload of step log file to results service ResultsLog, C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\_diag\blocks\e5e34a70-99ae-46ca-a784-4cf7ae1755b2_704359b0-6c38-4da0-a3e1-6b2b8afef22c.1
+[2025-12-04 02:39:13Z INFO JobServerQueue] Try to append 1 batches web console lines for record '9ee0231b-0d65-4118-a088-e1f7119ace4c', success rate: 1/1.
+[2025-12-04 02:39:14Z INFO JobServerQueue] Tried to upload 2 file(s) to results, success rate: 2/2.
+[2025-12-04 02:39:17Z INFO HostContext] Well known directory 'Bin': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\bin'
+[2025-12-04 02:39:17Z INFO HostContext] Well known directory 'Root': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner'
+[2025-12-04 02:39:17Z INFO HostContext] Well known directory 'Work': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\_work'
+[2025-12-04 02:39:19Z INFO JobServerQueue] Try to append 1 batches web console lines for record '9ee0231b-0d65-4118-a088-e1f7119ace4c', success rate: 1/1.
+[2025-12-04 02:39:19Z INFO JobServerQueue] Try to append 1 batches web console lines for record '9ee0231b-0d65-4118-a088-e1f7119ace4c', success rate: 1/1.
+[2025-12-04 02:39:25Z INFO JobServerQueue] Try to append 1 batches web console lines for record '9ee0231b-0d65-4118-a088-e1f7119ace4c', success rate: 1/1.
+[2025-12-04 02:39:25Z INFO JobServerQueue] Try to append 1 batches web console lines for record '9ee0231b-0d65-4118-a088-e1f7119ace4c', success rate: 1/1.
+[2025-12-04 02:39:27Z INFO HostContext] Well known directory 'Bin': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\bin'
+[2025-12-04 02:39:27Z INFO HostContext] Well known directory 'Root': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner'
+[2025-12-04 02:39:27Z INFO HostContext] Well known directory 'Work': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\_work'
+[2025-12-04 02:39:30Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-12-04 02:39:30Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-12-04 02:39:30Z INFO ProcessInvokerWrapper] Finished process 31824 with exit code 0, and elapsed time 00:00:18.3166002.
+[2025-12-04 02:39:30Z INFO CreateStepSummaryCommand] Step Summary file (C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\_work\_temp\_runner_file_commands\step_summary_f953a0ff-0d38-4ca7-bea7-2495bd89e4f7) is empty; skipping attachment upload
+[2025-12-04 02:39:30Z INFO StepsRunner] Step result: 
+[2025-12-04 02:39:30Z INFO ExecutionContext] Publish step telemetry for current step {
+  "action": "actions/checkout",
+  "ref": "v4",
+  "type": "node20",
+  "stage": "Post",
+  "stepId": "9ee0231b-0d65-4118-a088-e1f7119ace4c",
+  "result": "succeeded",
+  "errorMessages": [],
+  "executionTimeInSeconds": 19,
+  "startTime": "2025-12-04T02:39:12.2838957Z",
+  "finishTime": "2025-12-04T02:39:30.7615637Z"
+}.
+[2025-12-04 02:39:30Z INFO StepsRunner] No need for updating job result with current step result 'Succeeded'.
+[2025-12-04 02:39:30Z INFO StepsRunner] Current state: job state = 'Failed'
+[2025-12-04 02:39:30Z INFO JobRunner] Finalize job.
+[2025-12-04 02:39:30Z INFO HostContext] Well known directory 'Bin': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\bin'
+[2025-12-04 02:39:30Z INFO HostContext] Well known directory 'Root': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner'
+[2025-12-04 02:39:30Z INFO HostContext] Well known directory 'Diag': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\_diag'
+[2025-12-04 02:39:30Z INFO HostContext] Well known directory 'Bin': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\bin'
+[2025-12-04 02:39:30Z INFO HostContext] Well known directory 'Root': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner'
+[2025-12-04 02:39:30Z INFO HostContext] Well known directory 'Diag': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\_diag'
+[2025-12-04 02:39:30Z INFO JobExtension] Initialize Env context
+[2025-12-04 02:39:30Z INFO JobExtension] Initialize steps context
+[2025-12-04 02:39:30Z INFO JobExtension] Total accessible running process: 418.
+[2025-12-04 02:39:30Z INFO ExecutionContext] Publish step telemetry for current step {
+  "action": "complete_job",
+  "type": "runner",
+  "stage": "Post",
+  "stepId": "b6a335c0-e832-43c8-96a2-b7969a64fd13",
+  "result": "succeeded",
+  "errorMessages": [],
+  "executionTimeInSeconds": 1,
+  "startTime": "2025-12-04T02:39:30.7842568Z",
+  "finishTime": "2025-12-04T02:39:30.8103419Z"
+}.
+[2025-12-04 02:39:30Z INFO JobServerQueue] Try to upload 1 log files or attachments, success rate: 1/1.
+[2025-12-04 02:39:30Z INFO JobRunner] Job result after all job steps finish: Failed
+[2025-12-04 02:39:30Z INFO JobRunner] Completing the job execution context.
+[2025-12-04 02:39:30Z INFO JobRunner] Shutting down the job server queue.
+[2025-12-04 02:39:30Z INFO JobServerQueue] Fire signal to shutdown all queues.
+[2025-12-04 02:39:31Z INFO JobServerQueue] All queue process task stopped.
+[2025-12-04 02:39:31Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'b6a335c0-e832-43c8-96a2-b7969a64fd13', success rate: 1/1.
+[2025-12-04 02:39:31Z INFO JobServerQueue] Web console line queue drained.
+[2025-12-04 02:39:31Z INFO JobServerQueue] Uploading 2 files in one shot.
+[2025-12-04 02:39:31Z INFO JobServerQueue] Try to upload 2 log files or attachments, success rate: 2/2.
+[2025-12-04 02:39:31Z INFO JobServerQueue] File upload queue drained.
+[2025-12-04 02:39:31Z INFO JobServerQueue] Starting results-based upload queue...
+[2025-12-04 02:39:31Z INFO JobServerQueue] Uploading 3 file(s) in one shot through results service.
+[2025-12-04 02:39:31Z INFO JobServerQueue] Got a step log file to send to results service.
+[2025-12-04 02:39:31Z INFO JobServerQueue] Starting upload of step log file to results service ResultsLog, C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\_diag\blocks\e5e34a70-99ae-46ca-a784-4cf7ae1755b2_9ee0231b-0d65-4118-a088-e1f7119ace4c.1
+[2025-12-04 02:39:32Z INFO JobServerQueue] Got a step log file to send to results service.
+[2025-12-04 02:39:32Z INFO JobServerQueue] Starting upload of step log file to results service ResultsLog, C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\_diag\blocks\e5e34a70-99ae-46ca-a784-4cf7ae1755b2_b6a335c0-e832-43c8-96a2-b7969a64fd13.1
+[2025-12-04 02:39:33Z INFO JobServerQueue] Got a job log file to send to results service.
+[2025-12-04 02:39:33Z INFO JobServerQueue] Starting upload of job log file to results service ResultsLog, C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\_diag\blocks\e5e34a70-99ae-46ca-a784-4cf7ae1755b2_52272951-71b4-51a2-bc74-0c3caf9a0210.1
+[2025-12-04 02:39:34Z INFO JobServerQueue] Tried to upload 3 file(s) to results, success rate: 3/3.
+[2025-12-04 02:39:34Z INFO JobServerQueue] Results upload queue drained.
+[2025-12-04 02:39:34Z INFO JobServerQueue] Timeline update queue drained.
+[2025-12-04 02:39:34Z INFO JobServerQueue] Disposing job server ...
+[2025-12-04 02:39:34Z INFO JobServerQueue] Disposing results server ...
+[2025-12-04 02:39:34Z INFO JobServerQueue] All queue process tasks have been stopped, and all queues are drained.
+[2025-12-04 02:39:34Z INFO TempDirectoryManager] Cleaning runner temp folder: C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\_work\_temp
+[2025-12-04 02:39:34Z INFO HostContext] Well known directory 'Bin': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\bin'
+[2025-12-04 02:39:34Z INFO HostContext] Well known directory 'Root': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner'
+[2025-12-04 02:39:34Z INFO HostContext] Well known directory 'Diag': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\_diag'
+[2025-12-04 02:39:34Z INFO HostContext] Well known config file 'Telemetry': 'C:\Users\swaminathan.s\dremio-dbt-cicd\actions-runner\_diag\.telemetry'
+[2025-12-04 02:39:34Z INFO JobRunner] Raising job completed against run service
+[2025-12-04 02:39:35Z INFO Worker] Job completed.

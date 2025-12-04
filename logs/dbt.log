@@ -3995,3 +3995,62 @@ Parsing Error
 [0m11:04:23.771323 [debug] [MainThread]: Command `dbt run` failed at 11:04:23.771323 after 0.44 seconds
 [0m11:04:23.771323 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C8A3045550>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C8A2AFE090>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C8A2D811F0>]}
 [0m11:04:23.772321 [debug] [MainThread]: Flushing usage events
+[0m09:30:15.915101 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020413987230>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020413986840>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020413987980>]}
+
+
+============================== 09:30:15.925279 | 36bda81c-6086-4347-b730-ec6d2af0c2d9 ==============================
+[0m09:30:15.925279 [info ] [MainThread]: Running with dbt=1.7.0
+[0m09:30:15.925279 [debug] [MainThread]: running dbt with arguments {'no_print': 'None', 'target_path': 'None', 'printer_width': '80', 'invocation_command': 'dbt debug --profiles-dir C:\\Users\\swaminathan.s\\.dbt', 'profiles_dir': 'C:\\Users\\swaminathan.s\\.dbt', 'warn_error': 'None', 'indirect_selection': 'eager', 'partial_parse': 'True', 'log_path': 'C:\\Users\\swaminathan.s\\dremio-dbt-cicd\\logs', 'send_anonymous_usage_stats': 'True', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'fail_fast': 'False', 'version_check': 'True', 'use_experimental_parser': 'False', 'quiet': 'False', 'introspect': 'True', 'log_cache_events': 'False', 'debug': 'False', 'log_format': 'default', 'use_colors': 'True', 'cache_selected_only': 'False', 'write_json': 'True'}
+[0m09:30:15.925279 [info ] [MainThread]: dbt version: 1.7.0
+[0m09:30:15.925279 [info ] [MainThread]: python version: 3.12.10
+[0m09:30:15.925279 [info ] [MainThread]: python path: C:\Users\swaminathan.s\AppData\Local\Programs\Python\Python312\python.exe
+[0m09:30:15.925279 [info ] [MainThread]: os info: Windows-11-10.0.26200-SP0
+[0m09:30:16.027738 [info ] [MainThread]: Using profiles dir at C:\Users\swaminathan.s\.dbt
+[0m09:30:16.027738 [info ] [MainThread]: Using profiles.yml file at C:\Users\swaminathan.s\.dbt\profiles.yml
+[0m09:30:16.027738 [info ] [MainThread]: Using dbt_project.yml file at C:\Users\swaminathan.s\dremio-dbt-cicd\dbt_project.yml
+[0m09:30:16.033767 [info ] [MainThread]: adapter type: dremio
+[0m09:30:16.033767 [info ] [MainThread]: adapter version: 1.7.0
+[0m09:30:16.096274 [info ] [MainThread]: Configuration:
+[0m09:30:16.100806 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m09:30:16.100806 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m09:30:16.100806 [info ] [MainThread]: Required dependencies:
+[0m09:30:16.100806 [debug] [MainThread]: Executing "git --help"
+[0m09:30:16.246495 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]\n           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]\n           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone      Clone a repository into a new directory\n   init       Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add        Add file contents to the index\n   mv         Move or rename a file, a directory, or a symlink\n   restore    Restore working tree files\n   rm         Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect     Use binary search to find the commit that introduced a bug\n   diff       Show changes between commits, commit and working tree, etc\n   grep       Print lines matching a pattern\n   log        Show commit logs\n   show       Show various types of objects\n   status     Show the working tree status\n\ngrow, mark and tweak your common history\n   backfill   Download missing objects in a partial clone\n   branch     List, create, or delete branches\n   commit     Record changes to the repository\n   merge      Join two or more development histories together\n   rebase     Reapply commits on top of another base tip\n   reset      Reset current HEAD to the specified state\n   switch     Switch branches\n   tag        Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch      Download objects and refs from another repository\n   pull       Fetch from and integrate with another repository or a local branch\n   push       Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m09:30:16.246495 [debug] [MainThread]: STDERR: "b''"
+[0m09:30:16.246495 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m09:30:16.246495 [info ] [MainThread]: Connection:
+[0m09:30:16.246495 [info ] [MainThread]:   cloud_host: None
+[0m09:30:16.246495 [info ] [MainThread]:   cloud_project_id: None
+[0m09:30:16.246495 [info ] [MainThread]:   software_host: localhost
+[0m09:30:16.246495 [info ] [MainThread]:   port: 9047
+[0m09:30:16.246495 [info ] [MainThread]:   use_ssl: False
+[0m09:30:16.246495 [info ] [MainThread]:   environment: software
+[0m09:30:16.246495 [info ] [MainThread]:   UID: admin
+[0m09:30:16.246495 [info ] [MainThread]:   root_path: no_schema
+[0m09:30:16.246495 [info ] [MainThread]:   datalake: $scratch
+[0m09:30:16.246495 [info ] [MainThread]:   database: dbt_dev
+[0m09:30:16.254579 [info ] [MainThread]:   schema: models
+[0m09:30:16.254579 [info ] [MainThread]:   user: admin
+[0m09:30:16.254579 [info ] [MainThread]:   username: admin
+[0m09:30:16.255831 [info ] [MainThread]:   object_storage_source: $scratch
+[0m09:30:16.255831 [info ] [MainThread]:   object_storage_path: no_schema
+[0m09:30:16.255831 [info ] [MainThread]:   dremio_space: dbt_dev
+[0m09:30:16.257201 [info ] [MainThread]:   dremio_space_folder: models
+[0m09:30:16.258255 [info ] [MainThread]: Registered adapter: dremio=1.7.0
+[0m09:30:16.259328 [debug] [MainThread]: Acquiring new dremio connection 'debug'
+[0m09:30:16.260531 [debug] [MainThread]: dremio adapter: Using dremio connection "debug". fetch=False
+[0m09:30:16.261064 [debug] [MainThread]: dremio adapter: On debug: select 1 as id
+[0m09:30:16.261584 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m09:30:16.325557 [debug] [MainThread]: dremio adapter: Connected to db: dbt_dev
+[0m09:30:16.575218 [debug] [MainThread]: dremio adapter: Job State = METADATA_RETRIEVAL
+[0m09:30:16.787349 [debug] [MainThread]: dremio adapter: Job State = COMPLETED
+[0m09:30:16.787349 [debug] [MainThread]: dremio adapter: SQL status: 1 in 0.53 seconds
+[0m09:30:16.788877 [debug] [MainThread]: On debug: Close
+[0m09:30:16.788877 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m09:30:16.788877 [info ] [MainThread]: [32mAll checks passed![0m
+[0m09:30:16.790566 [debug] [MainThread]: Command `dbt debug` succeeded at 09:30:16.790566 after 1.18 seconds
+[0m09:30:16.790566 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m09:30:16.790566 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020412CE4800>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002041313BB00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002041396BF80>]}
+[0m09:30:16.790566 [debug] [MainThread]: Flushing usage events

@@ -1,0 +1,11 @@
+﻿{
+  "agentId": 21,
+  "agentName": "RLP2311",
+  "poolId": 1,
+  "poolName": "Default",
+  "serverUrl": "https://pipelinesghubeus22.actions.githubusercontent.com/jzw1bAFMUTIH43NFRDYmLi2MnFtUrBShYd63pGQgrhx3HviMSj/",
+  "gitHubUrl": "https://github.com/swaminathan-subbarayan/dremio-dbt-cicd",
+  "workFolder": "_work",
+  "useV2Flow": true,
+  "serverUrlV2": "https://broker.actions.githubusercontent.com/"
+}

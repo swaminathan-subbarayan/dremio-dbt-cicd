@@ -12,7 +12,6 @@ jobs:
     runs-on: [self-hosted, Windows]
     if: github.ref == 'refs/heads/develop'
 
-    # Make every run: step use cmd.exe (avoids PowerShell .ps1 temp scripts)
     defaults:
       run:
         shell: cmd
@@ -29,37 +28,34 @@ jobs:
           python -m pip install --upgrade pip
           python -m pip install dbt-dremio
 
-      - name: Create profiles.yml (Windows-safe via PowerShell array)
-        run: >
-          powershell -NoProfile -ExecutionPolicy Bypass -Command
-          "$p = Join-Path $env:USERPROFILE '.dbt';
-           New-Item -ItemType Directory -Force -Path $p | Out-Null;
-           $lines = @(
-             'dbt_cicd_profile:',
-             '  target: dev',
-             '  outputs:',
-             '    dev:',
-             '      type: dremio',
-             '      threads: 2',
-             '      environment: software',
-             '      software_host: \"${{ secrets.DREMIO_DEV_HOST }}\"',
-             '      port: ${{ secrets.DREMIO_DEV_PORT }}',
-             '      user: \"${{ secrets.DREMIO_DEV_USER }}\"',
-             '      password: \"${{ secrets.DREMIO_DEV_PASSWORD }}\"',
-             '      dremio_space: \"${{ secrets.DREMIO_DEV_SPACE }}\"',
-             '      dremio_space_folder: \"${{ secrets.DREMIO_DEV_SPACE_FOLDER }}\"',
-             '    prod:',
-             '      type: dremio',
-             '      threads: 2',
-             '      environment: software',
-             '      software_host: \"${{ secrets.DREMIO_PROD_HOST }}\"',
-             '      port: ${{ secrets.DREMIO_PROD_PORT }}',
-             '      user: \"${{ secrets.DREMIO_PROD_USER }}\"',
-             '      password: \"${{ secrets.DREMIO_PROD_PASSWORD }}\"',
-             '      dremio_space: \"${{ secrets.DREMIO_PROD_SPACE }}\"',
-             '      dremio_space_folder: \"${{ secrets.DREMIO_PROD_SPACE_FOLDER }}\"'
-           );
-           Set-Content -Path (Join-Path $p 'profiles.yml') -Value $lines -Encoding UTF8"
+      - name: Create profiles.yml (Windows-safe via cmd)
+        run: |
+          if not exist "%USERPROFILE%\.dbt" mkdir "%USERPROFILE%\.dbt"
+          (
+          echo dbt_cicd_profile:
+          echo   target: dev
+          echo   outputs:
+          echo     dev:
+          echo       type: dremio
+          echo       threads: 2
+          echo       environment: software
+          echo       software_host: "${{ secrets.DREMIO_DEV_HOST }}"
+          echo       port: ${{ secrets.DREMIO_DEV_PORT }}
+          echo       user: "${{ secrets.DREMIO_DEV_USER }}"
+          echo       password: "${{ secrets.DREMIO_DEV_PASSWORD }}"
+          echo       dremio_space: "${{ secrets.DREMIO_DEV_SPACE }}"
+          echo       dremio_space_folder: "${{ secrets.DREMIO_DEV_SPACE_FOLDER }}"
+          echo     prod:
+          echo       type: dremio
+          echo       threads: 2
+          echo       environment: software
+          echo       software_host: "${{ secrets.DREMIO_PROD_HOST }}"
+          echo       port: ${{ secrets.DREMIO_PROD_PORT }}
+          echo       user: "${{ secrets.DREMIO_PROD_USER }}"
+          echo       password: "${{ secrets.DREMIO_PROD_PASSWORD }}"
+          echo       dremio_space: "${{ secrets.DREMIO_PROD_SPACE }}"
+          echo       dremio_space_folder: "${{ secrets.DREMIO_PROD_SPACE_FOLDER }}"
+          ) > "%USERPROFILE%\.dbt\profiles.yml"
 
       - name: Debug profiles.yml
         run: type "%USERPROFILE%\.dbt\profiles.yml"
@@ -104,37 +100,34 @@ jobs:
           python -m pip install --upgrade pip
           python -m pip install dbt-dremio
 
-      - name: Create profiles.yml (Windows-safe via PowerShell array)
-        run: >
-          powershell -NoProfile -ExecutionPolicy Bypass -Command
-          "$p = Join-Path $env:USERPROFILE '.dbt';
-           New-Item -ItemType Directory -Force -Path $p | Out-Null;
-           $lines = @(
-             'dbt_cicd_profile:',
-             '  target: prod',
-             '  outputs:',
-             '    dev:',
-             '      type: dremio',
-             '      threads: 2',
-             '      environment: software',
-             '      software_host: \"${{ secrets.DREMIO_DEV_HOST }}\"',
-             '      port: ${{ secrets.DREMIO_DEV_PORT }}',
-             '      user: \"${{ secrets.DREMIO_DEV_USER }}\"',
-             '      password: \"${{ secrets.DREMIO_DEV_PASSWORD }}\"',
-             '      dremio_space: \"${{ secrets.DREMIO_DEV_SPACE }}\"',
-             '      dremio_space_folder: \"${{ secrets.DREMIO_DEV_SPACE_FOLDER }}\"',
-             '    prod:',
-             '      type: dremio',
-             '      threads: 2',
-             '      environment: software',
-             '      software_host: \"${{ secrets.DREMIO_PROD_HOST }}\"',
-             '      port: ${{ secrets.DREMIO_PROD_PORT }}',
-             '      user: \"${{ secrets.DREMIO_PROD_USER }}\"',
-             '      password: \"${{ secrets.DREMIO_PROD_PASSWORD }}\"',
-             '      dremio_space: \"${{ secrets.DREMIO_PROD_SPACE }}\"',
-             '      dremio_space_folder: \"${{ secrets.DREMIO_PROD_SPACE_FOLDER }}\"'
-           );
-           Set-Content -Path (Join-Path $p 'profiles.yml') -Value $lines -Encoding UTF8"
+      - name: Create profiles.yml (Windows-safe via cmd)
+        run: |
+          if not exist "%USERPROFILE%\.dbt" mkdir "%USERPROFILE%\.dbt"
+          (
+          echo dbt_cicd_profile:
+          echo   target: prod
+          echo   outputs:
+          echo     dev:
+          echo       type: dremio
+          echo       threads: 2
+          echo       environment: software
+          echo       software_host: "${{ secrets.DREMIO_DEV_HOST }}"
+          echo       port: ${{ secrets.DREMIO_DEV_PORT }}
+          echo       user: "${{ secrets.DREMIO_DEV_USER }}"
+          echo       password: "${{ secrets.DREMIO_DEV_PASSWORD }}"
+          echo       dremio_space: "${{ secrets.DREMIO_DEV_SPACE }}"
+          echo       dremio_space_folder: "${{ secrets.DREMIO_DEV_SPACE_FOLDER }}"
+          echo     prod:
+          echo       type: dremio
+          echo       threads: 2
+          echo       environment: software
+          echo       software_host: "${{ secrets.DREMIO_PROD_HOST }}"
+          echo       port: ${{ secrets.DREMIO_PROD_PORT }}
+          echo       user: "${{ secrets.DREMIO_PROD_USER }}"
+          echo       password: "${{ secrets.DREMIO_PROD_PASSWORD }}"
+          echo       dremio_space: "${{ secrets.DREMIO_PROD_SPACE }}"
+          echo       dremio_space_folder: "${{ secrets.DREMIO_PROD_SPACE_FOLDER }}"
+          ) > "%USERPROFILE%\.dbt\profiles.yml"
 
       - name: Debug profiles.yml
         run: type "%USERPROFILE%\.dbt\profiles.yml"

@@ -11,215 +11,140 @@ jobs:
   dev-deploy:
     runs-on: [self-hosted, Windows]
     if: github.ref == 'refs/heads/develop'
-#    runs-on: ubuntu-latest
+
+    # Make every run: step use cmd.exe (avoids PowerShell .ps1 temp scripts)
     defaults:
       run:
         shell: cmd
+
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
+
       - name: Verify Python
-        shell: cmd
         run: python --version
-#        uses: actions/setup-python@v4
-#        with:
-#          python-version: '3.12'
-      - name: Install dbt
-        shell: cmd
-        run: pip install dbt-dremio
-      # - name: Create profiles.yml
-      #   shell: cmd
-      #   run: >
-      #     powershell -NoProfile -ExecutionPolicy Bypass -Command
-      #     "$dbtDir = Join-Path $env:USERPROFILE '.dbt';
-      #     New-Item -ItemType Directory -Force -Path $dbtDir | Out-Null;
-      #     $content = @'
-      #     dbt_cicd_profile:
-      #       target: dev
-      #       outputs:
-      #           dev:
-      #             type: dremio
-      #             threads: 2
-      #             environment: software
-      #             software_host: "${{ secrets.DREMIO_DEV_HOST }}"
-      #             port: ${{ secrets.DREMIO_DEV_PORT }}
-      #             user: "${{ secrets.DREMIO_DEV_USER }}"
-      #             password: "${{ secrets.DREMIO_DEV_PASSWORD }}"
-      #             dremio_space: "${{ secrets.DREMIO_DEV_SPACE }}"
-      #             dremio_space_folder: "${{ secrets.DREMIO_DEV_SPACE_FOLDER }}"
-      #           prod:
-      #             type: dremio
-      #             threads: 2
-      #             environment: software
-      #             software_host: "${{ secrets.DREMIO_PROD_HOST }}"
-      #             port: ${{ secrets.DREMIO_PROD_PORT }}
-      #             user: "${{ secrets.DREMIO_PROD_USER }}"
-      #             password: "${{ secrets.DREMIO_PROD_PASSWORD }}"
-      #             dremio_space: "${{ secrets.DREMIO_PROD_SPACE }}"
-      #             dremio_space_folder: "${{ secrets.DREMIO_PROD_SPACE_FOLDER }}"
-      #     '@;
-      #     Set-Content -Path (Join-Path $dbtDir 'profiles.yml') -Value $content -Encoding UTF8"
-      - name: Create profiles.yml (Python)
-        shell: cmd
-        run: >
-          python -c "import os, textwrap;
-          p=os.path.join(os.environ['USERPROFILE'],'.dbt');
-          os.makedirs(p, exist_ok=True);
-          content=textwrap.dedent('''\
-          dbt_cicd_profile:
-            target: dev
-            outputs:
-                dev:
-                  type: dremio
-                  threads: 2
-                  environment: software
-                  software_host: \"${{ secrets.DREMIO_DEV_HOST }}\"
-                  port: ${{ secrets.DREMIO_DEV_PORT }}
-                  user: \"${{ secrets.DREMIO_DEV_USER }}\"
-                  password: \"${{ secrets.DREMIO_DEV_PASSWORD }}\"
-                  dremio_space: \"${{ secrets.DREMIO_DEV_SPACE }}\"
-                  dremio_space_folder: \"${{ secrets.DREMIO_DEV_SPACE_FOLDER }}\"
-                prod:
-                  type: dremio
-                  threads: 2
-                  environment: software
-                  software_host: \"${{ secrets.DREMIO_PROD_HOST }}\"
-                  port: ${{ secrets.DREMIO_PROD_PORT }}
-                  user: \"${{ secrets.DREMIO_PROD_USER }}\"
-                  password: \"${{ secrets.DREMIO_PROD_PASSWORD }}\"
-                  dremio_space: \"${{ secrets.DREMIO_PROD_SPACE }}\"
-                  dremio_space_folder: \"${{ secrets.DREMIO_PROD_SPACE_FOLDER }}\"
-          ''');
-          open(os.path.join(p,'profiles.yml'),'w',encoding='utf-8').write(content)"
+
+      - name: Upgrade pip & install dbt-dremio
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install dbt-dremio
+
+      - name: Create profiles.yml (Python, Windows-safe)
+        run: |
+          python -c "import os; p=os.path.join(os.environ['USERPROFILE'],'.dbt'); os.makedirs(p, exist_ok=True);
+          lines=[
+          'dbt_cicd_profile:',
+          '  target: dev',
+          '  outputs:',
+          '    dev:',
+          '      type: dremio',
+          '      threads: 2',
+          '      environment: software',
+          '      software_host: \"${{ secrets.DREMIO_DEV_HOST }}\"',
+          '      port: ${{ secrets.DREMIO_DEV_PORT }}',
+          '      user: \"${{ secrets.DREMIO_DEV_USER }}\"',
+          '      password: \"${{ secrets.DREMIO_DEV_PASSWORD }}\"',
+          '      dremio_space: \"${{ secrets.DREMIO_DEV_SPACE }}\"',
+          '      dremio_space_folder: \"${{ secrets.DREMIO_DEV_SPACE_FOLDER }}\"',
+          '    prod:',
+          '      type: dremio',
+          '      threads: 2',
+          '      environment: software',
+          '      software_host: \"${{ secrets.DREMIO_PROD_HOST }}\"',
+          '      port: ${{ secrets.DREMIO_PROD_PORT }}',
+          '      user: \"${{ secrets.DREMIO_PROD_USER }}\"',
+          '      password: \"${{ secrets.DREMIO_PROD_PASSWORD }}\"',
+          '      dremio_space: \"${{ secrets.DREMIO_PROD_SPACE }}\"',
+          '      dremio_space_folder: \"${{ secrets.DREMIO_PROD_SPACE_FOLDER }}\"',
+          ];
+          open(os.path.join(p,'profiles.yml'),'w',encoding='utf-8').write('\n'.join(lines))"
+
       - name: Debug profiles.yml
         run: type "%USERPROFILE%\.dbt\profiles.yml"
+
       - name: Connectivity check to Dremio (HTTPS)
-        run: |
-          set URL=https://${{ secrets.DREMIO_DEV_HOST }}:${{ secrets.DREMIO_DEV_PORT }}/apiv2/login
-          echo Testing: %URL%
-          curl -k -I "%URL%"
-      - name: Run dbt in Dev
-        # env:
-        #   DREMIO_DEV_HOST: ${{ secrets.DREMIO_DEV_HOST }}
-        #   DREMIO_DEV_PORT: ${{ secrets.DREMIO_DEV_PORT }}
-        #   DREMIO_DEV_USER: ${{ secrets.DREMIO_DEV_USER }}
-        #   DREMIO_DEV_PASSWORD: ${{ secrets.DREMIO_DEV_PASSWORD }}
-        #   DREMIO_DEV_SPACE: ${{ secrets.DREMIO_DEV_SPACE }}
-        #   DREMIO_DEV_SPACE_FOLDER: ${{ secrets.DREMIO_DEV_SPACE_FOLDER }}
-        run: |
-          dbt deps
-      - name: Debug profiles.yml
-        run: cat ~/.dbt/profiles.yml
-      - name: Check secrets
-        run: |
-          echo "DREMIO_DEV_HOST: ${{ secrets.DREMIO_DEV_HOST }}"
-          echo "DREMIO_PROD_HOST: ${{ secrets.DREMIO_PROD_HOST }}"
-          dbt run --target dev
-          dbt test --target dev
+        run: >
+          powershell -NoProfile -ExecutionPolicy Bypass -Command
+          "$url = 'https://${{ secrets.DREMIO_DEV_HOST }}:${{ secrets.DREMIO_DEV_PORT }}/apiv2/login';
+           Write-Host ('Testing: ' + $url);
+           try { (Invoke-WebRequest -Uri $url -UseBasicParsing -SkipCertificateCheck).StatusCode | Write-Host }
+           catch { Write-Host ('Connection failed: ' + $_.Exception.Message); exit 1 }"
+
+      - name: dbt debug
+        run: python -m dbt debug --profiles-dir "%USERPROFILE%\.dbt"
+
+      - name: dbt deps
+        run: python -m dbt deps
+
+      - name: dbt build (dev)
+        run: python -m dbt build --profiles-dir "%USERPROFILE%\.dbt" --profile dbt_cicd_profile --target dev
 
   prod-deploy:
     runs-on: [self-hosted, Windows]
     if: github.ref == 'refs/heads/main'
-#    runs-on: ubuntu-latest
+
     defaults:
       run:
         shell: cmd
+
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
+
       - name: Verify Python
-        shell: cmd
         run: python --version
-#        uses: actions/setup-python@v4
-#        with:
-#          python-version: '3.12'
-      - name: Install dbt
-        shell: cmd
-        run: pip install dbt-dremio
-      # - name: Create profiles.yml
-      #   shell: cmd
-      #   run: >
-      #     powershell -NoProfile -ExecutionPolicy Bypass -Command
-      #     "$dbtDir = Join-Path $env:USERPROFILE '.dbt';
-      #     New-Item -ItemType Directory -Force -Path $dbtDir | Out-Null;
-      #     $content = @'
-      #     dbt_cicd_profile:
-      #       target: dev
-      #       outputs:
-      #           dev:
-      #             type: dremio
-      #             threads: 2
-      #             environment: software
-      #             software_host: "${{ secrets.DREMIO_DEV_HOST }}"
-      #             port: ${{ secrets.DREMIO_DEV_PORT }}
-      #             user: "${{ secrets.DREMIO_DEV_USER }}"
-      #             password: "${{ secrets.DREMIO_DEV_PASSWORD }}"
-      #             dremio_space: "${{ secrets.DREMIO_DEV_SPACE }}"
-      #             dremio_space_folder: "${{ secrets.DREMIO_DEV_SPACE_FOLDER }}"
-      #           prod:
-      #             type: dremio
-      #             threads: 2
-      #             environment: software
-      #             software_host: "${{ secrets.DREMIO_PROD_HOST }}"
-      #             port: ${{ secrets.DREMIO_PROD_PORT }}
-      #             user: "${{ secrets.DREMIO_PROD_USER }}"
-      #             password: "${{ secrets.DREMIO_PROD_PASSWORD }}"
-      #             dremio_space: "${{ secrets.DREMIO_PROD_SPACE }}"
-      #             dremio_space_folder: "${{ secrets.DREMIO_PROD_SPACE_FOLDER }}"
-      #     '@;
-      #     Set-Content -Path (Join-Path $dbtDir 'profiles.yml') -Value $content -Encoding UTF8"
-      - name: Create profiles.yml (Python)
-        shell: cmd
-        run: >
-          python -c "import os, textwrap;
-          p=os.path.join(os.environ['USERPROFILE'],'.dbt');
-          os.makedirs(p, exist_ok=True);
-          content=textwrap.dedent('''\
-          dbt_cicd_profile:
-            target: dev
-            outputs:
-                dev:
-                  type: dremio
-                  threads: 2
-                  environment: software
-                  software_host: \"${{ secrets.DREMIO_DEV_HOST }}\"
-                  port: ${{ secrets.DREMIO_DEV_PORT }}
-                  user: \"${{ secrets.DREMIO_DEV_USER }}\"
-                  password: \"${{ secrets.DREMIO_DEV_PASSWORD }}\"
-                  dremio_space: \"${{ secrets.DREMIO_DEV_SPACE }}\"
-                  dremio_space_folder: \"${{ secrets.DREMIO_DEV_SPACE_FOLDER }}\"
-                prod:
-                  type: dremio
-                  threads: 2
-                  environment: software
-                  software_host: \"${{ secrets.DREMIO_PROD_HOST }}\"
-                  port: ${{ secrets.DREMIO_PROD_PORT }}
-                  user: \"${{ secrets.DREMIO_PROD_USER }}\"
-                  password: \"${{ secrets.DREMIO_PROD_PASSWORD }}\"
-                  dremio_space: \"${{ secrets.DREMIO_PROD_SPACE }}\"
-                  dremio_space_folder: \"${{ secrets.DREMIO_PROD_SPACE_FOLDER }}\"
-          ''');
-          open(os.path.join(p,'profiles.yml'),'w',encoding='utf-8').write(content)"
+
+      - name: Upgrade pip & install dbt-dremio
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install dbt-dremio
+
+      - name: Create profiles.yml (Python, Windows-safe)
+        run: |
+          python -c "import os; p=os.path.join(os.environ['USERPROFILE'],'.dbt'); os.makedirs(p, exist_ok=True);
+          lines=[
+          'dbt_cicd_profile:',
+          '  target: prod',
+          '  outputs:',
+          '    dev:',
+          '      type: dremio',
+          '      threads: 2',
+          '      environment: software',
+          '      software_host: \"${{ secrets.DREMIO_DEV_HOST }}\"',
+          '      port: ${{ secrets.DREMIO_DEV_PORT }}',
+          '      user: \"${{ secrets.DREMIO_DEV_USER }}\"',
+          '      password: \"${{ secrets.DREMIO_DEV_PASSWORD }}\"',
+          '      dremio_space: \"${{ secrets.DREMIO_DEV_SPACE }}\"',
+          '      dremio_space_folder: \"${{ secrets.DREMIO_DEV_SPACE_FOLDER }}\"',
+          '    prod:',
+          '      type: dremio',
+          '      threads: 2',
+          '      environment: software',
+          '      software_host: \"${{ secrets.DREMIO_PROD_HOST }}\"',
+          '      port: ${{ secrets.DREMIO_PROD_PORT }}',
+          '      user: \"${{ secrets.DREMIO_PROD_USER }}\"',
+          '      password: \"${{ secrets.DREMIO_PROD_PASSWORD }}\"',
+          '      dremio_space: \"${{ secrets.DREMIO_PROD_SPACE }}\"',
+          '      dremio_space_folder: \"${{ secrets.DREMIO_PROD_SPACE_FOLDER }}\"',
+          ];
+          open(os.path.join(p,'profiles.yml'),'w',encoding='utf-8').write('\n'.join(lines))"
+
       - name: Debug profiles.yml
         run: type "%USERPROFILE%\.dbt\profiles.yml"
+
       - name: Connectivity check to Dremio (HTTPS)
-        run: |
-          set URL=https://${{ secrets.DREMIO_DEV_HOST }}:${{ secrets.DREMIO_DEV_PORT }}/apiv2/login
-          echo Testing: %URL%
-          curl -k -I "%URL%"
-      - name: Run dbt in Prod
-        # env:
-        #   DREMIO_PROD_HOST: ${{ secrets.DREMIO_PROD_HOST }}
-        #   DREMIO_PROD_PORT: ${{ secrets.DREMIO_PROD_PORT }}
-        #   DREMIO_PROD_USER: ${{ secrets.DREMIO_PROD_USER }}
-        #   DREMIO_PROD_PASSWORD: ${{ secrets.DREMIO_PROD_PASSWORD }}
-        #   DREMIO_PROD_SPACE: ${{ secrets.DREMIO_PROD_SPACE }}
-        #   DREMIO_PROD_SPACE_FOLDER: ${{ secrets.DREMIO_PROD_SPACE_FOLDER }}
-        run: |
-          dbt deps
-      - name: Debug profiles.yml
-        run: cat ~/.dbt/profiles.yml
-      - name: Check secrets
-        run: |
-          echo "DREMIO_DEV_HOST: ${{ secrets.DREMIO_DEV_HOST }}"
-          echo "DREMIO_PROD_HOST: ${{ secrets.DREMIO_PROD_HOST }}"
-          dbt run --target prod
-          dbt test --target prod
+        run: >
+          powershell -NoProfile -ExecutionPolicy Bypass -Command
+          "$url = 'https://${{ secrets.DREMIO_PROD_HOST }}:${{ secrets.DREMIO_PROD_PORT }}/apiv2/login';
+           Write-Host ('Testing: ' + $url);
+           try { (Invoke-WebRequest -Uri $url -UseBasicParsing -SkipCertificateCheck).StatusCode | Write-Host }
+           catch { Write-Host ('Connection failed: ' + $_.Exception.Message); exit 1 }"
+
+      - name: dbt debug
+        run: python -m dbt debug --profiles-dir "%USERPROFILE%\.dbt"
+
+      - name: dbt deps
+        run: python -m dbt deps
+
+      - name: dbt build (prod)
+        run: python -m dbt build --profiles-dir "%USERPROFILE%\.dbt" --profile dbt_cicd_profile --target prod

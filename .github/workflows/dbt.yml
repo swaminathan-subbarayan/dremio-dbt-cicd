@@ -22,31 +22,31 @@ jobs:
       - name: Create profiles.yml
         run: |
           mkdir -p ~/.dbt
-          cat <<EOF > ~/.dbt/profiles.yml
+          cat <<'EOF' > ~/.dbt/profiles.yml
           dbt_cicd_profile:
             target: dev
             outputs:
-              dev:
-                type: dremio
-                threads: 2
-                environment: software
-                software_host: "${{ secrets.DREMIO_DEV_HOST }}"
-                port: ${{ secrets.DREMIO_DEV_PORT }}
-                user: "${{ secrets.DREMIO_DEV_USER }}"
-                password: "${{ secrets.DREMIO_DEV_PASSWORD }}"
-                dremio_space: "${{ secrets.DREMIO_DEV_SPACE }}"
-                dremio_space_folder: "${{ secrets.DREMIO_DEV_SPACE_FOLDER }}"
-              prod:
-                type: dremio
-                threads: 2
-                environment: software
-                software_host: "${{ secrets.DREMIO_PROD_HOST }}"
-                port: ${{ secrets.DREMIO_PROD_PORT }}
-                user: "${{ secrets.DREMIO_PROD_USER }}"
-                password: "${{ secrets.DREMIO_PROD_PASSWORD }}"
-                dremio_space: "${{ secrets.DREMIO_PROD_SPACE }}"
-                dremio_space_folder: "${{ secrets.DREMIO_PROD_SPACE_FOLDER }}"
-            EOF
+                dev:
+                  type: dremio
+                  threads: 2
+                  environment: software
+                  software_host: "${{ secrets.DREMIO_DEV_HOST }}"
+                  port: ${{ secrets.DREMIO_DEV_PORT }}
+                  user: "${{ secrets.DREMIO_DEV_USER }}"
+                  password: "${{ secrets.DREMIO_DEV_PASSWORD }}"
+                  dremio_space: "${{ secrets.DREMIO_DEV_SPACE }}"
+                  dremio_space_folder: "${{ secrets.DREMIO_DEV_SPACE_FOLDER }}"
+                prod:
+                  type: dremio
+                  threads: 2
+                  environment: software
+                  software_host: "${{ secrets.DREMIO_PROD_HOST }}"
+                  port: ${{ secrets.DREMIO_PROD_PORT }}
+                  user: "${{ secrets.DREMIO_PROD_USER }}"
+                  password: "${{ secrets.DREMIO_PROD_PASSWORD }}"
+                  dremio_space: "${{ secrets.DREMIO_PROD_SPACE }}"
+                  dremio_space_folder: "${{ secrets.DREMIO_PROD_SPACE_FOLDER }}"
+          EOF
       - name: Run dbt in Dev
         # env:
         #   DREMIO_DEV_HOST: ${{ secrets.DREMIO_DEV_HOST }}
@@ -80,31 +80,31 @@ jobs:
       - name: Create profiles.yml
         run: |
           mkdir -p ~/.dbt
-          cat <<EOF > ~/.dbt/profiles.yml
+          cat <<'EOF' > ~/.dbt/profiles.yml
           dbt_cicd_profile:
             target: dev
             outputs:
-              dev:
-                type: dremio
-                threads: 2
-                environment: software
-                software_host: "${{ secrets.DREMIO_DEV_HOST }}"
-                port: ${{ secrets.DREMIO_DEV_PORT }}
-                user: "${{ secrets.DREMIO_DEV_USER }}"
-                password: "${{ secrets.DREMIO_DEV_PASSWORD }}"
-                dremio_space: "${{ secrets.DREMIO_DEV_SPACE }}"
-                dremio_space_folder: "${{ secrets.DREMIO_DEV_SPACE_FOLDER }}"
-              prod:
-                type: dremio
-                threads: 2
-                environment: software
-                software_host: "${{ secrets.DREMIO_PROD_HOST }}"
-                port: ${{ secrets.DREMIO_PROD_PORT }}
-                user: "${{ secrets.DREMIO_PROD_USER }}"
-                password: "${{ secrets.DREMIO_PROD_PASSWORD }}"
-                dremio_space: "${{ secrets.DREMIO_PROD_SPACE }}"
-                dremio_space_folder: "${{ secrets.DREMIO_PROD_SPACE_FOLDER }}"
-            EOF
+                dev:
+                  type: dremio
+                  threads: 2
+                  environment: software
+                  software_host: "${{ secrets.DREMIO_DEV_HOST }}"
+                  port: ${{ secrets.DREMIO_DEV_PORT }}
+                  user: "${{ secrets.DREMIO_DEV_USER }}"
+                  password: "${{ secrets.DREMIO_DEV_PASSWORD }}"
+                  dremio_space: "${{ secrets.DREMIO_DEV_SPACE }}"
+                  dremio_space_folder: "${{ secrets.DREMIO_DEV_SPACE_FOLDER }}"
+                prod:
+                  type: dremio
+                  threads: 2
+                  environment: software
+                  software_host: "${{ secrets.DREMIO_PROD_HOST }}"
+                  port: ${{ secrets.DREMIO_PROD_PORT }}
+                  user: "${{ secrets.DREMIO_PROD_USER }}"
+                  password: "${{ secrets.DREMIO_PROD_PASSWORD }}"
+                  dremio_space: "${{ secrets.DREMIO_PROD_SPACE }}"
+                  dremio_space_folder: "${{ secrets.DREMIO_PROD_SPACE_FOLDER }}"
+          EOF
       - name: Run dbt in Prod
         # env:
         #   DREMIO_PROD_HOST: ${{ secrets.DREMIO_PROD_HOST }}

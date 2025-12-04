@@ -60,11 +60,11 @@ jobs:
       - name: Debug profiles.yml
         run: type "%USERPROFILE%\.dbt\profiles.yml"
 
-      - name: Connectivity check to Dremio (HTTPS via curl)
+      - name: Connectivity check to Dremio (HTTP via curl)
         run: |
-          set URL=https://${{ secrets.DREMIO_DEV_HOST }}:${{ secrets.DREMIO_DEV_PORT }}/apiv2/login
+          set URL=http://${{ secrets.DREMIO_DEV_HOST }}:${{ secrets.DREMIO_DEV_PORT }}/apiv2/login
           echo Testing: %URL%
-          curl -k -I "%URL%" || exit /b 1
+          curl -I "%URL%" || exit /b 1
 
       - name: dbt version
         run: python -m dbt --version

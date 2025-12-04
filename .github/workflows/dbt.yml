@@ -61,7 +61,10 @@ jobs:
       - name: Debug profiles.yml
         run: type "%USERPROFILE%\.dbt\profiles.yml"
       - name: Connectivity check to Dremio (HTTPS)
-        run: cmd /C "set URL=https://${{ secrets.DREMIO_DEV_HOST }}:${{ secrets.DREMIO_DEV_PORT }}/apiv2/login && echo Testing: %URL% && curl -k -I \"%URL%\""
+        run: |
+          set URL=https://${{ secrets.DREMIO_DEV_HOST }}:${{ secrets.DREMIO_DEV_PORT }}/apiv2/login
+          echo Testing: %URL%
+          curl -k -I "%URL%"
       - name: Run dbt in Dev
         # env:
         #   DREMIO_DEV_HOST: ${{ secrets.DREMIO_DEV_HOST }}
@@ -134,7 +137,10 @@ jobs:
       - name: Debug profiles.yml
         run: type "%USERPROFILE%\.dbt\profiles.yml"
       - name: Connectivity check to Dremio (HTTPS)
-        run: cmd /C "set URL=https://${{ secrets.DREMIO_DEV_HOST }}:${{ secrets.DREMIO_DEV_PORT }}/apiv2/login && echo Testing: %URL% && curl -k -I \"%URL%\""
+        run: |
+          set URL=https://${{ secrets.DREMIO_DEV_HOST }}:${{ secrets.DREMIO_DEV_PORT }}/apiv2/login
+          echo Testing: %URL%
+          curl -k -I "%URL%"
       - name: Run dbt in Prod
         # env:
         #   DREMIO_PROD_HOST: ${{ secrets.DREMIO_PROD_HOST }}

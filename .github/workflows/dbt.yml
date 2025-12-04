@@ -10,14 +10,15 @@ on:
 jobs:
   dev-deploy:
     runs-on: [self-hosted, Windows]
+    if: github.ref == 'refs/heads/develop'
 #    runs-on: ubuntu-latest
-#    if: github.ref == 'refs/heads/develop'
     steps:
-      - uses: actions/checkout@v3
-      - name: Set up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.12'
+      - uses: actions/checkout@v4
+      - name: Verify Python
+        run: python --version
+#        uses: actions/setup-python@v4
+#        with:
+#          python-version: '3.12'
       - name: Install dbt
         run: pip install dbt-dremio
       - name: Create profiles.yml
@@ -69,14 +70,15 @@ jobs:
 
   prod-deploy:
     runs-on: [self-hosted, Windows]
+    if: github.ref == 'refs/heads/main'
 #    runs-on: ubuntu-latest
-#    if: github.ref == 'refs/heads/main'
     steps:
-      - uses: actions/checkout@v3
-      - name: Set up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.12'
+      - uses: actions/checkout@v4
+      - name: Verify Python
+        run: python --version
+#        uses: actions/setup-python@v4
+#        with:
+#          python-version: '3.12'
       - name: Install dbt
         run: pip install dbt-dremio
       - name: Create profiles.yml

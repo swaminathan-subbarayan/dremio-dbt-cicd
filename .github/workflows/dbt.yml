@@ -14,15 +14,14 @@ jobs:
 #    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Allow PowerShell scripts for this job
-        shell: PowerShell
-        run: Set-ExecutionPolicy -Scope Process -ExecutionPolicy RemoteSigned
       - name: Verify Python
+        shell: cmd
         run: python --version
 #        uses: actions/setup-python@v4
 #        with:
 #          python-version: '3.12'
       - name: Install dbt
+        shell: cmd
         run: pip install dbt-dremio
       - name: Create profiles.yml
         run: |
@@ -77,15 +76,14 @@ jobs:
 #    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Allow PowerShell scripts for this job
-        shell: PowerShell
-        run: Set-ExecutionPolicy -Scope Process -ExecutionPolicy RemoteSigned
       - name: Verify Python
+        shell: cmd
         run: python --version
 #        uses: actions/setup-python@v4
 #        with:
 #          python-version: '3.12'
       - name: Install dbt
+        shell: cmd
         run: pip install dbt-dremio
       - name: Create profiles.yml
         run: |

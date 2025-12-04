@@ -27,9 +27,12 @@ jobs:
         shell: cmd
         run: pip install dbt-dremio
       - name: Create profiles.yml
-        run: |
-          mkdir -p ~/.dbt
-          cat <<'EOF' > ~/.dbt/profiles.yml
+        shell: cmd
+        run: >
+          powershell -NoProfile -ExecutionPolicy Bypass -Command
+          "$dbtDir = Join-Path $env:USERPROFILE '.dbt';
+          New-Item -ItemType Directory -Force -Path $dbtDir | Out-Null;
+          $content = @'
           dbt_cicd_profile:
             target: dev
             outputs:
@@ -53,7 +56,12 @@ jobs:
                   password: "${{ secrets.DREMIO_PROD_PASSWORD }}"
                   dremio_space: "${{ secrets.DREMIO_PROD_SPACE }}"
                   dremio_space_folder: "${{ secrets.DREMIO_PROD_SPACE_FOLDER }}"
-          EOF
+          '@;
+          Set-Content -Path (Join-Path $dbtDir 'profiles.yml') -Value $content -Encoding UTF8"
+      - name: Debug profiles.yml
+        run: type "%USERPROFILE%\.dbt\profiles.yml"
+      - name: Connectivity check to Dremio (HTTPS)
+        run: cmd /C "set URL=https://${{ secrets.DREMIO_DEV_HOST }}:${{ secrets.DREMIO_DEV_PORT }}/apiv2/login && echo Testing: %URL% && curl -k -I \"%URL%\""
       - name: Run dbt in Dev
         # env:
         #   DREMIO_DEV_HOST: ${{ secrets.DREMIO_DEV_HOST }}
@@ -92,9 +100,12 @@ jobs:
         shell: cmd
         run: pip install dbt-dremio
       - name: Create profiles.yml
-        run: |
-          mkdir -p ~/.dbt
-          cat <<'EOF' > ~/.dbt/profiles.yml
+        shell: cmd
+        run: >
+          powershell -NoProfile -ExecutionPolicy Bypass -Command
+          "$dbtDir = Join-Path $env:USERPROFILE '.dbt';
+          New-Item -ItemType Directory -Force -Path $dbtDir | Out-Null;
+          $content = @'
           dbt_cicd_profile:
             target: dev
             outputs:
@@ -118,7 +129,12 @@ jobs:
                   password: "${{ secrets.DREMIO_PROD_PASSWORD }}"
                   dremio_space: "${{ secrets.DREMIO_PROD_SPACE }}"
                   dremio_space_folder: "${{ secrets.DREMIO_PROD_SPACE_FOLDER }}"
-          EOF
+          '@;
+          Set-Content -Path (Join-Path $dbtDir 'profiles.yml') -Value $content -Encoding UTF8"
+      - name: Debug profiles.yml
+        run: type "%USERPROFILE%\.dbt\profiles.yml"
+      - name: Connectivity check to Dremio (HTTPS)
+        run: cmd /C "set URL=https://${{ secrets.DREMIO_DEV_HOST }}:${{ secrets.DREMIO_DEV_PORT }}/apiv2/login && echo Testing: %URL% && curl -k -I \"%URL%\""
       - name: Run dbt in Prod
         # env:
         #   DREMIO_PROD_HOST: ${{ secrets.DREMIO_PROD_HOST }}

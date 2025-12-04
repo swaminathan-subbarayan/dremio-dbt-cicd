@@ -15,7 +15,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Allow PowerShell scripts for this job
-        shell: pwsh
+        shell: PowerShell
         run: Set-ExecutionPolicy -Scope Process -ExecutionPolicy RemoteSigned
       - name: Verify Python
         run: python --version
@@ -78,7 +78,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Allow PowerShell scripts for this job
-        shell: pwsh
+        shell: PowerShell
         run: Set-ExecutionPolicy -Scope Process -ExecutionPolicy RemoteSigned
       - name: Verify Python
         run: python --version
